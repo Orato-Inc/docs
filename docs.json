@@ -9,12 +9,26 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Documentation",
+          "icon": "book-open-cover",
+          "href": "https://mintlify.com/docs"
+        },
+        {
+          "anchor": "Blog",
+          "icon": "newspaper",
+          "href": "https://mintlify.com/blog"
+        }
+      ]
+    },
     "tabs": [
       {
-        "tab": "Guides",
+        "tab": "Getting Started",
         "groups": [
           {
-            "group": "Getting started",
+            "group": "Quick Start",
             "pages": [
               "index",
               "quickstart",
@@ -22,23 +36,23 @@
             ]
           },
           {
-            "group": "Customization",
+            "group": "Building Agents",
             "pages": [
               "essentials/settings",
-              "essentials/navigation"
+              "essentials/navigation",
+              "essentials/voice-and-audio"
             ]
           },
           {
-            "group": "Writing content",
+            "group": "Integrations",
             "pages": [
               "essentials/markdown",
               "essentials/code",
-              "essentials/images",
-              "essentials/reusable-snippets"
+              "essentials/images"
             ]
           },
           {
-            "group": "AI tools",
+            "group": "Use Cases",
             "pages": [
               "ai-tools/cursor",
               "ai-tools/claude-code",
@@ -67,21 +81,7 @@
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
     "light": "/images/orato-logo-horizontal-header-1200.png",
@@ -118,5 +118,9 @@
       "github": "https://github.com/mintlify",
       "linkedin": "https://linkedin.com/company/mintlify"
     }
+  },
+  "fonts": {
+    "family": "Inter",
+    "weight": 200
   }
 }
