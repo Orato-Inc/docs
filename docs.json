@@ -84,8 +84,8 @@
     }
   },
   "logo": {
-    "light": "/images/orato-logo-horizontal-600.webp",
-    "dark": "/images/orato-logo-horizontal-600.webp"
+    "light": "/images/orato-logo-horizontal-header-1200.png",
+    "dark": "/images/orato-logo-horizontal-header-1200.png"
   },
   "navbar": {
     "links": [
