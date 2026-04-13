@@ -7,7 +7,6 @@
     "light": "#C4622D",
     "dark": "#8B3E18"
   },
-  "favicon": "/favicon.svg",
   "navigation": {
     "tabs": [
       {
@@ -108,5 +107,6 @@
   "fonts": {
     "family": "Inter",
     "weight": 200
-  }
+  },
+  "favicon": "/images/orato-logo-app-icon-512.png"
 }
