@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "luma",
-  "name": "Mint Starter Kit",
+  "theme": "sequoia",
+  "name": "Orato Starter Kit",
   "colors": {
     "primary": "#C4622D",
     "light": "#C4622D",
