@@ -10,59 +10,94 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Getting Started",
+        "tab": "Documentation",
         "groups": [
           {
-            "group": "Quick Start",
-            "pages": [
-              "index",
-              "quickstart",
-              "development"
-            ]
+            "group": "Getting Started",
+            "pages": []
           },
           {
-            "group": "Building Agents",
-            "pages": [
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/voice-and-audio"
-            ]
+            "group": "Using Orato",
+            "pages": []
           },
           {
-            "group": "Integrations",
-            "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images"
-            ]
+            "group": "Enterprise",
+            "pages": []
           },
           {
-            "group": "Use Cases",
-            "pages": [
-              "ai-tools/cursor",
-              "ai-tools/claude-code",
-              "ai-tools/windsurf"
-            ]
+            "group": "On premise deployments",
+            "pages": []
+          },
+          {
+            "group": "Multilingual Voice agents",
+            "pages": []
+          },
+          {
+            "group": "Function calls",
+            "pages": []
+          },
+          {
+            "group": "Features",
+            "pages": []
+          },
+          {
+            "group": "Advanced Capabilities",
+            "pages": []
+          },
+          {
+            "group": "Telephony Support",
+            "pages": []
+          },
+          {
+            "group": "Pricing",
+            "pages": []
+          },
+          {
+            "group": "Phone calls with Orato",
+            "pages": []
           }
         ]
       },
       {
-        "tab": "API reference",
+        "tab": "API's",
         "groups": [
           {
-            "group": "API documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
+            "group": "API Documentation",
+            "pages": []
           },
           {
-            "group": "Endpoint examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
-            ]
+            "group": "Current and Active API's",
+            "pages": []
+          },
+          {
+            "group": "Legacy API's",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "tab": "Integrations",
+        "groups": [
+          {
+            "group": "Orato Integrations",
+            "pages": []
+          }
+        ]
+      },
+      {
+        "tab": "Tutorials",
+        "groups": [
+          {
+            "group": "Demos and Tutorials",
+            "pages": []
+          },
+          {
+            "group": "SIP Trunking",
+            "pages": []
+          },
+          {
+            "group": "Guides",
+            "pages": []
           }
         ]
       }
