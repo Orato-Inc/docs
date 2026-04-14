@@ -14,7 +14,9 @@
         "groups": [
           {
             "group": "Getting Started",
-            "pages": []
+            "pages": [
+              "home"
+            ]
           },
           {
             "group": "Using Orato",
