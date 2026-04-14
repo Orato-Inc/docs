@@ -76,7 +76,7 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:support@tryorato.com "
       }
     ],
     "primary": {
@@ -99,14 +99,19 @@
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/OratoInc",
+      "linkedin": "https://www.linkedin.com/company/tryorato",
+      "youtube": "https://www.youtube.com/@Orato-inc",
+      "instagram": "https://www.instagram.com/orato.inc/",
+      "facebook": "https://www.facebook.com/Orato.inc"
     }
   },
   "fonts": {
     "family": "Inter",
     "weight": 200
   },
-  "favicon": "/images/orato-logo-app-icon-512.png"
+  "favicon": {
+    "light": "/images/orato-logo-app-icon-512.png",
+    "dark": "/images/orato-logo-app-icon-512.png"
+  }
 }
