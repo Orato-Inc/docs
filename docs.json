@@ -110,8 +110,5 @@
     "family": "Inter",
     "weight": 200
   },
-  "favicon": {
-    "light": "/images/orato-logo-app-icon-512.png",
-    "dark": "/images/orato-logo-app-icon-512.png"
-  }
+  "favicon": "/images/orato-logo-app-icon-512.png"
 }
