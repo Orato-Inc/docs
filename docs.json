@@ -11,70 +11,55 @@
     "tabs": [
       {
         "tab": "Documentation",
-        "groups": [
+        "pages": [
           {
             "group": "Getting Started",
             "pages": [
               "home",
-              "introduction"
+              "introduction",
+              "platform",
+              "quick-start"
             ]
           },
           {
             "group": "Using Orato",
-            "pages": []
+            "pages": [
+              "ai-assistant",
+              "calls",
+              "leads",
+              "campaigns",
+              "conversations",
+              "meetings",
+              "knowledge-base",
+              "phone-numbers"
+            ]
           },
           {
-            "group": "Enterprise",
-            "pages": []
+            "group": "Phone Calls with Orato",
+            "pages": [
+              "calls/outbound",
+              "calls/inbound",
+              "calls/batch-calling",
+              "calls/call-history"
+            ]
           },
           {
-            "group": "On premise deployments",
-            "pages": []
-          },
-          {
-            "group": "Multilingual Voice agents",
-            "pages": []
-          },
-          {
-            "group": "Function calls",
-            "pages": []
-          },
-          {
-            "group": "Features",
-            "pages": []
-          },
-          {
-            "group": "Advanced Capabilities",
-            "pages": []
-          },
-          {
-            "group": "Telephony Support",
-            "pages": []
-          },
-          {
-            "group": "Pricing",
-            "pages": []
-          },
-          {
-            "group": "Phone calls with Orato",
-            "pages": []
+            "group": "Developer",
+            "pages": [
+              "developer/api-keys",
+              "developer/widget-integration"
+            ]
           }
         ]
       },
       {
-        "tab": "API's",
+        "tab": "API Reference",
         "groups": [
           {
-            "group": "API Documentation",
-            "pages": []
-          },
-          {
-            "group": "Current and Active API's",
-            "pages": []
-          },
-          {
-            "group": "Legacy API's",
-            "pages": []
+            "group": "Overview",
+            "pages": [
+              "api-reference/introduction"
+            ]
           }
         ]
       },
@@ -83,7 +68,9 @@
         "groups": [
           {
             "group": "Orato Integrations",
-            "pages": []
+            "pages": [
+              "integrations/overview"
+            ]
           }
         ]
       },
@@ -91,16 +78,10 @@
         "tab": "Tutorials",
         "groups": [
           {
-            "group": "Demos and Tutorials",
-            "pages": []
-          },
-          {
-            "group": "SIP Trunking",
-            "pages": []
-          },
-          {
             "group": "Guides",
-            "pages": []
+            "pages": [
+              "tutorials/overview"
+            ]
           }
         ]
       }
@@ -114,26 +95,26 @@
     "links": [
       {
         "label": "Support",
-        "href": "mailto:support@tryorato.com "
+        "href": "mailto:support@tryorato.com"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://app.tryorato.com"
     }
   },
   "contextual": {
     "options": [
-     "copy",
-     "view",
-     "chatgpt",
-     "claude",
-     "perplexity",
-     "mcp",
-     "cursor",
-     "vscode"
-   ]
+      "copy",
+      "view",
+      "chatgpt",
+      "claude",
+      "perplexity",
+      "mcp",
+      "cursor",
+      "vscode"
+    ]
   },
   "footer": {
     "socials": {
