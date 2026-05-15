@@ -1,4 +1,150 @@
 ---
-title: 'Outbound'
+title: "Outbound"
+icon: "phone-arrow-up-right"
 ---
 
+## What is the Outbound?
+
+Outbound calls are calls your AI Assistant makes to contacts. You can trigger a single call from the dashboard, run a campaign to call a whole lead batch at once, or integrate directly with the API to trigger calls from your own application.
+
+<Frame>
+  ![Outbound](/images/Outbound.png)
+</Frame>
+
+---
+
+## Three ways to make an outbound call
+
+<Tabs>
+  <Tab title="Dashboard - single call">
+    Use this when you want to call one specific person right now.
+
+    <Steps>
+      <Step title="Go to Calls">
+        Click **Calls** in the left sidebar.
+      </Step>
+      <Step title="Click Make Call">
+        Click the orange **Make Call** button in the top right corner of the page.
+      </Step>
+      <Step title="Enter the number and select an assistant.">
+        Enter the recipient's phone number in international format and choose which AI Assistant should handle the call.
+      </Step>
+      <Step title="Confirm">
+        Click to confirm. Your assistant dials the number immediately.
+      </Step>
+    </Steps>
+  </Tab>
+  <Tab title="Campaign - call a whole list">
+    Use this when you want to call a batch of leads at once.
+
+    <Steps>
+      <Step title="Create a Lead Batch">
+        Go to **Leads** and create a batch with the contacts you want to call. Add them manually or upload a CSV.
+      </Step>
+      <Step title="Create a Campaign">
+        Go to **Campaigns**, click **\+ Create Campaign**, and fill in:
+
+        - The Lead Batch you just created
+        - The AI Assistant to use
+        - Call rate: 3–8 calls per minute
+        - Schedule: start immediately or set a time
+      </Step>
+      <Step title="Launch">
+        Click **Create Campaign**. Your assistant starts calling every contact in the batch automatically.
+      </Step>
+    </Steps>
+
+    <Tip>
+      Keep the call rate between 3 and 8 calls per minute. Going higher can trigger spam detection on carrier networks and reduce your answer rate.
+    </Tip>
+  </Tab>
+  <Tab title="API - trigger from your code">
+    Use this when you want to trigger calls programmatically from your own application.
+
+    First, get your API key from **Developer → API Keys**. Then send a POST request:
+
+    ```bash
+    curl --request POST \
+      --url https://api.tryorato.com/v1/call \
+      --header 'Authorization: Bearer YOUR_API_KEY' \
+      --header 'Content-Type: application/json' \
+      --data '{
+        "assistant_id": "your-assistant-id",
+        "recipient_phone_number": "+911234567890"
+      }'
+    ```
+
+    The call fires immediately. You'll get back a `call_id` you can use to check its status.
+  </Tab>
+</Tabs>
+
+---
+
+## What you see in the call list
+
+Every outbound call shows up in the **Calls** page with these details:
+
+| Column | Description |
+| --- | --- |
+| **Call Details** | Whether it was outbound or inbound, and the phone number |
+| **Lead** | The contact associated with this call, with a **View Lead** link |
+| **Status** | `COMPLETED`, `IN PROGRESS`, `FAILED`, or `TRANSFERRED` |
+| **Duration** | How long did the call last |
+| **Outcome** | The result of the call is tagged by your assistant |
+| **Date & Time** | When the call happened |
+| **Actions** | Options to view details, read the transcript, or replay the recording |
+
+### Filtering the call list
+
+Use the filters at the top of the page to narrow down what you're looking at:
+
+- **All Status**: filter by Completed, Failed, In Progress, or Transferred
+- **All Outcome**: filter by Qualified, Not Interested, Dead, etc.
+- **From Date / To Date**: filter by a date range
+
+Toggle **Live Updates** to automatically refresh the list as new calls come in during an active campaign.
+
+---
+
+## Call statuses
+
+| Status | What it means |
+| --- | --- |
+| `COMPLETED` | The call connected and ran to a natural end |
+| `IN PROGRESS` | The call is happening right now |
+| `FAILED` | The call couldn't connect |
+| `TRANSFERRED` | Your assistant transferred the call to a human agent |
+
+---
+
+## Things to know
+
+<Note>
+  Outbound calls require a phone number in your account. If you haven't bought one yet, go to **Phone Numbers** and complete the compliance process first.
+</Note>
+
+<Warning>
+  Only call contacts who have given consent to be contacted. Automated outbound calls are regulated under TCPA in the US and TRAI in India.
+</Warning>
+
+---
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="Campaigns" icon="bullhorn" href="/campaigns">
+    Call your entire lead list automatically
+  </Card>
+
+  <Card title="Call History" icon="clock-rotate-left" href="/calls/call-history">
+    Review transcripts and recordings of past calls
+  </Card>
+
+  <Card title="Inbound Calls" icon="phone-arrow-down-left" href="/calls/inbound">
+    Set up your assistant to receive incoming calls
+  </Card>
+
+  <Card title="Phone Numbers" icon="phone" href="/phone-numbers">
+    Get a number for outbound calling
+  </Card>
+</CardGroup>
