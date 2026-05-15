@@ -1,0 +1,150 @@
+---
+title: "Meetings"
+---
+
+## Overview
+
+The **Meeting Scheduler** is Orato's built-in tool for managing client meetings. When an AI Assistant qualifies a lead and books a follow-up during a call, the meeting automatically appears here. You can also schedule meetings manually at any time.
+
+<Frame>
+  ![Meetings](/images/Meetings.png)
+</Frame>
+
+---
+
+## At a glance
+
+Three stats are shown at the top of the Meetings page:
+
+<CardGroup cols={3}>
+  <Card title="Total Meetings" icon="calendar">
+    All meetings created — automatic and manual
+  </Card>
+
+  <Card title="Scheduled" icon="clock">
+    Upcoming meetings yet to take place
+  </Card>
+
+  <Card title="Completed" icon="check-circle">
+    Meetings that have already happened
+  </Card>
+</CardGroup>
+
+---
+
+## Two ways to view meetings
+
+<Tabs>
+  <Tab title="List View">
+    A table of all meetings with the following columns:
+
+    | Column | Description |
+    | --- | --- |
+    | **Meeting Details** | Title and scheduled date/time |
+    | **Type** | `GENERAL` or `Calendar Event` (from external calendar) |
+    | **Duration** | Meeting length in minutes |
+    | **Attendees** | Number of confirmed attendees |
+    | **Status** | `CONFIRMED`, `PENDING`, or `CANCELLED` |
+    | **Actions** | Options to reschedule or cancel |
+
+    Use the **Search**, **All Status**, and **All Sources** filters to find specific meetings.
+  </Tab>
+  <Tab title="Calendar View">
+    A visual calendar showing all upcoming and past meetings by date. Click any meeting block to see its details and take actions.
+
+    Toggle between List and Calendar using the **List / Calendar** buttons at the top of the page.
+  </Tab>
+</Tabs>
+
+---
+
+## Scheduling a meeting manually
+
+<Steps>
+  <Step title="Click Schedule">
+    Click the **\+ Schedule** button (top right of the Meetings page).
+  </Step>
+  <Step title="Fill in the meeting details">
+    <Frame>
+      ![Meting Details](/images/Meting-Details.png)
+    </Frame>
+
+    | Field | Description |
+    | --- | --- |
+    | **Select Lead** | Link this meeting to an existing lead in your system |
+    | **Meeting Title** | Descriptive name, e.g., _"Property Viewing - Andheri West."_ |
+    | **Description** | Brief notes on the meeting's purpose |
+    | **Date & Time** | When will the meeting take place |
+    | **Duration** | Length in minutes (default: 60 min) |
+    | **Location** | Physical address or video call link (default: _"To be confirmed"_) |
+    | **Meeting Type** | Consultation, General, or other types |
+  </Step>
+  <Step title="Click Schedule Meeting">
+    The meeting is created and visible immediately in both List and Calendar views.
+  </Step>
+</Steps>
+
+---
+
+## Connecting your calendar
+
+Click **Calendar Connected** (top right) to sync Orato with Google Calendar or Outlook.
+
+Once connected:
+
+- Meetings booked during calls sync to your calendar automatically
+- New meetings in Orato appear in your calendar in real time
+  - Orato checks your availability before booking, preventing double bookings
+
+<Note>
+  To connect your calendar, go to **Settings → Calendar** and authorise Orato to access your calendar account.
+</Note>
+
+---
+
+## Meeting templates
+
+Click **Templates** (top right) to save reusable meeting structures. A template pre-fills the meeting type, duration, location, and description, so you don't have to enter the same details every time.
+
+Useful for recurring meeting types like:
+
+- _30-min Discovery Call_
+- _60-min Product Demo_
+- _15-min Follow-up_
+
+---
+
+## How meetings get booked automatically during calls
+
+<Steps>
+  <Step title="The assistant qualifies the lead">
+    During a call, your assistant follows the instructions and determines the lead is ready for a meeting.
+  </Step>
+  <Step title="The assistant checks your calendar.">
+    With your calendar connected, the assistant fetches available time slots in real time.
+  </Step>
+  <Step title="The caller picks a time">
+    The assistant offers 2–3 available slots, and the caller confirms one verbally during the call.
+  </Step>
+  <Step title="The meeting is created instantly.">
+    The meeting appears on Orato's Meetings page and on your connected calendar the moment the call ends — no manual steps needed.
+  </Step>
+</Steps>
+
+<Tip>
+  To enable automatic meeting booking, connect your calendar in **Settings → Calendar** and ensure your AI Assistant's instructions include booking logic.
+</Tip>
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Conversations" icon="messages" href="/conversations">
+    See the calls that led to meeting bookings
+  </Card>
+
+  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
+    Configure your assistant to book meetings during calls
+  </Card>
+</CardGroup>

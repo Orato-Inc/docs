@@ -3,101 +3,147 @@ title: "Campaigns"
 description: "Launch outbound calling campaigns to your lead batches. Assign an AI Assistant, set call rate, and monitor progress in real time."
 ---
 
-## What are Campaigns?
+## Overview
 
-A Campaign is an automated outbound calling operation. You connect a **Lead Batch** to an **AI Assistant** and Orato calls every contact in the batch automatically. Track progress, call outcomes, and qualified leads from the Campaigns dashboard.
+A Campaign is how you put your AI Assistant to work at scale. You pick a Lead Batch, assign an assistant, and Orato calls every contact in that list automatically — logging outcomes, transcripts, and qualified leads as it goes.
+
+<Frame>
+  ![Orato Campaigns — list of all campaigns with status and progress](/images/campaigns.png)
+</Frame>
+
+---
+
+## The campaigns dashboard
+
+Four numbers are shown at the top:
+
+<CardGroup cols={4}>
+  <Card title="Total Campaigns" icon="bullhorn">
+    Every campaign you've ever created
+  </Card>
+
+  <Card title="Active" icon="circle-play">
+    Campaigns running right now
+  </Card>
+
+  <Card title="Total Calls" icon="phone">
+    All calls made across every campaign
+  </Card>
+
+  <Card title="Qualified Leads" icon="user-check">
+    Contacts marked as qualified by your assistant
+  </Card>
+</CardGroup>
+
+### Campaign status
+
+| Status | What it means |
+| --- | --- |
+| `Running` | The campaign is actively making calls |
+| `Completed` | Every contact in the batch has been called |
+| `Cancelled` | The campaign was stopped before finishing |
 
 ---
 
-## Campaigns dashboard
+## Creating a campaign
 
-The Campaigns page shows an overview of all your campaigns:
-
-| Stat | What it shows |
-| --- | --- |
-| **Total Campaigns** | All campaigns ever created |
-| **Active** | Currently running campaigns |
-| **Total Calls** | Total calls made across all campaigns |
-| **Qualified Leads** | Leads marked as qualified by your assistant |
-
-Each campaign row shows: name, status, progress bar, start time, results, and actions (view, edit, delete).
-
-### Campaign statuses
-
-| Status | Meaning |
-| --- | --- |
-| `Running` | Campaign is actively making calls |
-| `Completed` | All contacts in the batch have been called |
-| `Cancelled` | Campaign was manually stopped |
-
----
+Click **\+ Create Campaign** in the top right of the Campaigns page.
 
 <Frame>
   ![Create Campaign](/images/Create-Campaign-.png)
 </Frame>
 
-## Creating a campaign
-
-Click **\+ Create Campaign** from the Campaigns page.
-
 <Steps>
-  <Step title="Campaign Details">
-    Fill in:
-
-    - **Campaign Name**: a descriptive name (e.g. _"May Outreach - Real Estate Leads"_)
-    - **Lead Batch**: select the batch of leads to call (create one first in the Leads section if needed)
-    - **Description**: optional notes about the campaign's purpose and goals
+  <Step title="Fill in the campaign details">
+    | Field | What to enter |
+    | --- | --- |
+    | **Campaign Name** | Something clear — e.g. _"June Outreach — Property Leads"_ |
+    | **Lead Batch** | The batch of contacts you want to call |
+    | **Description** | Optional notes about what this campaign is for |
   </Step>
-  <Step title="Select AI Assistant">
-    Choose which AI Assistant will handle the calls. The assistant you select will make every call in this campaign.
+  <Step title="Choose your AI Assistant">
+    Pick which assistant handles the calls. Make sure the assistant's instructions match the type of leads you're calling.
 
     <Tip>
-      Make sure your selected assistant has instructions tailored for the type of leads in your batch. A lead qualification assistant will perform very differently from a support assistant.
+      An assistant set up for lead qualification will behave very differently from one set up for payment reminders. Use the right one for the job.
     </Tip>
   </Step>
-  <Step title="Set Lead Filters (optional)">
-    Narrow down which leads in the batch get called:
+  <Step title="Add lead filters (optional)">
+    If you don't want to call every contact in the batch, narrow it down:
 
-    - **Lead Status**: filter by lead status (e.g. only call new leads)
-    - **Lead Score**: filter by score (e.g. only call high-score leads)
+    - **Lead Status**: only call contacts with a specific status (e.g. new leads only)
+    - **Lead Score**: only call contacts above a certain score
 
-    Leave both empty to call all leads in the batch.
+    Leave both empty to call the entire batch.
+
+    <Info>
+      As the dashboard says: _"Leave filters empty to include all leads from the batch. Add filters to target specific lead segments."_
+    </Info>
   </Step>
-  <Step title="Configure Campaign Settings">
-    - **Call Rate (calls per minute)**: default is 5. Recommended range: **3–8 calls per minute** to avoid spam detection by carriers.
-    - **Schedule**:
-      - **Start Immediately**: campaign begins as soon as you click Create
-      - **Schedule for Later**: set a specific date and time to start
+  <Step title="Set the call rate and schedule">
+    | Setting | Guidance |
+    | --- | --- |
+    | **Call Rate (calls/min)** | Keep it between **3 and 8 calls per minute**. Going higher risks triggering spam detection on carrier networks. The default is 5. |
+    | **Start Immediately** | Campaign begins the moment you click Create |
+    | **Schedule for Later** | Set a specific date and time to start |
 
     <Warning>
-      Setting the call rate above 8 calls per minute may trigger spam filters. Stick to 3–8 for best delivery rates.
+      Don't set the call rate above 8 calls per minute. It won't get you results faster — it'll just get your number flagged as spam.
     </Warning>
   </Step>
-  <Step title="Launch">
-    Click **Create Campaign**. If you chose Start Immediately, your AI Assistant begins calling right away.
+  <Step title="Click Create Campaign">
+    That's it. If you chose Start Immediately, your assistant starts dialling straight away.
   </Step>
 </Steps>
 
 ---
 
-## Monitoring a campaign
+## Monitoring a live campaign
 
-Click on any campaign to see its live progress:
+Click any campaign to open its detail view:
 
-- **Progress bar**: shows how many contacts have been called vs total
-- **Results**: breakdown of call outcomes (connected, no answer, failed, qualified)
-- **Individual call logs**: click through to see each call's details and transcript
+- **Progress bar**: how many contacts have been called versus how many are left
+- **Results**: a breakdown of outcomes (connected, no answer, qualified, failed)
+- **Individual calls**: click through to read the transcript of any specific call
 
 ---
 
-## Before you create a campaign
+## Before you launch
+
+<Check>
+  A Lead Batch exists with valid phone numbers in international format
+</Check>
+
+<Check>
+  Your AI Assistant is configured and tested with the Talk button
+</Check>
+
+<Check>
+  The calling hours are appropriate for your contacts' time zone
+</Check>
+
+<Check>
+  Your account has enough balance — check by clicking Add Fund in the top nav
+</Check>
+
+---
+
+## Where to go next
 
 <CardGroup cols={2}>
-  <Card title="Create a Lead Batch" icon="users" href="/leads/overview">
-    Organise your contacts into a batch before launching a campaign
+  <Card title="Leads" icon="users" href="/leads">
+    Create a Lead Batch if you haven't already
   </Card>
 
-  <Card title="Set up an AI Assistant" icon="robot" href="/ai-assistants/overview">
+  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
     Configure the assistant that will make the calls
+  </Card>
+
+  <Card title="Conversations" icon="messages" href="/conversations">
+    Review call transcripts and outcomes after the campaign runs
+  </Card>
+
+  <Card title="Calls" icon="phone" href="/calls">
+    Monitor real-time activity and usage during the campaign
   </Card>
 </CardGroup>

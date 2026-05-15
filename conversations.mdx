@@ -5,7 +5,7 @@ description: "Review every voice call and chat interaction handled by your AI As
 
 ## Overview
 
-The **Conversations** page is your complete interaction history. Every time an AI Assistant has a conversation, whether a phone call or a website chat widget, it's logged here automatically.
+Every time your AI Assistant has a conversation, whether it's a phone call or a web widget chat, it's automatically logged in **Conversations**. You don't need to do anything. Just come here when you want to review what happened.
 
 <Frame>
   ![Conversation 1](/images/Conversation-1.png)
@@ -13,128 +13,127 @@ The **Conversations** page is your complete interaction history. Every time an A
 
 ---
 
-## Conversation types
+## Voice and chat, in one place
 
 Orato logs two types of conversations:
 
 <Tabs>
-  <Tab title="🎙️ Voice Conversations">
-    Phone calls handled by your AI Assistant, both inbound calls to your Orato number and outbound calls made through Campaigns.
+  <Tab title="🎙️ Voice">
+    Phone calls handled by your AI Assistant, both inbound calls to your number and outbound calls from Campaigns.
 
-    Each voice conversation shows:
-
-    - **Contact name** and source
-    - **Duration** (e.g. 1:22, 0:38)
-    - **Summary**: AI-generated summary of what was discussed
-    - **Outcome**: result of the conversation (Qualified, Unknown, Not Interested, etc.)
-    - **Date & Time**
+    Each voice conversation logs: contact name, call duration, an AI-written summary, the outcome, the date and time, and a full transcript with a recording.
   </Tab>
-  <Tab title="💬 Chat Conversations">
-    Text-based interactions through your embedded Web Widget. Visitors who type instead of speaking are logged as Chat Conversations.
+  <Tab title="💬 Chat">
+    Text conversations through your embedded Web Widget. When a visitor types instead of speaking, it's logged here as a Chat conversation.
 
-    Chat conversations have the same fields as voice:  contact, duration, summary, outcome, and timestamp.
+    Chat conversations have the same fields as voice - contact, duration, summary, outcome, and a full message transcript.
   </Tab>
 </Tabs>
 
-The stats bar at the top shows a breakdown:
+The three stats at the top give you a quick snapshot:
 
 | Stat | What it shows |
 | --- | --- |
-| **Total Conversations** | All voice \+ chat conversations combined |
-| **Voice Conversations** | Phone call interactions only |
-| **Chat Conversations** | Web widget text interactions only |
+| **Total Conversations** | Voice and chat combined |
+| **Voice Conversations** | Phone calls only |
+| **Chat Conversations** | Web widget interactions only |
 
 ---
 
-## Browsing conversations
+## Reading the table
 
 <Frame>
   ![Browse Conver](/images/Browse-Conver.png)
 </Frame>
 
-The conversation table has these columns:
-
 | Column | Description |
 | --- | --- |
-| **Contact** | Name of the person your assistant spoke with |
-| **Type** | `Voice` (phone call) or `Chat` (web widget) |
-| **Duration** | Length of the conversation in minutes:seconds |
-| **Summary** | AI-generated summary of the conversation |
-| **Outcome** | Result tagged at the end of the call |
-| **Date & Time** | When the conversation happened |
-| **Actions** | Click **View** to open the full transcript |
+| **Contact** | The person your assistant spoke with |
+| **Type** | Voice or Chat |
+| **Duration** | How long the conversation lasted in minutes and seconds |
+| **Summary** | A short AI-written summary of what was discussed |
+| **Outcome** | How the conversation ended — Qualified, Unknown, Not Interested, etc. |
+| **Date & Time** | When it happened |
+| **Actions** | Click **View** to open the full conversation detail |
 
-### Filtering conversations
-
-Use the filters at the top to narrow down what you see:
-
-- **Mode**: filter by Voice or Chat
-- **Search**: search by visitor/contact name
+To find a specific conversation, use the **Mode** filter to switch between Voice and Chat, or type a contact name in the **Search** bar.
 
 ---
 
-## Viewing a conversation
+## What's inside a conversation
 
-Click **View** on any conversation to open its detail page. Inside you'll find:
+Click **View** on any row to open its full detail page:
 
 <AccordionGroup>
   <Accordion title="Full transcript">
-    A word-for-word log of the conversation with speaker labels, your AI Assistant's lines and the contact's responses, in order.
+    A word-for-word log of the entire conversation with speaker labels. Both what your assistant said and what the caller said, in order, with timestamps.
   </Accordion>
 
-  <Accordion title="Recording (voice calls)">
-    An audio recording of the phone call. Listen back for quality review, training, or compliance purposes.
+  <Accordion title="Recording (voice calls only)">
+    The actual audio recording of the call. Listen back for quality checks, coaching, or compliance.
   </Accordion>
 
   <Accordion title="AI summary">
-    A concise AI-generated summary of what was discussed, useful for getting context quickly without reading the full transcript.
+    A short paragraph written by Orato that captures the key points of the conversation — useful when you need context quickly without reading everything.
   </Accordion>
 
   <Accordion title="Outcome">
-    The result the assistant determined: Qualified, Not Interested, Follow-up needed, etc. Outcomes are set based on your assistant's instructions.
+    The result of the conversation as determined by your assistant — based on the criteria you defined in its instructions.
   </Accordion>
 
-  <Accordion title="Metadata">
-    Contact details, call timestamp, duration, and which AI Assistant handled the conversation.
+  <Accordion title="Contact and call details">
+    The contact's information, which assistant handled it, duration, source (campaign name or inbound number), and the exact timestamp.
   </Accordion>
 </AccordionGroup>
 
 ---
 
-## Conversation outcomes
+## What outcomes mean
 
-Outcomes are automatically tagged by your AI Assistant based on how the conversation went:
-
-| Outcome | Meaning |
+| Outcome | What happened during the call |
 | --- | --- |
-| **Qualified** | Lead met your qualification criteria |
-| **Not Interested** | Contact explicitly declined |
-| **Unknown** | Outcome could not be determined |
-| **Follow-up** | Needs another touchpoint |
-| **Booked** | Meeting or appointment was scheduled |
+| **Qualified** | The contact met the criteria your assistant was given |
+| **Not Interested** | They declined or said they weren't interested |
+| **Unknown** | The conversation ended without a clear outcome |
+| **Booked** | A meeting or appointment was scheduled |
+| **Follow-up** | The contact wants to be reached again later |
 
 <Tip>
-  Define clear outcome conditions in your AI Assistant's instructions to improve outcome accuracy. For example: _"If the lead confirms a budget above \$5,000, mark them as Qualified."_
+  If you're seeing a lot of "Unknown" outcomes, your assistant's instructions probably don't define clearly enough when to mark someone as qualified. Add a line like: _"If the contact confirms a budget over ₹50,000 and asks to proceed, they are qualified."_
 </Tip>
 
 ---
 
-## Using conversation data
+## How to actually use this data
 
 <CardGroup cols={2}>
   <Card title="Improve your assistant" icon="robot">
-    Read through transcripts to spot where your assistant struggles, then update its instructions to handle those situations better
+    Read through transcripts to find moments where your assistant misunderstood a caller or gave a bad response. Update the instructions to fix it.
   </Card>
 
-  <Card title="Review meeting bookings" icon="calendar">
-    Any meetings booked during a conversation will appear in the Meetings section automatically
+  <Card title="Quality checks" icon="check-circle">
+    Listen to recordings to make sure your assistant is representing your brand the way you want — especially when you first go live.
   </Card>
 
-  <Card title="Track campaign performance" icon="chart-line">
-    Filter conversations by date to measure how a specific campaign is performing
+  <Card title="Campaign analysis" icon="chart-line">
+    Filter by date to measure how a specific campaign performed. Look at outcome rates, average call duration, and what's causing drops.
   </Card>
 
-  <Card title="Quality assurance" icon="check-circle">
-    Listen to recordings to ensure your assistant is representing your brand correctly on every call
+  <Card title="Meeting follow-ups" icon="calendar">
+    Any meetings booked during a conversation automatically show up in the Meetings section — no manual logging needed.
+  </Card>
+</CardGroup>
+
+---
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="Meetings" icon="calendar-check" href="/meetings">
+    See meetings that were booked during conversations
+  </Card>
+
+  <Card title="Campaigns" icon="bullhorn" href="/campaigns">
+    Launch a campaign to generate more conversations
   </Card>
 </CardGroup>

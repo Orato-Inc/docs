@@ -5,12 +5,23 @@ description: "Buy and manage phone numbers for your AI Assistants. Available in 
 
 ## Overview
 
-Phone numbers are what your AI Assistants use to make outbound calls and receive inbound calls. You purchase numbers directly through Orato, no third-party provider setup needed.
+Phone numbers are what your AI Assistants use to make outbound calls and receive inbound calls. You purchase numbers directly through Orato; no third-party telephony provider setup needed.
+
+<Frame>
+  ![Phone Number](/images/Phone-Number.png)
+</Frame>
 
 Currently available in:
 
-- 🇺🇸 **United States** (\+1)
-- 🇮🇳 **India** (\+91)
+<CardGroup cols={2}>
+  <Card title="🇺🇸 United States" icon="phone">
+    Numbers with \+1 country code for US-based calling
+  </Card>
+
+  <Card title="🇮🇳 India" icon="phone">
+    Numbers with the \+91 country code for India-based calling
+  </Card>
+</CardGroup>
 
 ---
 
@@ -19,31 +30,41 @@ Currently available in:
 <Steps>
   <Step title="Go to Phone Numbers">
     Click **Phone Numbers** in the left sidebar. You'll see all available numbers with their status and country.
+
+    Stats at the top show **the total available** numbers and **Countries** covered.
   </Step>
-  <Step title="Choose a number">
-    Browse the list and find a number that suits you. Click **Buy Number** next to it.
+  <Step title="Click Buy Number">
+    Find a number you want and click **Buy Number** next to it. This opens the compliance request form.
+
+    <Info>
+      Before any number can be activated, Orato requires a one-time compliance verification to confirm your business identity. This is required by telecom regulations.
+    </Info>
   </Step>
-  <Step title="Submit a Compliance Request">
-    Before any number can be activated, Orato requires a one-time compliance request to verify your business. You'll be asked to provide:
+  <Step title="Submit your compliance request.">
+    <Frame>
+      ![Comp](/images/Comp.png)
+    </Frame>
+
+    Fill in the compliance form:
 
     | Field | Description |
     | --- | --- |
-    | **Legal Business Name** | Your registered company name |
-    | **Display Alias** | How you want to appear on caller ID |
+    | **Legal Business Name** | Your registered company name, e.g., _Acme Pvt. Ltd._ |
+    | **Display Alias** | How you want to appear, e.g., _Acme Support Line_ |
     | **CIN Number** | Company Identification Number |
     | **GST Number** | Your GST registration number |
-    | **Country** | Country of registration |
-    | **Number Type** | Type of number you're requesting |
-    | **Registration Certificate** | PDF/PNG/JPEG, max 10MB |
-    | **GST Certificate** | PDF/PNG/JPEG, max 10MB |
+    | **Country** | Country of business registration |
+    | **Number Type** | Type of number being requested |
+    | **Registration Certificate** | Upload PDF/PNG/JPEG - max 10MB |
+    | **GST Certificate** | Upload PDF/PNG/JPEG - max 10MB |
 
     Check the confirmation box and click **Submit for Review**.
   </Step>
   <Step title="Wait for approval">
-    Orato reviews your compliance documents. Once approved, your number is activated and ready to assign to an AI Assistant.
+    Orato reviews your documents. Once approved, your number is activated and ready to be assigned to an AI Assistant.
 
     <Note>
-      Compliance is a one-time process per account. Once approved, you can purchase additional numbers without resubmitting documents.
+      Compliance is a **one-time process per account**. Once approved, you can purchase additional numbers without resubmitting documents.
     </Note>
   </Step>
 </Steps>
@@ -52,22 +73,26 @@ Currently available in:
 
 ## Compliance tab
 
-The **Compliance** tab shows all your compliance requests and their status:
+Click the **Compliance** tab on the Phone Numbers page to see all your compliance requests:
 
 | Status | Meaning |
 | --- | --- |
-| **Pending** | Request submitted, under review |
-| **Approved** | Documents verified, numbers can be purchased |
-| **Rejected** | Documents were not accepted — resubmit with corrections |
+| **Pending** | Request submitted, currently under review |
+| **Approved** | Documents verified, numbers are available to purchase |
+| **Rejected** | Documents were not accepted. Resubmit with corrections |
+
+<Warning>
+  If your compliance request is rejected, you'll receive a reason. Correct the issue in your documents and resubmit via **New Compliance Request**.
+</Warning>
 
 ---
 
 ## Assigning a number to an assistant
 
-Once you have an active phone number, assign it to an AI Assistant so calls can be made and received:
+Once you have an active phone number, connect it to an AI Assistant:
 
-1. Go to **AI Assistants** and open the assistant you want to assign the number to
-2. In the **Setup** step, select your number in the phone/telephony configuration
+1. Go to **AI Assistants** and open the assistant you want to use for calls
+2. In the **Setup** step, select your phone number in the telephony settings
 3. Save the assistant
 
 Your assistant will now use that number for all inbound and outbound calls.
@@ -77,11 +102,19 @@ Your assistant will now use that number for all inbound and outbound calls.
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="AI Assistants" icon="robot" href="/ai-assistants/overview">
+  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
     Assign your number to an AI Assistant
   </Card>
 
-  <Card title="Campaigns" icon="bullhorn" href="/campaigns/overview">
+  <Card title="Campaigns" icon="bullhorn" href="/campaigns">
     Start making outbound calls with your number
+  </Card>
+
+  <Card title="Calls" icon="phone" href="/calls">
+    Monitor call activity and billing
+  </Card>
+
+  <Card title="Conversations" icon="messages" href="/conversations">
+    Review call transcripts and outcomes
   </Card>
 </CardGroup>
