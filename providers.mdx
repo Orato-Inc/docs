@@ -1,0 +1,133 @@
+---
+title: "Providers"
+description: "Every AI provider Orato supports , LLMs, voice engines, and transcribers. Understand the differences so you can pick the right combination for your use case."
+---
+
+## Overview
+
+Orato gives you the flexibility to choose your own AI providers. Every assistant has three components you can configure, the transcriber (ears), the LLM (brain), and the voice engine (mouth). Picking the right combination affects how fast your assistant responds, how natural it sounds, and how well it handles complex conversations.
+
+---
+
+## LLM Providers
+
+The LLM is the brain of your assistant. It reads what the caller says and decides what to say back.
+
+<Tabs>
+  <Tab title="Groq">
+    **Best for: Phone calls where speed matters most**
+
+    Groq runs Llama 3.3 70B with ultra-low inference latency typically under 200ms. This makes responses feel instant and conversations feel natural.
+
+    | Model | Speed | Quality | Best for |
+    | --- | --- | --- | --- |
+    | Llama 3.3 70B | ⚡ Fastest | Very good | Outbound campaigns, lead qualification |
+
+    <Tip>
+      If you're running high-volume outbound campaigns and need sub-second responses, Groq is the right choice.
+    </Tip>
+  </Tab>
+  <Tab title="Anthropic">
+    **Best for: Complex conversations that need nuance**
+
+    Anthropic's Claude models are known for thoughtful, well-reasoned responses. They handle ambiguous situations and multi-turn conversations better than faster models.
+
+    | Model | Speed | Quality | Best for |
+    | --- | --- | --- | --- |
+    | Claude 3.5 Sonnet | Fast | Excellent | Support, complex sales, sensitive topics |
+    | Claude 3 Haiku | Fastest | Good | Simple FAQ handling |
+
+    <Tip>
+      Use Anthropic when your callers might ask unpredictable questions or when the conversation requires careful, nuanced handling — like medical, legal, or financial topics.
+    </Tip>
+  </Tab>
+  <Tab title="OpenAI">
+    **Best for: General-purpose use cases**
+
+    OpenAI's GPT models are well-rounded. They perform reliably across most scenarios and are a solid default choice if you're not sure which LLM to pick.
+
+    | Model | Speed | Quality | Best for |
+    | --- | --- | --- | --- |
+    | GPT-4o | Fast | Excellent | Most use cases |
+    | GPT-4o Mini | Fastest | Good | Simple, high-volume calls |
+  </Tab>
+</Tabs>
+
+---
+
+## Voice Providers
+
+The voice engine converts your assistant's text responses into speech. This is what the caller actually hears.
+
+<Tabs>
+  <Tab title="Cartesia">
+    **Best for: Most use cases — recommended default**
+
+    Cartesia's sonic-2 model delivers natural-sounding speech with very low latency. It's the best balance of quality and speed for phone calls.
+
+    | Model | Latency | Languages | Highlight |
+    | --- | --- | --- | --- |
+    | sonic-2 | Very low | English, multilingual | Best latency for calls |
+
+    Example voices: _Arushi - Hinglish Speaker_, and more.
+
+    <Tip>
+      Click **Preview** next to any voice in the AI Assistants setup to hear it before choosing.
+    </Tip>
+  </Tab>
+  <Tab title="ElevenLabs">
+    **Best for: When voice quality is the top priority**
+
+    ElevenLabs produces some of the most natural-sounding voices available. Great for businesses where the brand experience matters, premium services, high-ticket sales, executive communications.
+
+    | Model | Latency | Languages | Highlight |
+    | --- | --- | --- | --- |
+    | Multilingual v2 | Low | 29 languages | Most natural sound quality |
+  </Tab>
+  <Tab title="Sarvam">
+    **Best for: Indian audiences — Hindi, Hinglish, Indian English**
+
+    Sarvam is built specifically for Indian languages and accents. If your callers speak Hindi, Hinglish, or Indian English, Sarvam voices will sound far more natural than any other provider.
+
+    | Model | Languages | Highlight |
+    | --- | --- | --- |
+    | Sarvam TTS | Hindi, Hinglish, Indian English | Best for Indian market |
+
+    See [Indian Language Setup](/multilingual/indian-languages) for a full setup guide.
+  </Tab>
+</Tabs>
+
+---
+
+## Transcriber (ASR)
+
+The transcriber converts the caller's voice into text so the LLM can read it. Orato manages transcription automatically, you don't need to configure a transcriber separately. The platform selects the best option based on your voice provider and language settings.
+
+<Note>
+  If you're using Sarvam for Indian language voices, Orato automatically uses an ASR model optimised for Hindi and Hinglish. No additional setup needed.
+</Note>
+
+---
+
+## Choosing the right combination
+
+| Use case | LLM | Voice | Why |
+| --- | --- | --- | --- |
+| High-volume outbound calls | Groq | Cartesia sonic-2 | Fastest end-to-end latency |
+| Premium inbound support | Anthropic Claude | ElevenLabs | Best quality conversations |
+| Indian market calling | Groq | Sarvam | Native language \+ low latency |
+| General website widget | OpenAI GPT-4o | Cartesia | Reliable, natural |
+
+---
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
+    Configure your assistant with your chosen providers
+  </Card>
+
+  <Card title="Indian Language Setup" icon="globe" href="/multilingual/indian-languages">
+    Set up Hindi and Hinglish voice assistants using Sarvam
+  </Card>
+</CardGroup>

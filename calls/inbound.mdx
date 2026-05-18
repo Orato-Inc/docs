@@ -1,0 +1,138 @@
+---
+title: "Inbound"
+icon: "phone-arrow-down-left"
+---
+
+## What is the Inbound?
+
+Inbound calls are calls that people make to your Orato phone number. When someone dials in, your AI Assistant picks up straight away,  no hold music, no waiting, no missed calls. It handles the entire conversation and logs everything for you to review.
+
+<Frame>
+  ![Orato Call Management — inbound call in the call list with status and duration](/images/calls-inbound.png)
+</Frame>
+
+---
+
+## How to set up inbound calling
+
+<Steps>
+  <Step title="Buy a phone number">
+    Go to **Phone Numbers** in the left sidebar and browse the available numbers. Orato currently offers numbers in:
+
+    - 🇺🇸 **United States** - \+1
+    - 🇮🇳 **India** - \+91
+
+    Click **Buy Number** next to the one you want. You'll be asked to complete a compliance request first.
+
+    <Note>
+      Compliance is a one-time process. Once your business documents are verified, you can buy additional numbers anytime without resubmitting.
+    </Note>
+  </Step>
+  <Step title="Complete the compliance request">
+    Fill in your business details, legal name, display alias, CIN number, GST number, country, and upload your registration and GST certificates.
+
+    Submit for review. Orato typically processes this quickly.
+
+    <Info>
+      Once your compliance request is approved, your number becomes active and ready to use.
+    </Info>
+  </Step>
+  <Step title="Assign your number to an AI Assistant">
+    Open the AI Assistant you want to handle incoming calls. In the **Setup** step, select your phone number in the telephony settings and save.
+
+    From this point, any call to that number goes straight to your assistant.
+  </Step>
+  <Step title="Test it">
+    Call the number from your own phone. Your assistant should pick up within one or two rings and start the conversation with your opening message.
+
+    <Tip>
+      If your opening message says _"How can I help you today?"_ test a few different types of questions a real caller might ask. Make sure the assistant handles them the way you'd expect.
+    </Tip>
+  </Step>
+</Steps>
+
+---
+
+## What happens on an inbound call
+
+<Steps>
+  <Step title="Someone calls your number">
+    A customer, lead, or prospect dials your Orato phone number.
+  </Step>
+  <Step title="Your assistant answers immediately">
+    No hold time. Your assistant picks up and greets the caller with your configured opening message.
+  </Step>
+  <Step title="The conversation happens in real time">
+    Your assistant listens, understands what the caller is saying, and responds naturally following the instructions you wrote.
+  </Step>
+  <Step title="Call ends, and everything gets logged.">
+    Once the call wraps up, Orato logs the full transcript, outcome, duration, and recording. You can review everything in **Conversations**.
+  </Step>
+</Steps>
+
+---
+
+## Inbound calls in the call list
+
+Inbound calls show up in the **Calls** page just like outbound ones. You can filter the list to show inbound calls only using the **All Status** and date filters at the top.
+
+| Column | Description |
+| --- | --- |
+| **Call Details** | Shows as inbound with the caller's number |
+| **Lead** | The contact matched to this call, if one exists |
+| **Status** | `COMPLETED`, `IN PROGRESS`, `FAILED`, or `TRANSFERRED` |
+| **Duration** | How long did the call last |
+| **Outcome** | The result tagged by your assistant |
+| **Date & Time** | When the call came in |
+
+---
+
+## Handling calls your assistant can't resolve
+
+Sometimes a caller's question or situation is beyond what your assistant can handle. There are two ways to deal with this:
+
+<AccordionGroup>
+  <Accordion title="Transfer to a human agent">
+    Configure a call transfer in your assistant's instructions. When the assistant recognises it can't help, it transfers the call to a human agent at a number you specify.
+
+    Add a line to your instructions like: _"If the caller asks to speak to a human or if you cannot answer their question, transfer the call immediately."_
+  </Accordion>
+
+  <Accordion title="Take a message and follow-up">
+    Instruct your assistant to collect the caller's name, issue, and callback number, then end the call. The transcript and collected details are available in Conversations for your team to follow up.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Good to know
+
+<Tip>
+  Write your assistant's opening message to match how your business normally answers the phone. A familiar-sounding greeting builds trust immediately.
+</Tip>
+
+<Warning>
+  One phone number can only be assigned to one AI Assistant at a time. If you want different assistants for different types of incoming calls, you'll need separate phone numbers.
+</Warning>
+
+---
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="Phone Numbers" icon="phone" href="/phone-numbers">
+    Buy a number and complete compliance
+  </Card>
+
+  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
+    Configure your assistant's instructions and voice
+  </Card>
+
+  <Card title="Outbound Calls" icon="phone-arrow-up-right" href="/calls/outbound">
+    Make calls to your leads proactively
+  </Card>
+
+  <Card title="Call History" icon="clock-rotate-left" href="/calls/call-history">
+    Review transcripts from inbound calls
+  </Card>
+</CardGroup>

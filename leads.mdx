@@ -1,0 +1,130 @@
+---
+title: "Leads"
+description: "Organise your contacts into Lead Batches for targeted outbound campaigns. Add leads manually or import via CSV upload."
+icon: "layer-group"
+---
+
+## Overview
+
+The **Leads** section is where you manage all your contacts. Leads are grouped into **Lead Batches** - organised lists you assign to Campaigns for automated calling.
+
+<Frame>
+  ![Leads 1](/images/Leads-1.png)
+</Frame>
+
+<Info>
+  You need at least one Lead Batch with contacts before you can create a Campaign.
+</Info>
+
+---
+
+## Lead Batches dashboard
+
+Three stats are shown at the top:
+
+<CardGroup cols={3}>
+  <Card title="Total Batches" icon="layer-group">
+    Number of lead batches in your account
+  </Card>
+
+  <Card title="Total Leads" icon="users">
+    Combined contacts across all batches
+  </Card>
+
+  <Card title="Avg per Batch" icon="chart-bar">
+    Average contacts per batch
+  </Card>
+</CardGroup>
+
+Each batch card shows its **name**, **source** (Manual or CSV Upload), **date created**, and **total leads** with a progress bar.
+
+---
+
+## Creating a Lead Batch
+
+<Steps>
+  <Step title="Click Create Batch">
+    From the Leads page, click **\+ Create Batch** in the top right corner.
+  </Step>
+  <Step title="Name your batch">
+    Use a clear, descriptive name - e.g. _"May 2026 — Real Estate Inbound"_ or _"Webinar Signups - April"_.
+  </Step>
+  <Step title="Add your contacts">
+    <Tabs>
+      <Tab title="Add Manually">
+        Click **\+ Add Lead** and enter contact details one by one.
+
+        Best for small lists or adding individual leads as they come in.
+      </Tab>
+      <Tab title="CSV Upload">
+        Click **CSV Upload** and import a file. Your CSV must include at minimum a `phone_number` column in international format.
+
+        **Example CSV:**
+
+        ```csv
+        phone_number,name,email,company
+        +14155551234,Sarah Chen,sarah@acme.com,Acme Corp
+        +919876543210,Priya Sharma,priya@zest.in,Zest Ltd
+        ```
+
+        <Warning>
+          All phone numbers must be in international format — `+1` for US, `+91` for India. Invalid numbers will fail to connect during the campaign.
+        </Warning>
+      </Tab>
+    </Tabs>
+  </Step>
+</Steps>
+
+---
+
+## Managing batches
+
+Each batch card has action buttons at the bottom:
+
+| Action | What it does |
+| --- | --- |
+| 👁️ **View** | Open the batch and see all leads inside |
+| ✏️ **Edit** | Rename or update the batch description |
+| ⬇️ **Download** | Export the full batch as a CSV |
+| ⋯ **More** | Delete or additional options |
+
+---
+
+## Searching and filtering
+
+Use the controls at the top of the Leads page to find specific batches:
+
+- **Search batches**: search by batch name
+- **All Sources**: filter by Manual or CSV Upload
+- **Newest First / Oldest First**: sort by creation date
+- **Grid / List view**: toggle between card and table layouts
+
+---
+
+## Best practices
+
+<Tip>
+  **Name batches with context.** Include the date and lead source: e.g. _"Jun 2026 - Website Signups"_. This makes it easy to pick the right batch when setting up a Campaign.
+</Tip>
+
+<Tip>
+  **Keep batches focused.** One batch per campaign type performs better than one large mixed list. Lead filters in Campaigns work best when batches are segmented.
+</Tip>
+
+<Warning>
+  **Don't call contacts without consent.** Ensure you have the legal right to call everyone in your batch. Regulations like TCPA (US) and TRAI (India) apply to automated outbound calling.
+</Warning>
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Campaigns" icon="bullhorn" href="/campaigns">
+    Use your Lead Batch to launch an outbound calling campaign
+  </Card>
+
+  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
+    Configure the assistant that will call your leads
+  </Card>
+</CardGroup>

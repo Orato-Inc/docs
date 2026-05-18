@@ -1,0 +1,123 @@
+---
+title: "Integrations"
+description: "Connect Orato with the tools your team already uses — calendars, CRMs, and automation platforms."
+---
+
+## Overview
+
+Orato connects with external tools so your AI Assistant can do more than just talk. It can check calendar availability, book meetings, push data to your CRM, and trigger workflows in automation tools — all during a live call.
+
+---
+
+## Calendar integrations
+
+Connect your calendar so your AI Assistant can check availability and book meetings during conversations — without any manual work on your end.
+
+<Steps>
+  <Step title="Go to Settings">
+    Click **Settings** in the left sidebar, then select the **Calendar** tab.
+  </Step>
+  <Step title="Connect your calendar">
+    Click **Connect Calendar** and authorise Orato to access your Google Calendar or Outlook account.
+  </Step>
+  <Step title="Your assistant can now book meetings">
+    Once connected, your assistant checks real-time availability during calls and schedules meetings directly. Every booking shows up in both Orato's Meetings page and your calendar.
+  </Step>
+</Steps>
+
+<CardGroup cols={2}>
+  <Card title="Google Calendar" icon="calendar">
+    Connect your Google Calendar for automatic availability checking and meeting booking
+  </Card>
+  <Card title="Microsoft Outlook" icon="calendar">
+    Connect Outlook Calendar to sync meetings booked during calls
+  </Card>
+</CardGroup>
+
+<Tip>
+  Once your calendar is connected, add booking logic to your assistant's instructions — e.g. *"If the lead wants to proceed, check my calendar and offer them the next two available slots."*
+</Tip>
+
+---
+
+## CRM and data integrations
+
+After every call, Orato logs the transcript, outcome, and contact details. Use webhooks to push this data into your CRM or any other system automatically.
+
+<Steps>
+  <Step title="Set up a webhook">
+    In your AI Assistant's configuration, go to the analytics or settings section and add a webhook URL — the endpoint in your system that should receive call data.
+  </Step>
+  <Step title="Orato sends a payload after every call">
+    When a call ends, Orato sends a POST request to your webhook URL with the call details, transcript, outcome, and any extracted data.
+  </Step>
+  <Step title="Process the data in your CRM">
+    Use the incoming webhook data to create or update contacts, log call notes, trigger follow-up tasks, or score leads in your CRM.
+  </Step>
+</Steps>
+
+**Example webhook payload:**
+
+```json
+{
+  "event": "call.completed",
+  "call_id": "call_abc123",
+  "assistant_id": "your-assistant-id",
+  "contact": {
+    "phone_number": "+911234567890",
+    "name": "Priya Sharma"
+  },
+  "duration_seconds": 187,
+  "outcome": "qualified",
+  "transcript": [...],
+  "created_at": "2026-05-15T10:30:00Z"
+}
+```
+
+---
+
+## Automation platforms
+
+Connect Orato to automation tools to build workflows around your calls — trigger a call when a form is submitted, update a spreadsheet when a lead qualifies, or send a Slack message when a meeting is booked.
+
+<CardGroup cols={2}>
+  <Card title="Zapier" icon="bolt">
+    Use Orato triggers and actions in Zapier workflows — no code required
+  </Card>
+  <Card title="Make (formerly Integromat)" icon="arrows-spin">
+    Build automated scenarios in Make that react to Orato call events
+  </Card>
+</CardGroup>
+
+<Note>
+  Zapier and Make integrations connect through webhooks and the Orato API. Set up a webhook in your assistant configuration and use it as a trigger in your automation tool.
+</Note>
+
+---
+
+## Web Widget
+
+The Orato Web Widget is itself an integration — embed it on any website to add a live voice assistant to your pages with a single script tag.
+
+<Card title="Widget Integration →" icon="globe" href="/developer/widget-integration">
+  Full setup guide for embedding the Orato Web Widget on your website
+</Card>
+
+---
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="Meetings" icon="calendar-check" href="/meetings">
+    See how automatic meeting booking works
+  </Card>
+  <Card title="API Reference" icon="code" href="/api-reference/introduction">
+    Build custom integrations using the Orato API
+  </Card>
+  <Card title="Developer — API Keys" icon="key" href="/developer/api-keys">
+    Get your API key for integrations
+  </Card>
+  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
+    Configure your assistant to use integrations during calls
+  </Card>
+</CardGroup>

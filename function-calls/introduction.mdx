@@ -1,0 +1,74 @@
+---
+title: "Function Calls"
+description: "Give your AI Assistant the ability to take real actions during a call — book meetings, transfer to a human, look up data, and more."
+---
+
+## What are function calls?
+
+By default, your AI Assistant can only talk. Function calls give it the ability to _do things_ during a live conversation, check a calendar, book a meeting, transfer the call to a human, or call an external API to fetch data.
+
+When a caller says _"I'd like to book a time"_, your assistant doesn't just say _"okay"_, it actually checks your calendar, finds an open slot, and confirms the booking. Right there on the call.
+
+**What your assistant can do**
+
+<CardGroup cols={2}>
+  <Card title="Transfer Calls" icon="phone-arrow-right">
+    Hand off to a human agent when the caller needs real support or the AI can't help
+  </Card>
+
+  <Card title="Book Calendar Slots" icon="calendar-check">
+    Check availability and confirm appointments during the call, synced to your calendar
+  </Card>
+
+  <Card title="Custom Functions" icon="code">
+    Call any external API look up account status, fetch order details, check inventory, and more
+  </Card>
+</CardGroup>
+
+---
+
+## How it works
+
+<Steps>
+  <Step title="You define a tool in the assistant's Tools Tab">
+    In **AI Assistants → Setup → Tools Tab**, you add the tools your assistant can use. Each tool has a name, a description, and the action it performs.
+  </Step>
+  <Step title="Your instructions tell the assistant when to use it">
+    In your assistant's instructions, you write the conditions under which it should trigger a tool. For example: _"If the caller wants to book a meeting, use the calendar booking tool."_
+  </Step>
+  <Step title="The assistant triggers the tool mid-call">
+    When the condition is met during a live conversation, the assistant pauses, runs the function, gets the result, and incorporates it naturally into its response — all in real time.
+  </Step>
+</Steps>
+
+---
+
+## Available function calls
+
+<CardGroup cols={2}>
+  <Card title="Transfer Calls" icon="phone-arrow-right" href="/function-calls/transfer-calls">
+    Configure warm and cold transfers to a human agent
+  </Card>
+
+  <Card title="Book Calendar Slots" icon="calendar" href="/function-calls/book-calendar-slots">
+    Let your assistant book meetings directly during the call
+  </Card>
+
+  <Card title="Custom Functions" icon="code" href="/function-calls/custom-functions">
+    Connect any external API to your assistant
+  </Card>
+</CardGroup>
+
+---
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
+    Configure your assistant's Tools Tab
+  </Card>
+
+  <Card title="Integrations" icon="plug" href="/integrations/overview">
+    Connect your calendar and CRM
+  </Card>
+</CardGroup>

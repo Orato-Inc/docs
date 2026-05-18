@@ -1,0 +1,97 @@
+---
+title: "Transfer Calls"
+description: "Configure your AI Assistant to transfer calls to a human agent when needed, warm transfer (with context) or cold transfer (direct handoff)."
+---
+
+## Overview
+
+There are situations where a human needs to take over, a caller is upset, the question is too complex, or the caller specifically asks for a person. Call transfer lets your assistant hand off smoothly instead of failing awkwardly.
+
+---
+
+## Transfer types
+
+<Tabs>
+  <Tab title="Warm Transfer">
+    Your assistant stays on the call briefly and introduces the caller to the human agent before dropping off.
+
+    **What it sounds like:** _"I'm going to connect you with one of our team members now. Please hold for just a moment."_
+
+    The human agent joins the call, the assistant provides a brief context handoff, and then drops.
+
+    **Best for:** Customer support, complex sales calls, situations where context matters.
+  </Tab>
+  <Tab title="Cold Transfer">
+    Your assistant transfers the call directly to the human agent without any introduction. The caller is simply routed to a new number.
+
+    **What it sounds like:** _"Let me transfer you now."_, and the call is routed immediately.
+
+    **Best for:** Simple routing, when the receiving agent already has the caller's context.
+  </Tab>
+</Tabs>
+
+---
+
+## Setting up call transfer
+
+<Steps>
+  <Step title="Go to AI Assistants and open your assistant">
+    Click **AI Assistants** in the sidebar and open the assistant you want to configure.
+  </Step>
+  <Step title="Go to the Tools Tab">
+    In the assistant's Setup, navigate to the **Tools Tab**. This is where you add callable actions.
+  </Step>
+  <Step title="Add the Transfer tool">
+    Add a new tool and configure:
+
+    | Field | What to enter |
+    | --- | --- |
+    | **Tool name** | e.g. `transfer_to_human` |
+    | **Transfer number** | The phone number to transfer calls to |
+    | **Transfer type** | Warm or Cold |
+    | **Description** | Tell the assistant when to use this tool — e.g. _"Use this when the caller asks to speak to a human or when you cannot answer their question"_ |
+  </Step>
+  <Step title="Update your instructions">
+    Add a line to your assistant's instructions that tells it when to trigger the transfer:
+
+    ```text
+        If the caller explicitly asks to speak to a human, 
+            or if you've been unable to help after two attempts, 
+                use the transfer tool immediately.
+                    Do not keep trying — transfer straight away.
+    ```
+  </Step>
+  <Step title="Test it">
+    Use the **Talk** button to test your assistant. Say something like _"I want to speak to a real person"_ and verify the transfer triggers correctly.
+  </Step>
+</Steps>
+
+---
+
+## Writing good transfer instructions
+
+<Tip>
+  Be explicit about when to transfer. _"Transfer if the caller seems frustrated"_ is too vague. _"Transfer if the caller says the words 'speak to a human', 'real person', or 'manager'"_ is clear and reliable.
+</Tip>
+
+<Tip>
+  Add a brief transition phrase to your instructions so the transfer sounds smooth — e.g. _"Before transferring, say: 'I'll connect you with one of our team members right away.'"_
+</Tip>
+
+<Warning>
+  Make sure the transfer number is always available and staffed during calling hours. A failed transfer is worse than the AI handling it — the caller hears a dead line.
+</Warning>
+
+---
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="Book Calendar Slots" icon="calendar" href="/function-calls/book-calendar-slots">
+    Let your assistant book meetings during calls
+  </Card>
+
+  <Card title="Custom Functions" icon="code" href="/function-calls/custom-functions">
+    Connect external APIs to your assistant
+  </Card>
+</CardGroup>

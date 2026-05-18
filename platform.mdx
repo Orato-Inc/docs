@@ -1,0 +1,123 @@
+---
+title: "Platform Concepts"
+description: "Understand how Orato's real-time voice pipeline works. Learn what each component does and what the key terms mean before you start building."
+icon: "arrows-to-circle"
+---
+
+## The voice pipeline
+
+Every conversation on Orato flows through a real-time pipeline. From when a caller speaks to when they hear a response, the entire loop completes in under one second.
+
+<Frame>
+  ![Orato Voice AI Pipeline — Transcriber, LLM, Voice Engine](/images/voice-pipeline.svg)
+</Frame>
+
+<Steps>
+  <Step title="Transcriber — your assistant's ears">
+    The moment someone speaks, Orato transcribes their voice into text in real time using Automatic Speech Recognition (ASR). The AI cannot process audio directly; it needs text. A fast, accurate transcriber ensures the AI understands the caller correctly every time.
+  </Step>
+  <Step title="LLM — your assistant's brain">
+    The transcribed text is sent to a Large Language Model. The LLM reads the full conversation history, follows your written instructions, and generates a reply. This makes your assistant intelligent. It understands context, handles objections, and makes decisions mid-call.
+
+    Orato supports three LLM providers:
+
+    - **Anthropic**: Claude models, nuanced and careful reasoning
+    - **Groq**: Llama 3.3 70B, ultra-fast processing for low-latency calls
+    - **OpenAI**: GPT-4 models, balanced quality and speed
+  </Step>
+  <Step title="Voice Engine — your assistant's voice">
+    The LLM's text response is converted into natural speech using Text-to-Speech (TTS). The caller hears a real voice, not a robot. Orato supports:
+
+    - **Cartesia**: sonic-2, low-latency and natural (recommended for most)
+    - **ElevenLabs**: highly natural voices, wide selection
+    - **Sarvam**: Hindi, Hinglish, and Indian English accents
+  </Step>
+</Steps>
+
+---
+
+## Key concepts
+
+<AccordionGroup>
+  <Accordion title="AI Assistant - your virtual voice employee">
+    An AI Assistant is a fully configured voice agent. Give it a name, write its instructions, and choose its LLM and voice — and it handles calls on your behalf. One assistant can run unlimited simultaneous conversations.
+
+    Each assistant shows a **per-minute cost** (~0.09/min) that combines Transcriber \+ LLM \+ Voice \+ Telephony \+ Platform costs.
+  </Accordion>
+
+  <Accordion title="Instructions - the training manual">
+    Instructions are what you write to tell your assistant how to behave on every call. They define:
+
+    - Who the assistant is (name, company, role)
+    - What the goal of the call
+    - What questions to ask
+    - What to avoid saying
+    - How to end the conversation
+
+    Orato's **AI Instruction Generator** auto-generates a structured prompt — just describe your business and call goal, then click Generate.
+  </Accordion>
+
+  <Accordion title="Lead Batch - an organised contact list">
+    A Lead Batch is a group of contacts you want to call. You create batches manually or by uploading a CSV file. Batches then serve as the target list when creating a Campaign.
+  </Accordion>
+
+  <Accordion title="Campaign - automated outbound calling">
+    A Campaign connects a Lead Batch to an AI Assistant and automatically calls every contact. You set the call rate (3–8 calls per minute recommended), apply lead filters, and schedule when to start. Campaign progress is tracked in real time.
+  </Accordion>
+
+  <Accordion title="Conversation - every interaction logged">
+    Every voice call and web chat your assistant handles is logged as a Conversation — including contact details, duration, an AI-generated summary, outcome, and full transcript. Voice and chat conversations are tracked separately.
+  </Accordion>
+
+  <Accordion title="Knowledge Base - contextual documents">
+    Upload PDF, TXT, or DOCX files (up to 10MB each), and your assistant can search and reference them during conversations. Useful for product FAQs, pricing sheets, policies, and scripts.
+  </Accordion>
+
+  <Accordion title="Web Widget - voice AI on your website">
+    A floating microphone button that visitors click to talk to your AI Assistant in real time — directly on your website. Configured with your brand colour, logo, and position. Added via a single script tag.
+  </Accordion>
+
+  <Accordion title="Phone Numbers - your calling identity">
+    Phone numbers are what your assistants use to make and receive calls. You buy numbers directly from Orato (US and India) after completing a one-time compliance request with your business documents.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Cost breakdown
+
+Every AI Assistant shows a per-minute cost bar in the dashboard:
+
+| Component | What it covers |
+| --- | --- |
+| **Transcriber** | Speech-to-text conversion cost |
+| **LLM** | Language model inference (varies by model and provider) |
+| **Voice** | Text-to-speech synthesis |
+| **Telephony** | Phone call infrastructure (~\$0.02/min) |
+| **Platform** | Orato platform fee |
+
+A typical assistant configuration costs approximately **0.09 per minute**.
+
+---
+
+## Assistant roles
+
+| Role | How it's deployed |
+| --- | --- |
+| **Web Widget** | Embedded voice/chat assistant on your website |
+| **Outbound** | Makes calls to leads via Campaigns |
+| **Inbound** | Answers calls to your Orato phone number. |
+
+---
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Quick Start" icon="rocket" href="/quick-start">
+    Create your first assistant and go live
+  </Card>
+
+  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
+    Full guide to building and configuring assistants
+  </Card>
+</CardGroup>
