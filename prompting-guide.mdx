@@ -1,0 +1,192 @@
+---
+title: "Prompting Guide"
+description: "How to write instructions that make your AI Assistant perform well on every call. Good prompts make the difference between an assistant that converts and one that confuses."
+---
+
+## Why instructions matter
+
+Your AI Assistant is only as good as the instructions you give it. The LLM is powerful, but it needs direction, who it is, what the call is about, how to handle specific situations. A vague prompt produces a vague assistant. A clear, specific prompt produces one that sounds like it was trained for the job.
+
+This guide covers how to write instructions that actually work.
+
+---
+
+## The basic structure
+
+Every good instruction prompt has three parts:
+
+<Steps>
+  <Step title="Identity: who the assistant is">
+    Tell the assistant its name, company, and role. Keep it short.
+
+    ```text
+        # IDENTITY
+            You are Arya, a sales assistant for Orato. 
+                You help businesses discover how AI calling can grow their revenue.
+                    You're warm, confident, and get to the point.
+    ```
+  </Step>
+  <Step title="Voice rules: how to speak">
+    This is the most important section for calls. Without it, your assistant will sound like a chatbot.
+
+    ```text
+        # CRITICAL RULE: VOICE-FIRST RESPONSES
+            Every response must be 1-2 sentences maximum.
+                You are speaking out loud — never use bullet points, 
+                    asterisks, emojis, or any formatting.
+                        Sound like a confident, helpful human.
+    ```
+  </Step>
+  <Step title="Goal: what to do on the call">
+    Tell the assistant exactly what it's trying to achieve, what questions to ask, and how to end the call.
+
+    ```text
+        # YOUR GOAL
+            Your job is to qualify leads for the sales team.
+                Ask: company size, current challenge, and budget range.
+                    If they're a good fit, offer to book a demo.
+                        If they're not interested, thank them and end the call politely.
+    ```
+  </Step>
+</Steps>
+
+---
+
+## Rules for writing good prompts
+
+<AccordionGroup>
+  <Accordion title="Keep responses short, always">
+    The number one mistake is writing instructions that produce long responses. On a phone call, anything longer than two sentences sounds like a monologue. The caller will either interrupt or hang up.
+
+    **Bad:**
+
+    ```text
+        Provide a comprehensive overview of all the features 
+            and benefits of our product, including pricing tiers, 
+                integrations, and support options.
+    ```
+
+    **Good:**
+
+    ```text
+        Give a one-sentence summary of what we do, 
+            then ask what they're looking for.
+    ```
+  </Accordion>
+
+  <Accordion title="Be specific about the goal">
+    Don't say "qualify the lead." Say exactly what qualifies them.
+
+    **Vague:**
+
+    ```text
+        Qualify the lead and see if they're a good fit.
+    ```
+
+    **Specific:**
+
+    ```text
+        A lead is qualified if: they have a team of 5+ salespeople, 
+            they're currently spending time on manual outbound calls, 
+                and they have a budget above ₹30,000/month.
+    ```
+  </Accordion>
+
+  <Accordion title="Tell it what NOT to do">
+    Explicitly stating what to avoid is just as important as telling it what to do.
+
+    ```text
+        Never discuss competitor pricing.
+            Never promise features that aren't confirmed.
+                Never keep talking if the caller says they're busy — 
+                    offer to call back instead.
+    ```
+  </Accordion>
+
+  <Accordion title="Handle the most common objections">
+    Think about the top 3 things callers say that derail a call, and write a response for each.
+
+    ```text
+        If they say "I'm busy right now":
+            Apologise, ask for a better time, and offer to schedule a callback.
+    
+                If they say "We already use a similar tool":
+                    Ask what they use and what they like about it before continuing.
+    
+                        If they say "Just send me an email":
+                            Agree, confirm their email address, and still try to get one 
+                                qualifying question answered before ending the call.
+    ```
+  </Accordion>
+
+  <Accordion title="Write a clear ending">
+    Tell your assistant exactly how and when to wrap up the call.
+
+    ```text
+        # ENDING THE CALL
+            Once you have answers to all three qualifying questions, 
+                summarise what you heard in one sentence and offer 
+                    to connect them with the team. 
+                        Always thank them before hanging up.
+    ```
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Use the AI Instruction Generator
+
+Don't start from scratch, let Orato write the first draft.
+
+In **AI Assistants → Setup**, fill in:
+
+- What your business does
+- What the call's goal is
+
+Click **Generate Instructions** and you'll get a structured prompt that already follows all these rules. Edit it from there.
+
+<Tip>
+  The AI Instruction Generator produces a solid starting point in seconds. Most prompts only need minor edits — adjust the tone, add your specific qualifying criteria, and you're done.
+</Tip>
+
+---
+
+## Quick checklist before you go live
+
+<Check>
+  Identity is defined: name, company, role
+</Check>
+
+<Check>
+  Voice rules are included ?: 1-2 sentences max, no formatting
+</Check>
+
+<Check>
+  Goal is specific: not "qualify the lead" but exactly what qualifies them
+</Check>
+
+<Check>
+  Top 3 objections are handled
+</Check>
+
+<Check>
+  A clear ending is defined
+</Check>
+
+<Check>
+  Tested using the Talk button: listened to how it sounds out loud
+</Check>
+
+---
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
+    Create your assistant and paste in your prompt
+  </Card>
+
+  <Card title="Assistant Templates" icon="layout-template" href="/assistant-templates">
+    Start from a pre-built template instead of writing from scratch
+  </Card>
+</CardGroup>
