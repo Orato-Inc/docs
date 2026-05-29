@@ -61,8 +61,8 @@
           {
             "group": "CRM Integration",
             "pages": [
-              "crm/zendesk",
-              "crm/zoho"
+              "crm/zendesk-new",
+              "crm/zoho-new"
             ]
           },
           {
