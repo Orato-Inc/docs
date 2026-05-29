@@ -61,15 +61,15 @@
           {
             "group": "CRM Integration",
             "pages": [
-              "crm/zendesk",
-              "crm/zoho"
+              "crm/zoho",
+              "crm/zendesk"
             ]
           },
           {
             "group": "Developer",
             "pages": [
-              "developer/widget-integration",
-              "developer/api-keys"
+              "developer/api-keys",
+              "developer/widget-integration"
             ]
           }
         ]

@@ -1,0 +1,337 @@
+## Overview
+
+The Orato Web Widget lets you embed a fully functional AI voice and chat assistant on any website with a single script tag. Visitors can start a **voice conversation** or send a **text message,** both powered by the same assistant you configure in your Orato dashboard.
+
+<Frame>
+  ![Widget](/images/widget.png)
+</Frame>
+
+<Info>
+  The widget uses **WebRTC and LiveKit** under the hood for real-time voice. It works on all modern browsers (Chrome, Firefox, Safari, Edge) and does not require any plugin installation by the visitor.
+</Info>
+
+---
+
+## How It Works
+
+<Steps>
+  <Step title="Create a Web Widget Assistant">
+    In your Orato dashboard, go to **AI Assistants** → **New Assistant** → select **Web Widget** as the role. Configure your voice, instructions, and branding.
+  </Step>
+  <Step title="Generate a Public API Key">
+    Go to **Developer → API Keys** → create a **Public Key** (`pk_live_...`). Add your website domain to the whitelist so only your site can use it.
+  </Step>
+  <Step title="Copy the Embed Code">
+    After the assistant is created, open it and copy the embed snippet from the **Widget** tab. It looks like a single `<script>` tag.
+  </Step>
+  <Step title="Paste on Your Website">
+    Add the snippet before the closing `</body>` tag on any page where you want the widget to appear. That's it.
+  </Step>
+</Steps>
+
+---
+
+## Embed Code
+
+The embed snippet looks like this:
+
+```html
+<script
+  src="https://widget.tryorato.com/embed.js"
+  data-assistant-id="asst_xxxxxxxxxxxxxxxxxx"
+  data-api-key="pk_live_xxxxxxxxxxxxxxxxxxxxxxxx"
+  async
+></script>
+```
+
+<ParamField path="data-assistant-id" type="string" required>
+  The unique ID of your Web Widget assistant. Found in the assistant's detail page in your dashboard.
+</ParamField>
+
+<ParamField path="data-api-key" type="string" required>
+  Your **Public** API key (`pk_live_...`). Never use a Secret key here; public keys are safe for frontend use and are restricted by your domain whitelist.
+</ParamField>
+
+<ParamField path="async" type="boolean">
+  Always include `async` to ensure the widget loads without blocking your page render.
+</ParamField>
+
+---
+
+## API Keys
+
+Orato uses two types of API keys. Only **Public keys** should ever be used in widget embed code.
+
+<CardGroup cols={2}>
+  <Card title="Public Key" color="#22c55e" icon="eye">
+    Starts with `pk_live_...`. Safe for frontend and widget use. Restricted to domains you whitelist. Use this in your embed snippet.
+  </Card>
+
+  <Card title="Secret Key" color="#ef4444" icon="lock">
+    Starts with `sk_live_...`. Full API access. **Never** put this in frontend code, embed snippets, or public repositories.
+  </Card>
+</CardGroup>
+
+### Creating a Public Key
+
+<Steps>
+  <Step title="Go to Developer → API Keys">
+    In your Orato dashboard sidebar, click **Developer**, then **API Keys**.
+  </Step>
+  <Step title="Click Create API Key">
+    Click the **\+ Create API Key** button in the top right.
+  </Step>
+  <Step title="Select Public Key">
+    Choose **Public Key (**`pk_live_...`**)**, this is the type safe for widget use.
+  </Step>
+  <Step title="Name Your Key">
+    Give it a descriptive name like `My Website Widget` or `Pricing Page Widget`.
+  </Step>
+  <Step title="Copy and Save It">
+    The full key is shown **only once**. Copy it and store it securely before closing the modal.
+  </Step>
+</Steps>
+
+<Warning>
+  If you close the creation modal without copying the key, it is gone permanently. You will need to create a new key. Orato does not store the full key value after generation.
+</Warning>
+
+### Domain Whitelisting
+
+After creating a public key, click **Manage Domains** on the key row to restrict which websites can use it.
+
+Add domains in the format `yourdomain.com` (without `https://` or trailing slashes). Requests from any domain not in the list will be blocked.
+
+<Tip>
+  Always whitelist your domains before going live. A public key with no domain whitelist can be used from **any website**, which is a security risk.
+</Tip>
+
+| Domain Format | Example |
+| --- | --- |
+| Root domain | `yourcompany.com` |
+| Subdomain | `app.yourcompany.com` |
+| Multiple | Add each domain separately |
+
+---
+
+## Widget Customization
+
+The widget's look and feel is configured inside your **Web Widget assistant** settings in Orato — no code changes needed.
+
+### Branding Options
+
+<ParamField path="brandColor" default="#111827" type="string">
+  The header background color of the widget panel. Use your brand's primary color.
+</ParamField>
+
+<ParamField path="widgetBackgroundColor" default="#ffffff" type="string">
+  The background color of the widget body and chat area.
+</ParamField>
+
+<ParamField path="launcherBackgroundColor" default="#111827" type="string">
+  The color of the floating launcher button that visitors click to open the widget.
+</ParamField>
+
+<ParamField path="headerTextColor" default="#ffffff" type="string">
+  Text and icon color inside the widget header.
+</ParamField>
+
+<ParamField path="position" default="bottom-right" type="string">
+  Where the launcher button appears on screen. Options: `bottom-right`, `bottom-left`, `bottom-center`, `top-right`, `top-left`.
+</ParamField>
+
+<ParamField path="launcherStyle" default="circle" type="string">
+  Shape of the launcher button. `circle` shows a simple icon button. `pill` shows a wider button with your logo and assistant's name.
+</ParamField>
+
+<ParamField path="logoUrl" type="string">
+  URL of your brand logo (PNG, JPG, or WebP). Shown in the widget header next to the assistant name. Max 1MB if uploading directly.
+</ParamField>
+
+<ParamField path="welcomeMessage" type="string">
+  A short message is shown in the widget when it first opens, before the visitor starts a session. Defaults to the assistant's opening message if left empty.
+</ParamField>
+
+---
+
+## Widget Modes
+
+The widget supports two interaction modes. Visitors can switch between them using the segmented toggle at the top of the widget.
+
+<CardGroup cols={2}>
+  <Card title="Voice Mode" icon="microphone">
+    Real-time voice conversation using the visitor's browser microphone. The assistant speaks and listens simultaneously. Powered by LiveKit WebRTC.
+  </Card>
+
+  <Card title="Chat Mode" icon="message">
+    Text-based conversation. The visitor types messages, and the assistant responds in text. No microphone required.
+  </Card>
+</CardGroup>
+
+### Voice Mode States
+
+| State | What's Happening |
+| --- | --- |
+| **Tap to Start** | Session not yet started, visitor clicks the mic button to connect |
+| **Connecting…** | Widget is establishing a LiveKit session with the assistant |
+| **Setting up assistant…** | Session connected, assistant is initializing |
+| **Listening…** | The microphone is active, and the assistant is hearing the visitor |
+| **Speaking…** | Assistant is responding in voice |
+| **Tap to Speak** | The assistant finished speaking, waiting for the visitor's input |
+
+---
+
+## Idle Timeout
+
+To save resources, the widget automatically prompts visitors who have been inactive for **3 minutes**.
+
+When inactivity is detected:
+
+- A **"Still there?"** overlay appears over the widget
+- A **30-second countdown** begins
+- If the visitor clicks **"Yes, I'm here"**, the session continues normally
+- If the countdown reaches zero, the session ends automatically, and the widget resets to the start screen
+
+<Note>
+  Activity is tracked by new messages in the transcript and voice state changes (listening or speaking). Any interaction resets the idle timer.
+</Note>
+
+---
+
+## Allowed Origins
+
+The `allowedOrigins` The field in your assistant's widget config is separate from your API key domain whitelist. Use it to restrict which domains can **embed and initialize** the widget session at the assistant level.
+
+```json
+{
+  "widgetConfig": {
+    "allowedOrigins": [
+      "https://yourcompany.com",
+      "https://app.yourcompany.com"
+    ]
+  }
+}
+```
+
+<Tip>
+  You have two layers of security: the **API key domain whitelist** (enforced on the key) and **allowedOrigins** (enforced on the assistant). For maximum security, set both.
+</Tip>
+
+---
+
+## Widget Conversations in Orato
+
+Every session started through the widget is recorded in your Orato dashboard under **Conversations**.
+
+Each conversation entry includes:
+
+<ResponseField name="type" type="string">
+  `voice` or `chat` , the interaction mode the visitor used
+</ResponseField>
+
+<ResponseField name="duration" type="number">
+  Session length in seconds
+</ResponseField>
+
+<ResponseField name="summary" type="string">
+  AI-generated summary of what was discussed
+</ResponseField>
+
+<ResponseField name="outcome" type="string">
+  Disposition of the conversation: `qualified`, `not-interested`, `callback`, `no-answer`, or `voicemail`
+</ResponseField>
+
+<ResponseField name="transcript" type="array">
+  Full turn-by-turn transcript. Each item has a `role` (`assistant` or `user`) and `text`.
+</ResponseField>
+
+<ResponseField name="widgetMetadata" type="object">
+  Browser context: `origin` (the domain the widget was embedded on), `sessionId`, `userAgent`, `visitorId`, and `visitorName` if provided.
+</ResponseField>
+
+---
+
+<Frame>
+  ![Test Image](/images/test-image.png)
+</Frame>
+
+## Testing Your Widget
+
+Before going live, test the widget directly from your Orato dashboard:
+
+<Steps>
+  <Step title="Open Your Assistant">
+    Go to **AI Assistants** and click on your Web Widget assistant.
+  </Step>
+  <Step title="Click the Talk Button">
+    Click the **Talk** button in the top-right of the assistant editor. This opens a live widget preview powered by your actual assistant configuration.
+  </Step>
+  <Step title="Test Voice and Chat">
+    Switch between Voice and Chat modes to verify that both work as expected. The preview session is logged under Conversations with a `preview` label.
+  </Step>
+  <Step title="Check Conversations">
+    Go to **Conversations** in the sidebar and verify that the test session appeared with a transcript and summary.
+  </Step>
+</Steps>
+
+<Note>
+  Preview sessions from the dashboard are tagged with `callSource: preview` in the Conversations list so you can distinguish them from real visitor sessions.
+</Note>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The widget doesn't appear on my site">
+    - Check that the `data-assistant-id` and `data-api-key` attributes are correct and not swapped
+    - Verify your domain is added to the API key's domain whitelist
+    - Check the browser console for blocked request errors (CORS or 401)
+    - Make sure the script tag is placed before `</body>`, not inside `<head>`
+  </Accordion>
+
+  <Accordion title="Voice mode doesn't connect">
+    - Ensure the visitor has granted microphone permission in their browser
+    - Check that the site is served over **HTTPS**; WebRTC requires a secure origin
+    - Try on Chrome or Edge if the issue is Safari-specific (WebRTC behavior varies)
+    - Verify the assistant has a voice configured and is active in your dashboard
+  </Accordion>
+
+  <Accordion title="API key is being rejected (401 error)">
+    - Make sure you're using a **Public key** (`pk_live_...`), not a Secret key
+    - Check that your site's domain is in the key's allowed domains list
+    - The domain must match exactly, `www.yoursite.com` and `yoursite.com` are treated as different domains
+  </Accordion>
+
+  <Accordion title="Conversations aren't showing up in the dashboard">
+    - Go to **Conversations** in the sidebar (not Calls widget sessions appear in Conversations only)
+    - Filter by **Voice** or **Chat** mode to narrow results
+    - There may be a few seconds of processing delay after a session ends before it appears
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Security Checklist
+
+Before deploying to production, verify:
+
+<Check>
+  Using a **Public key** (`pk_live_...`) in the embed snippet — never a Secret key
+</Check>
+
+<Check>
+  Domain whitelist on the API key is set to your production domain(s)
+</Check>
+
+<Check>
+  `allowedOrigins` In the assistant's widget config, matches your production domain(s)
+</Check>
+
+<Check>
+  Your site is served over **HTTPS** (required for WebRTC voice)
+</Check>
+
+<Check>
+  The embed script `src` points to `https://widget.tryorato.com/embed.js` (not a self-hosted copy)
+</Check>
