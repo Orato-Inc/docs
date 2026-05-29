@@ -1,0 +1,168 @@
+---
+title: "Zoho"
+icon: "headset"
+---
+
+## Overview
+
+The Zoho Desk integration connects your Zoho Desk account to Orato, so your support team can handle tickets directly from within the platform. No more tab-switching mid-call, view a caller's ticket history, check open issues, or raise a new ticket in seconds.
+
+<Frame>
+  ![Ticketing](/images/Ticketing.png)
+</Frame>
+
+<Info>
+  You need an active Zoho Desk account to use this integration. Make sure the user account you connect to has access to the relevant department and tickets.
+</Info>
+
+---
+
+## What You Can Do
+
+<CardGroup cols={2}>
+  <Card title="Live Ticket View" icon="list">
+    See all tickets from your Zoho Desk account, open, on hold, pending, resolved, and closed.
+  </Card>
+
+  <Card title="Search & Filter" icon="magnifying-glass">
+    Search across all tickets by subject, description, contact name, or email. Filter using the status tabs to narrow your focus.
+  </Card>
+
+  <Card title="Contact Details" icon="address-card">
+    Each ticket shows the contact's name, email, and phone number so your agents have full context before responding.
+  </Card>
+
+  <Card title="Create New Tickets" icon="plus">
+    Raise a new Zoho Desk ticket on behalf of a caller from within Orato, with subject, priority, and description, in just a few clicks.
+  </Card>
+</CardGroup>
+
+---
+
+## Connecting Zoho Desk to Orato
+
+<Steps>
+  <Step title="Open Integrations">
+    In your Orato dashboard, go to **Integrations** in the left sidebar.
+  </Step>
+  <Step title="Find Zoho Desk">
+    Locate the **Zoho Desk** card under the Ticketing category and click **Connect**.
+  </Step>
+  <Step title="Authorize with Zoho">
+    You'll be redirected to Zoho's OAuth authorization page. Sign in with your Zoho account and grant Orato the required permissions to read and write tickets.
+  </Step>
+  <Step title="Select Your Organization">
+    If your Zoho account has multiple organizations, select the one whose tickets you want to sync into Orato.
+  </Step>
+  <Step title="You're Connected">
+    Orato will start syncing your Zoho Desk tickets. Navigate to **Integrations → Zoho Desk** to see your dashboard.
+  </Step>
+</Steps>
+
+<Warning>
+  Ensure the Zoho Desk user you authorize has appropriate agent permissions. Tickets created via Orato will appear in Zoho as actions from this user.
+</Warning>
+
+---
+
+## The Zoho Desk Dashboard in Orato
+
+### KPI Cards
+
+Four summary cards at the top give you an instant overview:
+
+| Card | What It Shows |
+| --- | --- |
+| **Total** | All tickets are currently synced from Zoho Desk |
+| **Open** | Tickets with `open` status, actively being worked on |
+| **On Hold** | Tickets paused, waiting for an internal team action |
+| **Resolved** | Tickets marked as resolved or closed |
+
+Clicking any card filters the ticket table to that group.
+
+### Ticket Table
+
+Each row in the ticket table contains:
+
+- **Ticket**: Subject, a short preview of the ticket body, and the unique ticket ID
+- **Contact**: Name and email of the requester
+- **Status**: Color-coded badge (Open, On Hold, Pending, Resolved, Closed)
+- **Priority**: High / Medium / Low with a colored dot indicator
+- **Updated**: Relative timestamp (e.g., "3h ago")
+- **Open in Zoho Desk**: Direct link to the ticket in your Zoho portal
+
+### Ticket Detail Panel
+
+Click any ticket row to open a slide-in panel showing:
+
+- Status and priority at a glance
+- Contact details: name, email, phone
+- Full ticket description
+- Ticket ID and last updated time
+- **Open in Zoho Desk** button for direct access
+
+### Search
+
+The search bar filters tickets in real time across subject, description, contact name, and email. The visible result count updates as you type.
+
+---
+
+## Creating a New Ticket
+
+Click **New Ticket** in the top-right to open the ticket creation modal. Fill in:
+
+- **Subject**: A brief, descriptive title for the issue
+- **Description**: What the caller reported, in as much detail as needed
+- **Priority**: High, Medium, or Low
+- **Contact email**: Who the ticket belongs to
+
+Once submitted, the ticket is created instantly in Zoho Desk, and the table refreshes.
+
+<Tip>
+  If a caller has already raised a ticket previously, search their name or phone number before creating a new one to avoid duplicate tickets. Zoho Desk agents can then merge them if needed.
+</Tip>
+
+---
+
+## Ticket Statuses in Zoho Desk
+
+| Status | Description |
+| --- | --- |
+| **Open** | The ticket is active and assigned to an agent |
+| **On Hold** | The ticket is paused, typically waiting for internal review |
+| **Pending** | Awaiting a response from the requester |
+| **Resolved** | The agent has marked the issue as resolved |
+| **Closed** | The ticket has been fully closed after resolution |
+
+---
+
+## Differences from Zendesk
+
+If you're deciding between the two integrations:
+
+| Feature | Zoho Desk | Zendesk |
+| --- | --- | --- |
+| Status: On Hold | ✅ Yes | ❌ No (uses Pending) |
+| Priority levels | High / Medium / Low | Urgent / High / Medium / Normal / Low |
+| OAuth flow | ✅ OAuth 2.0 | API key |
+| Column label | "Contact" | "Requester" |
+
+Both integrations support the same core features: live ticket view, search, ticket detail panel, ticket creation, and refresh.
+
+---
+
+## Data Sync Behavior
+
+- Tickets load in pages of **25**. Click **Load more** at the bottom of the table to fetch the next page.
+- Hit **Refresh** anytime to pull the latest ticket state from Zoho Desk.
+- Data is fetched live on demand; Orato does not store a permanent local copy of your Zoho Desk tickets.
+
+---
+
+## Disconnecting Zoho Desk
+
+Go to **Integrations** in your dashboard, find the Zoho Desk card, and click **Disconnect**. This revokes Orato's OAuth token and removes the connection.
+
+<Note>
+  Disconnecting Zoho Desk from Orato does not affect your Zoho Desk account or any tickets created through Orato. It only removes the live sync.
+</Note>

@@ -47,8 +47,8 @@
           {
             "group": "Features",
             "pages": [
-              "features/translate-prompt",
               "calls/transcript-search",
+              "features/translate-prompt",
               "features/assistant-templates"
             ]
           },
@@ -61,8 +61,8 @@
           {
             "group": "CRM Integration",
             "pages": [
-              "crm/zoho",
-              "crm/zendesk"
+              "crm/zendesk",
+              "crm/zoho"
             ]
           },
           {
