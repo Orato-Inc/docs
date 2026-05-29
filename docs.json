@@ -68,7 +68,8 @@
           {
             "group": "Developer",
             "pages": [
-              "developer/widget-integration"
+              "developer/widget-integration",
+              "developer/api-keys"
             ]
           }
         ]

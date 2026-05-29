@@ -1,0 +1,252 @@
+---
+title: "API Keys"
+sidebarTitle: "API Keys"
+description: "Generate and manage API keys to authenticate Orato integrations, widgets, and server-side automations."
+icon: "key"
+---
+
+## Overview
+
+API keys are how you authenticate requests to Orato, whether you're embedding the voice widget on a website, triggering calls from your backend, or building a custom integration. Orato gives you two types of keys for two different contexts.
+
+<Warning>
+  API keys give access to your Orato account. Treat them like passwords. Never commit them to version control, expose them in client-side code (except public keys), or share them via chat or email.
+</Warning>
+
+---
+
+## Key Types
+
+<CardGroup cols={2}>
+  <Card title="Public Key" color="#22c55e" icon="eye">
+    **Prefix:** `pk_live_...`
+
+    Safe to use in frontend code and widget embed snippets. Access is restricted to a domain whitelist you control. Use this for the Orato Web Widget.
+  </Card>
+
+  <Card title="Secret Key" color="#ef4444" icon="lock">
+    **Prefix:** `sk_live_...`
+
+    Full API access. For server-side and backend use only. Never put this in frontend code, browser scripts, or public repositories.
+  </Card>
+</CardGroup>
+
+---
+
+<Frame>
+  ![API](/images/API.png)
+</Frame>
+
+## Creating an API Key
+
+<Steps>
+  <Step title="Navigate to Developer → API Keys">
+    Open your Orato dashboard and click **Developer** in the left sidebar, then select **API Keys**.
+  </Step>
+  <Step title="Click + Create API Key">
+    Click the **\+ Create API Key** button in the top-right corner of the page.
+  </Step>
+  <Step title="Choose the Key Type">
+    Select **Public Key** if the key will be used in a website widget or frontend code. Select **Secret Key** for server-side integrations, backend automation, or the Orato REST API.
+  </Step>
+  <Step title="Name the Key">
+    Enter a descriptive name so you can identify it later (e.g., `Production Widget`, `CRM Webhook`, `Backend Server`). Minimum 3 characters.
+  </Step>
+  <Step title="Copy and Store the Key Immediately">
+    The full key value is shown **only once**, immediately after creation. Copy it and store it in a secure location (a password manager or secrets manager) before closing the modal.
+  </Step>
+  <Step title="Confirm You've Saved It">
+    Check the **"I have saved this API key securely"** checkbox, then click **Done**. The modal will not close without this confirmation.
+  </Step>
+</Steps>
+
+<Warning>
+  If you close the creation modal without copying the key, it **cannot be recovered**. You will need to delete the key and generate a new one.
+</Warning>
+
+---
+
+## Managing Existing Keys
+
+The API Keys table shows all keys on your account with the following information:
+
+<ResponseField name="Name" type="string">
+  The label you gave the key when creating it.
+</ResponseField>
+
+<ResponseField name="Type" type="string">
+  `PUBLIC` or `SECRET` — shown as a color-coded badge.
+</ResponseField>
+
+<ResponseField name="Key Preview" type="string">
+  The prefix of the key (e.g., `pk_live_abcd...`). The full value is never shown again after creation.
+</ResponseField>
+
+<ResponseField name="Allowed Domains" type="string">
+  For public keys: the domains this key is authorized to make requests from. Secret keys show "No usage restrictions (Server-side)".
+</ResponseField>
+
+<ResponseField name="Usage" type="number">
+  Total number of API calls made with this key.
+</ResponseField>
+
+<ResponseField name="Created" type="string">
+  The date the key was generated.
+</ResponseField>
+
+---
+
+## Domain Whitelisting (Public Keys)
+
+Public keys are restricted by an **allowed domains list**. This ensures your widget key can only be used from your own website and not from unknown third-party sites.
+
+### Adding Domains
+
+<Steps>
+  <Step title="Click Manage Domains">
+    On any Public key row in the table, click **Manage Domains**.
+  </Step>
+  <Step title="Enter Your Domain">
+    Type your domain in the format `yourdomain.com` (without `https://` or a trailing `/`) and click **Add**.
+  </Step>
+  <Step title="Add More if Needed">
+    Add each domain separately, for example, add `yourcompany.com` and `app.yourcompany.com` as two separate entries.
+  </Step>
+  <Step title="Save Changes">
+    Click **Save Changes**. The whitelist takes effect immediately.
+  </Step>
+</Steps>
+
+### Domain Format Reference
+
+| What You Want | How to Enter It |
+| --- | --- |
+| Root domain | `yourcompany.com` |
+| Subdomain | `app.yourcompany.com` |
+| Staging environment | `staging.yourcompany.com` |
+| Local development | `localhost` |
+
+<Note>
+  `www.yourcompany.com` and `yourcompany.com` are treated as different domains. Add both if your site redirects between them.
+</Note>
+
+### What Happens Without a Whitelist
+
+A public key with **no domains whitelisted** will accept requests from any website. This is shown as an **"All Domains (Insecure)"** warning badge in the table.
+
+<Tip>
+  Always add your production domain before going live. For local development and testing, add `localhost` as a separate domain entry.
+</Tip>
+
+---
+
+## Deleting a Key
+
+To permanently delete a key, click **Delete** on the key's row in the table and confirm the deletion.
+
+<Warning>
+  Deleting a key is **immediate and irreversible**. Any widget, integration, or automation using that key will stop working instantly. Make sure you've updated all dependent systems before deleting.
+</Warning>
+
+---
+
+## Using API Keys
+
+### In the Web Widget
+
+Public keys go in the `data-api-key` attribute of the widget embed script:
+
+```html
+<script
+  src="https://widget.tryorato.com/embed.js"
+  data-assistant-id="asst_xxxxxxxxxxxxxxxxxx"
+  data-api-key="pk_live_xxxxxxxxxxxxxxxxxxxxxxxx"
+  async
+></script>
+```
+
+See [Widget Integration](/developer/widget-integration) for full embed documentation.
+
+### In Server-Side API Calls
+
+Secret keys go in the `Authorization` header of every request to the Orato REST API:
+
+```bash
+curl https://api.tryorato.com/v1/calls \
+  -H "Authorization: Bearer sk_live_xxxxxxxxxxxxxxxxxxxxxxxx" \
+  -H "Content-Type: application/json"
+```
+
+```javascript
+const response = await fetch('https://api.tryorato.com/v1/calls', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer sk_live_xxxxxxxxxxxxxxxxxxxxxxxx',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({ assistantId: 'asst_xxx', phoneNumber: '+14155552671' }),
+});
+```
+
+<Warning>
+  Never put a Secret key (`sk_live_...`) in frontend JavaScript, HTML, or any code that is visible to a browser. Use environment variables on the server side.
+</Warning>
+
+---
+
+## Security Best Practices
+
+<AccordionGroup>
+  <Accordion title="Use environment variables, never hardcode keys">
+    Store keys in environment variables (`.env` files, cloud secrets managers like AWS Secrets Manager, Vercel Environment Variables, etc.). Never hardcode a key directly in source code.
+
+    ```bash
+    # .env
+    ORATO_SECRET_KEY=sk_live_xxxxxxxxxxxxxxxxxxxxxxxx
+    ```
+
+    ```javascript
+    // server.js
+    const apiKey = process.env.ORATO_SECRET_KEY;
+    ```
+  </Accordion>
+
+  <Accordion title="Use separate keys per environment">
+    Create different keys for development, staging, and production. This way, rotating a compromised key in one environment doesn't affect others, and you can track usage per environment.
+  </Accordion>
+
+  <Accordion title="Rotate keys regularly">
+    Create a new key, update all dependent systems, then delete the old key. Orato has no forced rotation schedule, but a quarterly rotation is a good practice for secret keys used in production.
+  </Accordion>
+
+  <Accordion title="Monitor usage counts">
+    The **Usage** column in the API Keys table shows how many calls each key has made. An unexpectedly high count on a key you don't use often could indicate unauthorized use, delete it immediately if suspected.
+  </Accordion>
+
+  <Accordion title="Never add secret keys to your .env files in public repos">
+    Add `.env` to your `.gitignore`. If a secret key is ever accidentally committed to a public repository, delete it from Orato immediately and generate a new one. Assume it is compromised.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="401 Unauthorized on API requests">
+    - Confirm you're passing the key in the `Authorization: Bearer <key>` header
+    - Check that the key hasn't been deleted from your dashboard
+    - Verify you're using a **Secret key** for API calls (Public keys cannot authenticate REST API requests)
+  </Accordion>
+
+  <Accordion title="Widget shows a key error on my site">
+    - Ensure you're using a **Public key** (`pk_live_...`), not a Secret key, in the embed snippet
+    - Verify your site's domain is added to the key's allowed domains list
+    - Check for exact domain match, `www.` prefix matters
+    - Try opening browser DevTools → Network tab to see the exact error response
+  </Accordion>
+
+  <Accordion title="Lost the full key value after closing the modal">
+    The full key cannot be recovered. Delete the existing key from the table and create a new one. Copy and store the new key before closing the creation modal.
+  </Accordion>
+</AccordionGroup>
