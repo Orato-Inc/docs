@@ -1,0 +1,219 @@
+---
+title: "Assistant Templates"
+description: "Create AI assistants faster using goal-based templates, pre-configured starting points for sales, support, web chat, and custom use cases."
+icon: "wand-magic-sparkles"
+---
+
+## Overview
+
+When you create a new AI assistant in Orato, you don't have to start from a blank prompt. **Assistant Templates** give you a pre-configured starting point based on what you want your assistant to do. Pick a goal, and Orato pre-fills the instructions, opening message, and closing message, so you're configuring, not creating from scratch.
+
+<Frame>
+  ![Assis Template](/images/Assis-template.png)
+</Frame>
+
+---
+
+## Available Templates
+
+<CardGroup cols={2}>
+  <Card title="Sales & Lead Outreach" icon="phone-volume">
+    Pre-configured for outbound calling. Calls leads, introduces itself, qualifies interest, and attempts to book a demo. Best for sales teams running outbound campaigns.
+  </Card>
+
+  <Card title="Customer Support" icon="headset">
+    Set up as an inbound assistant. Answers calls warmly, listens to the issue, resolves it if possible, and escalates to a human when needed.
+  </Card>
+
+  <Card title="Website Voice Chat" icon="globe">
+    Deploys as a web widget on your site. Helps visitors find information and guides them toward taking the next step, no phone number required.
+  </Card>
+
+  <Card title="Custom" icon="sliders">
+    Starts with an empty prompt. Use this if your use case doesn't fit the other templates; build your assistant fully from scratch.
+  </Card>
+</CardGroup>
+
+---
+
+## The Assistant Creation Wizard
+
+Once you pick a template, Orato opens the **3-step assistant wizard**:
+
+<Steps>
+  <Step title="Step 1: Setup -  Name & Instructions">
+    Set the assistant's name, role (Outbound, Inbound, Web Widget, API), and instructions. Use the AI Instruction Generator to auto-write a prompt, or write your own.
+  </Step>
+  <Step title="Step 2: Personality - Voice & Messages">
+    Choose the AI model, voice, transcription provider, and configure the opening and closing messages. Preview voices before selecting.
+  </Step>
+  <Step title="Step 3: Review - Confirm & Launch">
+    Review all settings in a summary grid, attach Knowledge Base documents if needed, and create the assistant.
+  </Step>
+</Steps>
+
+---
+
+## Step 1: Setup
+
+### Assistant Name and Role
+
+Give your assistant a clear name (e.g., "Sales Bot – India", "Support Agent – English"). The **Role** determines the call direction:
+
+| Role | Use Case |
+| --- | --- |
+| **Outbound** | Calls your lead list, runs campaigns |
+| **Inbound** | Picks up incoming calls from customers |
+| **Web Widget** | Voice chat embedded on a website |
+| **API** | Triggered programmatically from your application |
+
+### Outbound Caller ID
+
+If you select **Outbound**, you'll also need to choose a **Caller ID**, the phone number that shows up to recipients when the assistant calls. Only active numbers from your Orato Phone Numbers page are available here.
+
+<Tip>
+  If no phone numbers appear in this dropdown, go to **Phone Numbers** in the sidebar and purchase or configure a number first. [Learn more →](/phone-numbers)
+</Tip>
+
+### AI Instruction Generator
+
+Don't want to write instructions from scratch? Use the built-in **AI Instruction Generator**:
+
+1. Describe what your business does (e.g., "We sell B2B SaaS CRM software")
+2. Describe the call goal (e.g., "Qualify inbound leads and book product demos")
+3. Click **Generate Instructions**
+
+Orato generates a full, structured system prompt for your assistant in seconds. You can edit the output before saving.
+
+### Writing Instructions Manually
+
+If you prefer to write your own, the **Instructions** field accepts a free-form prompt. Good instructions include:
+
+- Your company name and what you sell or do
+- The assistant's name and persona
+- The goal of each call (qualify, support, book, inform)
+- Tone and style (friendly, professional, concise)
+- Key things to say or avoid
+- Dynamic variables like `{customer_name}` for personalization
+
+<Note>
+  Instructions must be at least 20 characters. Vague prompts produce vague assistants; more detail leads to better performance.
+</Note>
+
+---
+
+## Step 2: Personality
+
+### AI Brain (LLM)
+
+Select the **AI model provider** (e.g., OpenAI, Anthropic) and then the specific model (e.g., GPT-4o, Claude Sonnet). More capable models produce better conversations but may cost more per minute.
+
+### Voice (Text-to-Speech)
+
+Choose the **TTS provider** and a specific voice. Features include:
+
+- **Provider pills**: Switch between ElevenLabs, Cartesia, and others
+- **Model selection**: Choose the engine model within a provider
+- **Voice picker**: Browse voices with gender icon and accent tags
+- **Live preview**: Click the play button on any voice to hear a sample before selecting
+
+<Tip>
+  Match your voice language to your target caller's language. For Hindi-speaking callers, choose a Hindi voice. For English callers in the US, choose an American English voice. The combination of the right voice \+ the right transcription language matters significantly for call quality.
+</Tip>
+
+### Transcriber (Speech-to-Text)
+
+Choose the **STT provider** and model that will transcribe what callers say. Options include:
+
+- **Deepgram**: Fast, accurate English transcription. Supports multilingual code-switching
+- **Sarvam**: Best for Indian regional languages (Hindi, Tamil, Telugu, Kannada, etc.)
+- **Other providers**: Based on your plan and configuration
+
+Also, set the **language** for transcription. For Sarvam, you can also configure the **output mode** (transcribe or code-mix) for Hinglish scenarios.
+
+### Opening and Closing Messages
+
+**Opening Message**: The first thing your assistant says when the call connects. You can:
+
+- Write it manually (e.g., `Hi {customer_name}, do you have 2 minutes?`)
+- Let the **AI generate it** dynamically based on the caller context
+
+**Who speaks first** (Outbound/Inbound only):
+
+- **Agent speaks first**: The assistant says the opening message the moment the call connects
+- **Agent waits for user**: The assistant stays silent until the caller says something. Useful to avoid talking over the callee's greetings like "Hello?"
+
+**Closing Message**: What the assistant says before ending the call (e.g., `Thanks for your time. Have a great day!`)
+
+---
+
+## Step 3: Review
+
+The review step shows a summary grid of all your selections:
+
+| Field | Your Setting |
+| --- | --- |
+| Name | Your assistant's name |
+| Role | Outbound / Inbound / Web Widget / API |
+| Caller ID | Your selected outbound number |
+| Voice | Selected voice name |
+| AI Model | Selected LLM |
+| Opening | Your opening message or "AI Generated." |
+| Closing | Your closing message |
+| Call Start | Agent first or wait for the user |
+
+### Attaching Knowledge Base Documents
+
+At the review step, you can attach one or more **Knowledge Base documents** to your assistant. Attached documents give the assistant access to specific product info, FAQs, or company data to answer questions more accurately.
+
+Only documents with a **Ready** status in your Knowledge Base appear here. [Learn how to upload documents →](/knowledge-base)
+
+---
+
+## Advanced Settings
+
+Available in Step 2 under **Advanced Settings** (collapsed by default):
+
+| Setting | Default | Description |
+| --- | --- | --- |
+| **Max Duration** | 600s (10 min) | Maximum call length before auto-hangup |
+| **Silence Timeout** | 30s | Seconds of silence before the assistant re-engages |
+| **Response Delay** | 0.4s | The time the assistant waits before responding after the caller finishes speaking. |
+| **End Call Phrases** | — | Words that trigger call ending (e.g., "goodbye", "thanks bye") |
+| **Enable Recording** | On | Whether to record the call |
+| **Transfer to Human** | — | E.164 phone number to transfer to if the caller asks for a human |
+
+---
+
+## Web Widget Customization
+
+If you select the **Web Widget** role, an additional branding section appears in Step 2:
+
+- **Brand Color** and **Widget Background Color**
+- **Launcher Color** and **Header Text Color**
+- **Launcher Design** — Circular button or pill with logo \+ name
+- **Widget Position** — Bottom-right, bottom-left, bottom-center, top-right, top-left
+- **Welcome Message** — Text shown to visitors before they start the conversation
+- **Allowed Origins** — Restrict which domains can embed the widget
+- **Brand Logo** — Upload a PNG/JPG/WebP logo (max 1MB) or paste a public image URL
+
+---
+
+## Editing an Existing Assistant
+
+To edit an assistant you've already created:
+
+1. Go to **AI Assistants** in the Orato sidebar
+2. Find your assistant and click **Edit**
+3. The same wizard opens, pre-filled with your current configuration
+4. Make your changes and click **Update Assistant**
+
+<Note>
+  When editing, the goal-picker screen (Step 0) is skipped. You go directly to Step 1 of the wizard with your existing settings.
+</Note>
+
+---
+
+## Cost Breakdown
+
+As you configure your assistant in Steps 1 and 2, a **cost breakdown bar** at the top of the editor shows an estimated cost per minute based on your selected LLM, voice, and transcription providers. This helps you make informed decisions about model quality vs. cost before launching.

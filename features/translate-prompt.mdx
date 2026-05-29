@@ -1,0 +1,165 @@
+---
+title: "Translate Prompt"
+description: "Translate your AI assistant's instructions into any language so it performs better with non-English callers."
+icon: "language"
+---
+
+## Overview
+
+When your AI assistant handles calls in Hindi, Tamil, Marathi, or any other regional language, its instructions, the prompt that tells it how to behave, should be in that same language. The **Translate Prompt** feature lets you instantly translate your assistant's instructions into 20\+ languages without leaving the Orato assistant editor.
+
+---
+
+## Why This Matters
+
+Your assistant's voice, transcription model, and prompt all need to work together. When they're aligned in the same language, the assistant:
+
+- Follows instructions more naturally and accurately
+- Uses tone and phrasing that feel native to callers
+- Avoids awkward literal translations at runtime
+
+<Info>
+  If you've configured a Hindi voice and Hindi transcription for a campaign targeting Hindi-speaking leads, your assistant prompt should also be in Hindi. The **Translate Prompt** feature makes this a one-click action.
+</Info>
+
+---
+
+## Where to Find It
+
+The **Translate Prompt** button appears at the bottom of the **Instructions** step (Step 1) in the AI Assistant editor, next to the **Cancel** button in the footer toolbar.
+
+<Frame>
+  ![Translate](/images/Translate.png)
+</Frame>
+
+It has two parts:
+
+| Element | Purpose |
+| --- | --- |
+| **Translate Prompt** button | Opens the language picker dropdown to select a target language |
+| **ℹ️ Info** button | Explains why instruction translation helps, with examples |
+
+---
+
+## How to Translate Your Instructions
+
+<Steps>
+  <Step title="Write Your Instructions First">
+    In the **AI Assistant** editor, go to Step 1 (Setup) and write your instructions in English (or whatever language you're starting from). The translator needs the existing text to work.
+  </Step>
+  <Step title="Click Translate Prompt">
+    Click the **Translate Prompt** button in the editor footer. A dropdown appears with a searchable list of 20\+ languages.
+  </Step>
+  <Step title="Search and Select a Language">
+    Type the language name (e.g., "Hindi" or "हिन्दी") in the search bar, then click the language you want to translate into.
+  </Step>
+  <Step title="Wait for Translation">
+    Orato sends your instructions to the AI translation service. The button shows **Translating…** with a loading indicator. This typically takes 2–5 seconds.
+  </Step>
+  <Step title="Review the Translated Instructions">
+    The **Instructions** text field updates automatically with the translated text. Review it to make sure tone and intent are preserved.
+  </Step>
+  <Step title="Save Your Assistant">
+    Proceed through the remaining steps and save your assistant as usual.
+  </Step>
+</Steps>
+
+<Warning>
+  Translation replaces the content currently in your Instructions field. Copy your original English instructions somewhere safe before translating if you want to keep both versions.
+</Warning>
+
+---
+
+## Supported Languages
+
+The following languages are available for translation:
+
+<Tabs>
+  <Tab title="Indian Languages">
+    | Language | Native Name |
+    | --- | --- |
+    | Hindi | हिन्दी |
+    | Marathi | मराठी |
+    | Tamil | தமிழ் |
+    | Telugu | తెలుగు |
+    | Kannada | ಕನ್ನಡ |
+    | Gujarati | ગુજરાતી |
+    | Punjabi | ਪੰਜਾਬੀ |
+    | Bengali | বাংলা |
+  </Tab>
+  <Tab title="Global Languages">
+    | Language | Native Name |
+    | --- | --- |
+    | English | English |
+    | Arabic | العربية |
+    | Spanish | Español |
+    | French | Français |
+    | German | Deutsch |
+    | Portuguese | Português |
+    | Russian | Русский |
+    | Chinese | 中文 |
+    | Japanese | 日本語 |
+    | Korean | 한국어 |
+    | Turkish | Türkçe |
+    | Indonesian | Bahasa |
+    | Vietnamese | Tiếng Việt |
+  </Tab>
+</Tabs>
+
+---
+
+## Important: Placeholders Are Preserved
+
+Dynamic variables in your instructions, like `{customer_name}`, `{company}`, `{product_name}`, are **not translated**. They remain as-is, so they continue to work correctly at runtime when Orato injects real caller data.
+
+For example, if your original instruction contains:
+
+```text
+Greet the caller by saying "Hello, {customer_name}!"
+```
+
+After translating to Hindi:
+
+```text
+कॉलर को "Hello, {customer_name}!" कहकर ग्रीट करें
+```
+
+The `{customer_name}` The placeholder is preserved exactly.
+
+---
+
+## Best Practices
+
+<AccordionGroup>
+  <Accordion title="Match language to your voice and transcription settings">
+    If you set your assistant's voice to a Hindi voice and use Sarvam or Deepgram with a Hindi language setting, your prompt should also be in Hindi. Mismatched languages cause the assistant to sound unnatural or ignore certain instructions.
+  </Accordion>
+
+  <Accordion title="Review translations for domain-specific terms">
+    AI translation is highly accurate for general language, but industry-specific terms (e.g., medical, legal, finance) may translate awkwardly. Review the output and edit terminology manually if needed.
+  </Accordion>
+
+  <Accordion title="Start with a clear English prompt">
+    The quality of the translation directly depends on the quality of your source prompt. Write clear, structured instructions in English first, then translate. Vague English instructions produce vague translations.
+  </Accordion>
+
+  <Accordion title="Use the info button to understand tradeoffs">
+    If you're unsure whether to translate your prompt, click the ℹ️ button next to **Translate Prompt** for a plain-language explanation of when and why to do it.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## When Not to Translate
+
+You do **not** need to translate your instructions if:
+
+- Your assistant is set up for **English-only** calls
+- Your voice and transcription are configured for English
+- Your callers are primarily English-speaking
+
+Translation is specifically for scenarios where the voice, transcription, and caller base are all in a non-English language.
+
+<Note>
+  Orato's AI translation is powered by the same underlying models that run your assistants. Translations are generated fresh each time and are not stored or reused across sessions.
+</Note>

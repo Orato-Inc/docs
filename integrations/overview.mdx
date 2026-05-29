@@ -1,123 +1,81 @@
 ---
 title: "Integrations"
-description: "Connect Orato with the tools your team already uses — calendars, CRMs, and automation platforms."
+description: "Connect Orato with your existing tools, CRMs, ticketing systems, communication platforms, and productivity apps, so your agents never have to leave the platform."
+icon: "plug"
 ---
 
-## Overview
+Orato's Integrations hub lets you connect the tools your team already uses to your voice AI workflow. Whether your agents need to raise a support ticket mid-call, sync a lead to your CRM, or get a Slack ping after a conversation ends, it all happens automatically without switching tabs.
 
-Orato connects with external tools so your AI Assistant can do more than just talk. It can check calendar availability, book meetings, push data to your CRM, and trigger workflows in automation tools — all during a live call.
+<Frame>
+  ![Integration](/images/integration.png)
+</Frame>
 
----
+<Info>
+  All integrations are accessible from the **Integrations** section in your Orato dashboard. Connect once, and every assistant and campaign on your account can use it.
+</Info>
 
-## Calendar integrations
-
-Connect your calendar so your AI Assistant can check availability and book meetings during conversations — without any manual work on your end.
-
-<Steps>
-  <Step title="Go to Settings">
-    Click **Settings** in the left sidebar, then select the **Calendar** tab.
-  </Step>
-  <Step title="Connect your calendar">
-    Click **Connect Calendar** and authorise Orato to access your Google Calendar or Outlook account.
-  </Step>
-  <Step title="Your assistant can now book meetings">
-    Once connected, your assistant checks real-time availability during calls and schedules meetings directly. Every booking shows up in both Orato's Meetings page and your calendar.
-  </Step>
-</Steps>
+## Available Integrations
 
 <CardGroup cols={2}>
-  <Card title="Google Calendar" icon="calendar">
-    Connect your Google Calendar for automatic availability checking and meeting booking
+  <Card title="Zoho Desk" icon="headset" href="/integrations/zoho">
+    Create and manage Zoho Desk support tickets directly from within a live or completed call. Agents can raise tickets without leaving Orato.
   </Card>
-  <Card title="Microsoft Outlook" icon="calendar">
-    Connect Outlook Calendar to sync meetings booked during calls
+
+  <Card title="Zendesk" icon="ticket" href="/integrations/zendesk">
+    Sync your Zendesk ticket queue with Orato. View open, pending, and solved tickets, and create new ones on behalf of callers instantly.
+  </Card>
+
+  <Card title="Freshdesk" color="#28a745" icon="life-ring">
+    Manage Freshdesk customer support tickets directly from Orato calls. _(Coming Soon)_
+  </Card>
+
+  <Card title="HubSpot CRM" color="#f97316" icon="hubspot">
+    Automatically push call outcomes, leads, and contact data into HubSpot after every conversation. _(Coming Soon)_
+  </Card>
+
+  <Card title="Salesforce" color="#00a1e0" icon="cloud">
+    Send qualified leads and call summaries directly into Salesforce records after every Orato call. _(Coming Soon)_
+  </Card>
+
+  <Card title="Zoho CRM" color="#e8580a" icon="database">
+    Sync lead data and call outcomes to Zoho CRM automatically after conversations complete. _(Coming Soon)_
+  </Card>
+
+  <Card title="Slack" color="#4a154b" icon="slack">
+    Receive instant Slack notifications for completed calls, new leads, and agent activity. _(Coming Soon)_
+  </Card>
+
+  <Card title="Google Calendar" color="#4285f4" icon="calendar">
+    Auto-schedule follow-up meetings and sync call appointments to Google Calendar. _(Coming Soon)_
   </Card>
 </CardGroup>
 
-<Tip>
-  Once your calendar is connected, add booking logic to your assistant's instructions — e.g. *"If the lead wants to proceed, check my calendar and offer them the next two available slots."*
-</Tip>
+## How Integrations Work in Orato
 
----
+When you connect an integration:
 
-## CRM and data integrations
-
-After every call, Orato logs the transcript, outcome, and contact details. Use webhooks to push this data into your CRM or any other system automatically.
-
-<Steps>
-  <Step title="Set up a webhook">
-    In your AI Assistant's configuration, go to the analytics or settings section and add a webhook URL — the endpoint in your system that should receive call data.
-  </Step>
-  <Step title="Orato sends a payload after every call">
-    When a call ends, Orato sends a POST request to your webhook URL with the call details, transcript, outcome, and any extracted data.
-  </Step>
-  <Step title="Process the data in your CRM">
-    Use the incoming webhook data to create or update contacts, log call notes, trigger follow-up tasks, or score leads in your CRM.
-  </Step>
-</Steps>
-
-**Example webhook payload:**
-
-```json
-{
-  "event": "call.completed",
-  "call_id": "call_abc123",
-  "assistant_id": "your-assistant-id",
-  "contact": {
-    "phone_number": "+911234567890",
-    "name": "Priya Sharma"
-  },
-  "duration_seconds": 187,
-  "outcome": "qualified",
-  "transcript": [...],
-  "created_at": "2026-05-15T10:30:00Z"
-}
-```
-
----
-
-## Automation platforms
-
-Connect Orato to automation tools to build workflows around your calls — trigger a call when a form is submitted, update a spreadsheet when a lead qualifies, or send a Slack message when a meeting is booked.
-
-<CardGroup cols={2}>
-  <Card title="Zapier" icon="bolt">
-    Use Orato triggers and actions in Zapier workflows — no code required
-  </Card>
-  <Card title="Make (formerly Integromat)" icon="arrows-spin">
-    Build automated scenarios in Make that react to Orato call events
-  </Card>
-</CardGroup>
+1. **Authentication**: You authorize Orato to access your third-party account (OAuth or API key, depending on the provider).
+2. **Sync**: Orato fetches your existing data (tickets, contacts, leads) and keeps it up to date in real time.
+3. **In-call actions**: Your agents can trigger actions (like creating a ticket) directly from the call interface without navigating away.
+4. **Post-call automation**: After a call ends, Orato can automatically push data to your connected tools based on outcomes and dispositions.
 
 <Note>
-  Zapier and Make integrations connect through webhooks and the Orato API. Set up a webhook in your assistant configuration and use it as a trigger in your automation tool.
+  Orato does not store credentials from third-party platforms in plain text. All tokens are encrypted at rest. You can revoke access to any integration from your dashboard at any time.
 </Note>
 
----
+## CRM Integrations
 
-## Web Widget
+The **CRM Integration** section gives your team a live view of support tickets from Zoho Desk and Zendesk, right inside Orato. Agents can:
 
-The Orato Web Widget is itself an integration — embed it on any website to add a live voice assistant to your pages with a single script tag.
+- View all open, pending, and resolved tickets
+- Filter and search by keyword, status, or priority
+- Open a ticket's full details in a side drawer
+- Create new tickets on behalf of a caller, without leaving the call
 
-<Card title="Widget Integration →" icon="globe" href="/developer/widget-integration">
-  Full setup guide for embedding the Orato Web Widget on your website
-</Card>
+<Tip>
+  If you handle high inbound call volumes for customer support, connecting Zendesk or Zoho Desk is one of the highest-ROI things you can do. Agents stop context-switching, and tickets get raised faster with better accuracy.
+</Tip>
 
----
+## What's Coming
 
-## Where to go next
-
-<CardGroup cols={2}>
-  <Card title="Meetings" icon="calendar-check" href="/meetings">
-    See how automatic meeting booking works
-  </Card>
-  <Card title="API Reference" icon="code" href="/api-reference/introduction">
-    Build custom integrations using the Orato API
-  </Card>
-  <Card title="Developer — API Keys" icon="key" href="/developer/api-keys">
-    Get your API key for integrations
-  </Card>
-  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
-    Configure your assistant to use integrations during calls
-  </Card>
-</CardGroup>
+We are actively building integrations for WhatsApp Business, Notion, and additional CRM platforms. If there's a tool your team needs, reach out to [support@tryorato.com](mailto:support@tryorato.com), and we'll prioritize it.

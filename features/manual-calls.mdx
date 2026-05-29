@@ -1,0 +1,190 @@
+---
+title: "Manual Calls"
+description: "Make browser-based outbound calls directly from Orato with a built-in dialer, call recordings, transcripts, and a lead phonebook."
+icon: "phone"
+---
+
+## Overview
+
+**Manual Calls** is Orato's browser-based calling feature that lets your agents make outbound calls directly from the Orato dashboard, no external phone, SIP app, or softphone needed. Every manual call gets a recording, a full transcript, an AI summary, and an outcome so your team has a complete paper trail.
+
+<Frame>
+  ![Manual Calls](/images/Manual-Calls.png)
+</Frame>
+
+<Info>
+  Manual Calls uses your browser's microphone and WebRTC to place calls. Make sure your browser has microphone permissions enabled for `app.tryorato.com`.
+</Info>
+
+---
+
+## Key Features
+
+<CardGroup cols={2}>
+  <Card title="Browser Dialer" icon="phone-volume">
+    Enter any phone number directly in the dialer, or pick a contact from your Phonebook, and call instantly from your browser.
+  </Card>
+
+  <Card title="Recordings & Transcripts" icon="microphone">
+    Every completed call automatically gets a recording and a full AI-generated transcript \+ summary.
+  </Card>
+
+  <Card title="Outcome Tracking" icon="chart-bar">
+    Mark calls with outcomes like Qualified, Not Interested, Callback, No Answer, or Voicemail to keep your pipeline organized.
+  </Card>
+
+  <Card title="Quota Management" icon="gauge">
+    Track your calling minute quota in real time, see how many minutes you've used, and what's remaining on your plan.
+  </Card>
+</CardGroup>
+
+---
+
+## Navigating the Manual Calls Page
+
+Go to **Manual Calls** in your Orato sidebar to open the Manual Calls dashboard.
+
+### Metric Cards
+
+The top row shows four live metrics:
+
+| Card | What It Shows |
+| --- | --- |
+| **Total Calls** | Total manual calls made on your account |
+| **Completed** | Calls that connected and completed successfully (current page) |
+| **Minutes Used** | Total minutes consumed across calls on the current page |
+| **Quota Remaining** | Your remaining calling quota (e.g., `43 / 60 minutes`) |
+
+### Filters and Search
+
+Use the toolbar below the metrics to narrow your call list:
+
+- **Search**: Filter by phone number or contact name
+- **Status filter**: All, Completed, In Progress, Failed, No Answer
+- **Outcome filter**: All, Qualified, Not Interested, Callback, No Answer, Voicemail
+
+### Call Table
+
+Each row in the call table shows:
+
+| Column | Description |
+| --- | --- |
+| **Contact** | Lead name (if matched) and phone number |
+| **Status** | Completed / In Progress / Failed / No Answer |
+| **Outcome** | The disposition set for this call |
+| **Duration** | Call length in `m:ss` format. Shows `N/A` for unanswered calls |
+| **Date & Time** | When the call started |
+| **Actions (⋯)** | Options to play the recording, view the transcript, or download |
+
+---
+
+<Frame>
+  ![Phone Book](/images/Phone-book.png)
+</Frame>
+
+## Making a Manual Call
+
+<Steps>
+  <Step title="Open the Dialer">
+    Click the **Open Dialer** button in the top-right of the Manual Calls page. The dialer panel slides open on the right side.
+  </Step>
+  <Step title="Enter a Phone Number">
+    Type the number you want to call in E.164 format (e.g., `+919876543210`). Or, use the **Phonebook** to find an existing lead.
+  </Step>
+  <Step title="Select Your Caller ID">
+    Make sure your active phone number is selected in the top bar of the Orato dashboard before calling. This is the number that will be shown to the recipient.
+  </Step>
+  <Step title="Start the Call">
+    Click the **Call** button in the dialer. Your browser will use your microphone to connect to the call through Orato's telephony infrastructure.
+  </Step>
+  <Step title="End the Call">
+    Click **End Call** when the conversation is complete. Orato will process the recording and transcript in the background.
+  </Step>
+</Steps>
+
+<Warning>
+  If the dialer says "No microphone found" or the call fails immediately, check that your browser has microphone access: go to **Site Settings** in your browser and ensure microphone permission is set to **Allow** for `app.tryorato.com`.
+</Warning>
+
+---
+
+## Using the Phonebook
+
+The **Phonebook** is your directory of saved leads and contacts within Orato.
+
+1. Click **Phonebook** in the top-right of the Manual Calls page
+2. Browse or search for a contact by name or number
+3. Click the **Call** icon next to any lead to auto-populate their number in the dialer and initiate the call.
+
+<Tip>
+  The Phonebook pulls from your **Leads** database in Orato. If a contact isn't showing up, check that they've been added as a lead with a valid phone number.
+</Tip>
+
+---
+
+## Viewing Call Recordings and Transcripts
+
+After a call completes, click the **⋯** menu on the call row to access:
+
+<AccordionGroup>
+  <Accordion title="Play Recording">
+    Opens an in-app audio player modal with the call recording. The player shows call details (contact name, number, date, duration) and lets you play or pause directly in the browser.
+  </Accordion>
+
+  <Accordion title="View Transcript & Summary">
+    Opens the **Call Transcript & Summary** modal with the AI-generated summary and full turn-by-turn transcript. Supports keyword search and highlighting, see [Transcript & Search](/calls/transcript-search) for full details.
+  </Accordion>
+
+  <Accordion title="Download Recording">
+    Downloads the call recording as an `.mp3` file directly to your machine. The download requires authentication and happens securely through Orato's backend.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Call Statuses
+
+| Status | Description |
+| --- | --- |
+| **Completed** | Call connected and ended normally |
+| **In Progress** | Call is currently active |
+| **Failed** | Call could not connect due to a technical error |
+| **No Answer** | The recipient did not pick up |
+
+---
+
+## Call Outcomes
+
+Outcomes are set automatically based on the call or can be updated manually:
+
+| Outcome | Meaning |
+| --- | --- |
+| **Qualified** | Lead showed interest and meets your criteria |
+| **Not Interested** | Lead declined or explicitly not interested |
+| **Callback** | Lead asked to be called back at a later time |
+| **No Answer** | The call rang, but was not picked up |
+| **Voicemail** | Call reached voicemail |
+| **Pending** | Outcome not yet determined |
+
+---
+
+## Quota and Minute Tracking
+
+Manual Calls consume from your organization's **calling minute quota**. The **Quota Remaining** card shows your current balance in real time (e.g., `43 / 60 minutes`).
+
+If your quota runs out:
+
+- The dialer will show a warning and prevent new calls
+- Contact your account admin or [support@tryorato.com](mailto:support@tryorato.com) to top up your quota
+
+<Note>
+  Quota is tracked per organization, not per user. All agents on your account share the same minute pool.
+</Note>
+
+---
+
+## Pagination
+
+The call table loads **20 calls per page** by default. Use the pagination controls at the bottom of the table to navigate between pages or change the page size (20, 50, or 100 rows per page).
+
+The table also shows a count like "Showing 1–20 of 143 calls," so you always know where you are.

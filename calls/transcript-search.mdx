@@ -1,0 +1,135 @@
+---
+title: "Transcript & Search"
+description: "Search keywords across call transcripts and summaries — instantly find and highlight what was said in any conversation."
+icon: "magnifying-glass-dollar"
+---
+
+## Overview
+
+Every call processed by Orato produces a full conversation transcript and an AI-generated summary. The **Transcript & Search** feature lets you search for any keyword inside these, either within a single call or across your entire call history, so you can find exactly what was said, by whom, and when.
+
+---
+
+## Inside a Single Call: The Transcript Viewer
+
+When you open a call from the **Calls** page (by clicking the eye icon on any row), the **Call Transcript & Summary** modal opens.
+
+This modal has two panels side by side:
+
+<CardGroup cols={2}>
+  <Card title="Call Summary" icon="file-lines">
+    An AI-generated summary of the call, key points discussed, outcome, and next steps. Useful for quick reviews without reading the full transcript.
+  </Card>
+
+  <Card title="Conversation Transcript" icon="comments">
+    The full turn-by-turn transcript of the call. Each message is labeled, **AI Assistant** or **Customer**, with the exact words spoken.
+  </Card>
+</CardGroup>
+
+---
+
+## Keyword Search Inside a Transcript
+
+At the top of the transcript modal, there is a **search bar**. Type any keyword and Orato will:
+
+1. Scan both the **Call Summary** and the **Conversation Transcript** simultaneously
+2. **Highlight every match** in amber/yellow, so they're visually easy to spot
+3. Scroll you to the first match automatically
+
+<Frame>
+  ![Search](/images/search.png)
+</Frame>
+
+### How to Use It
+
+<Steps>
+  <Step title="Open a Call">
+    Go to **Calls** in your Orato dashboard and click the eye icon (👁) on the call you want to review.
+  </Step>
+  <Step title="Type Your Keyword">
+    In the search bar at the top of the modal (e.g., type `hospital`, `pricing`, `refund`, `follow-up`The matches appear highlighted immediately.
+  </Step>
+  <Step title="Review Highlights">
+    All matched words are highlighted in both the summary and the transcript, and you can see context around each match easily.
+  </Step>
+  <Step title="Copy if Needed">
+    Use the **Copy** buttons next to each panel to copy the summary or transcript to the clipboard. **Copy All** copies both at once.
+  </Step>
+</Steps>
+
+<Tip>
+  This is especially useful for quality assurance; managers can search for keywords like "complaint", "cancel", "competitor", or "price" to quickly audit how those topics were handled in calls.
+</Tip>
+
+---
+
+## Cross-Call Search: Finding Calls by Keyword
+
+You can also search for keywords **from the main Call Management page**, before even opening a specific call. This searches across all call summaries and transcripts in your account.
+
+<Frame>
+  ![Call Search](/images/Call-search.png)
+</Frame>
+
+### How It Works
+
+1. Go to the **Calls** page in your Orato dashboard
+2. Type a keyword in the top search bar (e.g., `Hospital`, `callback`, `interested`)
+3. The call list **filters in real time**, and only calls where that keyword appears in the transcript or summary remain visible
+4. Open any filtered call to see the highlighted matches inside the transcript
+
+<Info>
+  Cross-call search helps you find patterns across hundreds of calls instantly. For example, searching "not interested" shows you every call where a prospect expressed disinterest, useful for refining your assistant's objection-handling prompt.
+</Info>
+
+---
+
+## Call Details Available in the Transcript Modal
+
+The transcript modal also surfaces key call metadata at the top:
+
+| Field | Description |
+| --- | --- |
+| **Call Type** | Inbound or Outbound |
+| **Duration** | Total call length (e.g., `0:15`) |
+| **Outcome** | Disposition set during or after the call (e.g., `CALLBACK`, `QUALIFIED`) |
+| **Call Date & Time** | Exact timestamp of when the call occurred |
+
+---
+
+## Use Cases
+
+<AccordionGroup>
+  <Accordion title="Quality Assurance & Coaching">
+    Search for words like "rude", "hang up", or "transfer" to identify calls that need supervisor review. Share transcript excerpts with agents during coaching sessions.
+  </Accordion>
+
+  <Accordion title="Compliance Monitoring">
+    Search for required disclosures or legally mandated phrases to verify your AI assistant is saying what it should on every call.
+  </Accordion>
+
+  <Accordion title="Lead Follow-up">
+    Search "call back" or "next week" across your call history to find leads who asked for a follow-up and ensure none slipped through.
+  </Accordion>
+
+  <Accordion title="Product & Pricing Research">
+    Search for competitor names, product features, or pricing objections to understand what your prospects are asking about most.
+  </Accordion>
+
+  <Accordion title="Training Data">
+    Export highlighted transcripts to build training examples for your assistant's prompt, showing it exactly how specific scenarios play out in real calls.
+  </Accordion>
+</AccordionGroup>
+
+---
+
+## Tips for Better Search Results
+
+- Use **single keywords** rather than full sentences for broader matches (e.g., `hospital` instead of `hospital name`)
+- The search is **case-insensitive** - `CALLBACK` and `callback` return the same results
+- If you are searching in the transcript modal, both the summary and the transcript are searched simultaneously
+- From the Calls page, the search filters calls where the keyword appears **anywhere** in the transcript or summary
+
+<Note>
+  Transcript data is only available for calls that have completed processing. Calls still being transcribed may not appear in search results immediately. Typically, transcripts are ready within a few seconds of call completion.
+</Note>

@@ -40,13 +40,34 @@
               "calls/outbound",
               "calls/inbound",
               "calls/batch-calling",
-              "calls/call-history"
+              "calls/call-history",
+              "features/manual-calls"
+            ]
+          },
+          {
+            "group": "Features",
+            "pages": [
+              "features/translate-prompt",
+              "calls/transcript-search",
+              "features/assistant-templates"
+            ]
+          },
+          {
+            "group": "Integrations",
+            "pages": [
+              "integrations/overview"
+            ]
+          },
+          {
+            "group": "CRM Integration",
+            "pages": [
+              "crm/zendesk",
+              "crm/zoho"
             ]
           },
           {
             "group": "Developer",
             "pages": [
-              "developer/api-keys",
               "developer/widget-integration"
             ]
           }
@@ -59,17 +80,6 @@
             "group": "Overview",
             "pages": [
               "api-reference/introduction"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Integrations",
-        "groups": [
-          {
-            "group": "Orato Integrations",
-            "pages": [
-              "integrations/overview"
             ]
           }
         ]
