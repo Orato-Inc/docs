@@ -1,0 +1,149 @@
+---
+title: "Slack"
+description: "Push real-time campaign notifications, lead alerts, and credit warnings directly into your Slack workspace."
+icon: "slack"
+---
+
+## Overview
+
+The Slack integration brings Orato's activity feed into the channels your team already lives in. Connect your workspace once, pick a default channel, choose what you want Orato to post about, and your team stays in the loop, without anyone needing to check the dashboard.
+
+<Info>
+  Slack integration is available on all Orato plans. You'll need admin access to the Slack workspace you want to connect to or permission from your Slack admin.
+</Info>
+
+---
+
+## What You Can Do
+
+<CardGroup cols={2}>
+  <Card title="Campaign Updates" icon="bullhorn">
+    Get a Slack message when a campaign starts, stops, or finishes, with a summary posted to your chosen channel.
+  </Card>
+
+  <Card title="Lead Alerts" icon="user-check">
+    Ping your team the moment a high-value lead qualifies or an appointment gets booked.
+  </Card>
+
+  <Card title="Credit Warnings" icon="triangle-exclamation">
+    Set a threshold and get a channel alert before your credits run dry mid-campaign.
+  </Card>
+
+  <Card title="System Errors" icon="circle-exclamation">
+    Route critical failures and runtime exceptions straight to the people who need to act on them.
+  </Card>
+</CardGroup>
+
+---
+
+## Connecting Your Slack Workspace
+
+<Steps>
+  <Step title="Open Slack settings">
+    In your Orato dashboard, go to **CRM Integration → Slack**.
+  </Step>
+  <Step title="Click Authorize Orato on Slack">
+    Hit the **Authorize Orato on Slack** button. A secure authorization window will open.
+  </Step>
+  <Step title="Select a workspace and approve">
+    Choose the Slack workspace you want to connect and grant Orato the permissions it needs:
+
+    | Permission | Why is it needed |
+    | --- | --- |
+    | `chat:write` | To post notification messages to channels |
+    | `channels:read` | To list your public channels so you can pick one |
+    | `channels:join` | To join the selected channel before posting |
+  </Step>
+  <Step title="Confirm the connection">
+    Once authorized, the status badge updates to **Connected,** and the channel selector and notification preferences appear below.
+  </Step>
+</Steps>
+
+<Note>
+  Orato can only post messages to the channel you select; it cannot read your existing Slack messages, DMs, or any other channel activity. Your workspace credentials are stored encrypted in your organisation's secure vault.
+</Note>
+
+---
+
+## Choosing a Default Channel
+
+After connecting, you'll see a **Default notification channel** dropdown. This is the channel where all enabled Orato notifications will be posted.
+
+- Only public channels are listed
+- You can change the channel at any time without disconnecting
+- Orato automatically joins the channel before posting if it hasn't already
+
+<Tip>
+  Create a dedicated `#orato-alerts` channel so notifications don't clutter your general or team channels. It keeps things clean and easy to search later.
+</Tip>
+
+---
+
+## Choosing Your Notifications
+
+Once a channel is selected, a notification grid appears. Toggle each event type on or off for your workspace.
+
+| Notification | What triggers it |
+| --- | --- |
+| **Low credits alert** | Credits fall below your defined threshold |
+| **System errors** | Critical runtime failures and exceptions |
+| **Campaign reports** | Summary stats are posted when a campaign finishes |
+| **Qualified leads** | A lead meets your qualification criteria |
+| **New meetings booked** | An appointment or consultation gets scheduled |
+| **Campaign started** | A campaign goes live and begins calling |
+| **Campaign stopped** | A campaign is manually stopped or cancelled |
+
+The counter next to the section title shows how many are currently active (e.g. `4 / 7 active`).
+
+---
+
+## Setting a Low Credit Threshold
+
+If **the low credits alert** is enabled, you can configure when it fires.
+
+- Enter a dollar amount in the threshold input
+- Orato posts a Slack message when the credits drop to a value below
+- The minimum allowed value is **\$2.00**
+
+---
+
+## Saving Your Preferences
+
+When you're happy with your channel and notification selections, click **Save preferences**. Changes take effect immediately; the next time a triggered event happens, the message goes straight to Slack.
+
+To undo unsaved changes, click **Discard changes** to reload your last saved state.
+
+---
+
+## Disconnecting Slack
+
+To remove the integration, click **Disconnect workspace**. This stops all Slack notifications and clears the stored credentials from your vault.
+
+You can reconnect at any time. Your previous notification preferences won't be remembered after disconnecting, so you'll need to reconfigure them when you reconnect.
+
+---
+
+## Troubleshooting
+
+**I authorized the workspace, but nothing is appearing in Slack**
+
+Make sure you've selected a default channel and clicked **Save preferences**. Notifications won't post until both steps are complete.
+
+**My channel isn't showing up in the dropdown**
+
+Only public channels are listed. If the channel you want is private, make it public first — or create a dedicated public channel for Orato alerts.
+
+**I see "Failed to initialize Slack connection."**
+
+The authorization session may have timed out. Click **Authorize Orato on Slack** again and complete the flow without closing the pop-up window.
+
+**The connected status isn't updating after I approved**
+
+Wait a few seconds and refresh the page. If it still shows disconnected, click **Disconnect** and try reconnecting.
+
+---
+
+## What's Next
+
+- Set up [Gmail](/crm/gmail) if you'd prefer email-based alerts alongside or instead of Slack
+- Connect [Zendesk](/crm/zendesk-new) or [Zoho](/crm/zoho-new) to push lead and call data into your CRM automatically

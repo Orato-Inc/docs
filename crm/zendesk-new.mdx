@@ -5,7 +5,7 @@ icon: "headset"
 
 ## Overview
 
-The Zendesk integration brings your entire Zendesk ticket queue into Orato. Your support agents can see open tickets, check a caller's history, and create new tickets mid-call, all from one place.
+The Zendesk integration brings your entire Zendesk ticket queue into Orato. Your support agents can see open tickets, check a caller's history, and create new tickets mid-call. all without leaving the platform.
 
 <Frame>
   ![Ticketing 1](/images/Ticketing-1.png)
@@ -33,7 +33,7 @@ The Zendesk integration brings your entire Zendesk ticket queue into Orato. Your
   </Card>
 
   <Card title="Create New Tickets" icon="plus">
-    Raise a new Zendesk ticket on behalf of a caller directly from Orato with subject, priority, and description, without opening a new browser tab.
+    Raise a new Zendesk ticket on behalf of a caller directly from Orato, with subject, priority, and description, without opening a new browser tab.
   </Card>
 </CardGroup>
 
@@ -52,7 +52,7 @@ The Zendesk integration brings your entire Zendesk ticket queue into Orato. Your
     You'll be asked for your Zendesk subdomain (e.g., `yourcompany` from `yourcompany.zendesk.com`) and an API token. You can generate an API token in Zendesk under **Admin → Channels → API**.
   </Step>
   <Step title="Authorize Access">
-    Once you enter your credentials, Orato will verify the connection and begin syncing your tickets.
+    Once you enter your credentials, Orato verifies the connection and begins syncing your tickets.
   </Step>
   <Step title="Start Using It">
     Navigate to **Integrations → Zendesk** in Orato to see your ticket dashboard.
@@ -71,13 +71,13 @@ Once connected, the Zendesk page inside Orato gives you a full ticket management
 
 ### KPI Cards
 
-At the top of the page, four metric cards show you at a glance:
+At the top of the page, four metric cards give you an instant overview:
 
 | Card | What It Shows |
 | --- | --- |
 | **Total** | Total number of tickets synced from your account |
-| **Open** | All tickets with `open` or `new` status — needs attention |
-| **Pending** | Tickets aare waiting a response from the requester |
+| **Open** | All tickets with `open` or `new` status, needs attention |
+| **Pending** | Tickets are waiting for a response from the requester |
 | **Solved** | Tickets marked solved or closed |
 
 Clicking a card filters the table below to show only that ticket group.
@@ -91,7 +91,7 @@ The table displays your tickets with the following columns:
 - **Status**: Color-coded badge: Open (red), New (purple), Pending (amber), Solved (green), Closed (gray)
 - **Priority**: Urgent / High / Medium / Normal / Low with a colored indicator dot
 - **Updated**: Relative time of the last update (e.g., "2h ago")
-- **Open in Zendesk**: Direct link icon to open the ticket in your Zendesk dashboard
+- **Open in Zendesk**: Direct link to open the ticket in your Zendesk dashboard
 
 ### Ticket Detail Panel
 
@@ -100,7 +100,7 @@ Click any row to open a side drawer with full ticket details:
 - Status and priority chips
 - Requester name, email, and phone
 - Ticket ID and last updated timestamp
-- Full ticket description (rendered HTML)
+- Full ticket description
 - A button to open the ticket directly in Zendesk
 
 ### Search
@@ -133,7 +133,7 @@ After submission, the ticket appears in Zendesk immediately, and the list in Ora
 | Status | Meaning in Zendesk |
 | --- | --- |
 | **New** | Ticket just created, not yet assigned to an agent |
-| **Open** | Assigned and being actively worked on |
+| **Open** | Assigned and actively being worked on |
 | **Pending** | Waiting for the requester to respond |
 | **Solved** | The agent has resolved the issue |
 | **Closed** | Solved the ticket that has been closed after a grace period |
@@ -144,7 +144,7 @@ After submission, the ticket appears in Zendesk immediately, and the list in Ora
 
 - Orato fetches tickets in pages of **25** at a time. Use the **Load more** button at the bottom of the table to fetch additional pages.
 - Click **Refresh** in the top-right to pull the latest data from Zendesk at any point.
-- Ticket data is not cached permanently in Orato; every refresh pulls live data from Zendesk.
+- Ticket data is not cached permanently in Orato — every refresh pulls live data directly from Zendesk.
 
 ---
 

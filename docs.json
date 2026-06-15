@@ -11,7 +11,7 @@
     "tabs": [
       {
         "tab": "Documentation",
-        "pages": [
+        "groups": [
           {
             "group": "Getting Started",
             "pages": [
@@ -62,7 +62,9 @@
             "group": "CRM Integration",
             "pages": [
               "crm/zendesk-new",
-              "crm/zoho-new"
+              "crm/zoho-new",
+              "crm/gmail",
+              "crm/slack"
             ]
           },
           {

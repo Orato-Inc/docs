@@ -1,0 +1,134 @@
+---
+title: "Gmail"
+description: "Get campaign reports, lead updates, and system alerts delivered straight to your Gmail inbox."
+icon: "envelope"
+---
+
+## Overview
+
+The Gmail integration lets Orato send you email notifications whenever something important happens, a campaign wraps up, a lead qualifies, credits run low, or an error needs your attention. You connect once, pick what you want to hear about, and Orato handles the rest.
+
+<Info>
+  Gmail integration is available on all Orato plans. You need an active Google account to connect it.
+</Info>
+
+---
+
+## What You Can Do
+
+<CardGroup cols={2}>
+  <Card title="Campaign Notifications" icon="bullhorn">
+    Get an email the moment a campaign starts, ends, or completes, with a full outcome summary.
+  </Card>
+
+  <Card title="Lead Alerts" icon="user-check">
+    Know instantly when a lead qualifies or when an appointment gets booked by an advisor.
+  </Card>
+
+  <Card title="Credit Warnings" icon="triangle-exclamation">
+    Set a credits threshold and receive an alert before your balance runs out mid-campaign.
+  </Card>
+
+  <Card title="System Errors" icon="circle-exclamation">
+    Get notified about critical failures and runtime exceptions so nothing slips through the cracks.
+  </Card>
+</CardGroup>
+
+---
+
+## Connecting Your Gmail Account
+
+<Steps>
+  <Step title="Open Gmail settings">
+    In your Orato dashboard, go to **CRM Integration → Gmail**.
+  </Step>
+  <Step title="Click Connect Gmail Account">
+    Hit the **Connect Gmail Account** button. A secure authorization window will open.
+  </Step>
+  <Step title="Sign in with Google">
+    Sign in with the Google account you want notifications sent to, and approve the permissions Orato requests:
+
+    | Permission | Why is it needed |
+    | --- | --- |
+    | `gmail.send` | To send notification emails to your inbox |
+    | `userinfo.email` | To confirm which account is connected |
+
+    That's it, Orato only requests send access. It cannot read your existing emails.
+  </Step>
+  <Step title="Confirm the connection">
+    Once you approve, your connected email address appears in the status badge at the top of the card. You're all set.
+  </Step>
+</Steps>
+
+<Note>
+  Your Google account credentials are never stored by Orato. The connection is secured using industry-standard authorization and stored encrypted in your organisation's secure vault.
+</Note>
+
+---
+
+## Choosing Your Notifications
+
+After connecting, you'll see a grid of notification types. Toggle each one on or off depending on what matters to your team.
+
+| Notification | What triggers it |
+| --- | --- |
+| **Low credits alert** | Credits fall below your defined threshold |
+| **System errors** | Critical failures or runtime exceptions in your account |
+| **Campaign outcomes** | A campaign finishes, and a summary is ready |
+| **Qualified leads** | A lead meets your qualification criteria |
+| **Campaign started** | A campaign goes live and begins calling |
+| **Campaign ended** | A campaign concludes or is stopped |
+| **Appointment booked** | A lead schedules a callback with an advisor |
+
+The counter in the top-right of the section shows how many are currently active (e.g. `5 / 7 active`).
+
+---
+
+## Setting a Low Credit Threshold
+
+The **Low credits threshold** card lets you define when the credits alert fires.
+
+- Enter a dollar amount in the input field
+- Orato will email you when your remaining credits drop to a value below
+- The minimum threshold is **\$2.00**
+
+Your connected email address is shown below the input as confirmation of where alerts will land.
+
+---
+
+## Saving Your Preferences
+
+Once you've set your notifications and threshold, click **Save preferences**. Changes take effect immediately.
+
+If you want to undo edits you haven't saved yet, click **Discard changes**. This reloads the last saved state from Orato.
+
+---
+
+## Disconnecting Gmail
+
+To remove the Gmail connection, click **Disconnect Gmail** on the connection card. This immediately stops all email notifications and removes the stored credentials from your vault.
+
+You can reconnect at any time by following the steps above.
+
+---
+
+## Troubleshooting
+
+**I connected, but I'm not receiving emails**
+
+Check that at least one notification type is toggled on, and your preferences are saved. Also, check that Orato emails aren't landing in your spam or promotions folder.
+
+**The connection status isn't updating after I authorized**
+
+Wait a few seconds and refresh the page. Authorization confirmation can occasionally take a moment. If it still shows disconnected, click **Disconnect** and try connecting again.
+
+**I see a "Failed to initialize Gmail connection" error**
+
+The authorization session may have timed out. Click **Connect Gmail Account** again and complete the flow without closing the pop-up window.
+
+---
+
+## What's Next
+
+- Set up [Slack](/crm/slack) to get the same alerts posted directly in your team's channels.
+- Connect [Zendesk](/crm/zendesk-new) or [Zoho](/crm/zoho-new) to push lead and call data into your CRM

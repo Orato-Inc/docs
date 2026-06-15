@@ -49,7 +49,7 @@ The Zoho Desk integration connects your Zoho Desk account to Orato, so your supp
     Locate the **Zoho Desk** card under the Ticketing category and click **Connect**.
   </Step>
   <Step title="Authorize with Zoho">
-    You'll be redirected to Zoho's OAuth authorization page. Sign in with your Zoho account and grant Orato the required permissions to read and write tickets.
+    You'll be redirected to Zoho's authorization page. Sign in with your Zoho account and grant Orato the required permissions to read and write tickets.
   </Step>
   <Step title="Select Your Organization">
     If your Zoho account has multiple organizations, select the one whose tickets you want to sync into Orato.
@@ -119,7 +119,7 @@ Click **New Ticket** in the top-right to open the ticket creation modal. Fill in
 Once submitted, the ticket is created instantly in Zoho Desk, and the table refreshes.
 
 <Tip>
-  If a caller has already raised a ticket previously, search their name or phone number before creating a new one to avoid duplicate tickets. Zoho Desk agents can then merge them if needed.
+  If a caller has already raised a ticket, search their name or email before creating a new one to avoid duplicates. Zoho Desk agents can merge them if needed.
 </Tip>
 
 ---
@@ -138,13 +138,12 @@ Once submitted, the ticket is created instantly in Zoho Desk, and the table refr
 
 ## Differences from Zendesk
 
-If you're deciding between the two integrations:
+If you're deciding between the two integrations or using both:
 
 | Feature | Zoho Desk | Zendesk |
 | --- | --- | --- |
 | Status: On Hold | ✅ Yes | ❌ No (uses Pending) |
 | Priority levels | High / Medium / Low | Urgent / High / Medium / Normal / Low |
-| OAuth flow | ✅ OAuth 2.0 | API key |
 | Column label | "Contact" | "Requester" |
 
 Both integrations support the same core features: live ticket view, search, ticket detail panel, ticket creation, and refresh.
@@ -161,7 +160,7 @@ Both integrations support the same core features: live ticket view, search, tick
 
 ## Disconnecting Zoho Desk
 
-Go to **Integrations** in your dashboard, find the Zoho Desk card, and click **Disconnect**. This revokes Orato's OAuth token and removes the connection.
+Go to **Integrations** in your dashboard, find the Zoho Desk card, and click **Disconnect**. This revokes Orato's access and removes the connection.
 
 <Note>
   Disconnecting Zoho Desk from Orato does not affect your Zoho Desk account or any tickets created through Orato. It only removes the live sync.
