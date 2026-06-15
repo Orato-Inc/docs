@@ -1,0 +1,222 @@
+---
+title: "Dashboard"
+icon: "gauge"
+description: "Your real-time command center, calls, leads, AI performance, and usage all in one view."
+---
+
+The Orato dashboard loads the moment you sign in and stays in sync automatically via a live connection. No manual refresh, no stale numbers.
+
+It's organized into three layers: **live KPIs at the top**, **trend analysis in the middle**, and **actionable items and recent activity at the bottom**.
+
+---
+
+## Live KPI strip
+
+Six metric cards sit across the top of the page. Every card updates in real time as calls come in and go out.
+
+<CardGroup cols={3}>
+  <Card title="Total Leads" icon="users">
+    All leads in your account. The sub-label shows how many are new and how many are flagged hot.
+  </Card>
+
+  <Card title="Calls Today" icon="phone">
+    Live call count for the current day, with the completed count and average call duration shown underneath. A sparkline shows the 7-day trend.
+  </Card>
+
+  <Card title="Lead Conversion" icon="circle-check">
+    The percentage of leads that reached a qualified or converted outcome. The sub-label shows the raw number of qualified leads.
+  </Card>
+
+  <Card title="Inbound Answer Rate" icon="phone-arrow-down-left">
+    How many inbound calls did your assistant answer vs. total inbound attempts today, expressed as a percentage?
+  </Card>
+
+  <Card title="Avg Response Time" icon="bolt">
+    How fast does your AI assistant pick up after a call connects? Measured from connection to the first AI response.
+  </Card>
+
+  <Card title="AI Handle Rate" icon="robot">
+    The share of calls your assistant resolved without escalating to a human. The sub-label tells you whether the escalation rate is high or low.
+  </Card>
+</CardGroup>
+
+---
+
+## Call activity
+
+The call activity panel is your main trend view. It sits below the KPI strip and covers the left two-thirds of the screen.
+
+### Choosing a time period
+
+<Tabs>
+  <Tab title="Last 7 days">
+    The default view. Shows one week of daily call volume — useful for spotting day-of-week patterns and recent spikes.
+  </Tab>
+  <Tab title="Last 30 days">
+    A month of data. Good for reviewing a full campaign cycle or comparing this month to the last.
+  </Tab>
+  <Tab title="This month">
+    The current calendar month from the 1st to today. Resets automatically at the start of each month.
+  </Tab>
+  <Tab title="Last month">
+    The previous complete calendar month. Useful for month-over-month reporting.
+  </Tab>
+  <Tab title="Custom range">
+    Pick any start and end date. Use this when you want to analyze a specific campaign window that doesn't align to a calendar month.
+  </Tab>
+</Tabs>
+
+The summary row beneath the chart shows totals for the selected period across six dimensions: total calls, completed, connected, inbound, outbound, and billable minutes.
+
+### Reading the chart lines
+
+| Line | What it means |
+| --- | --- |
+| **Total** | Every call attempt, regardless of outcome |
+| **Completed** | Calls that ran past a few seconds and ended cleanly |
+
+A wide gap between the two lines means a lot of short attempts, busy signals, voicemails, and no answers. A tight gap means most attempts are connecting and completing. If the gap grows after you change a campaign setting, that's your signal that something shifted.
+
+---
+
+## AI assistant performance
+
+The AI Performance card sits to the right of the activity chart. It shows four numbers:
+
+| Metric | What it means |
+| --- | --- |
+| **Handle Rate** | How often does the assistant complete a call on its own without handing off |
+| **Escalation Rate** | The inverse, calls that needed a human to step in |
+| **Avg AI Duration** | Average call length for assistant-handled calls |
+| **Active / Total** | How many of your configured assistants are currently active vs. total |
+
+At the bottom of the card, you'll see the **top escalation reason**, the phrase or topic that most commonly causes your assistant to hand off. If the same thing keeps appearing, it's a signal to update your assistant's instructions to handle that scenario.
+
+---
+
+## Call usage statistics
+
+The usage panel shows account-level numbers for the current billing period.
+
+<CardGroup cols={4}>
+  <Card title="Connection Rate" icon="signal">
+    The percentage of outbound attempts that connected to a live person. Low connection rate on a list usually means the list quality needs work.
+  </Card>
+
+  <Card title="Connected Calls" icon="phone-check">
+    Total all-time calls that connected, across all campaigns and assistants.
+  </Card>
+
+  <Card title="Billable Minutes" icon="timer">
+    Call minutes used this month. If your plan has an estimated remaining figure, it appears here. Unlimited plans show a dash.
+  </Card>
+
+  <Card title="Usage Cost (USD)" icon="circle-dollar-to-slot">
+    Total spend this month, with an average per-minute rate calculated from your active assistants' model and voice pricing.
+  </Card>
+</CardGroup>
+
+<Tip>
+  The per-minute rate reflects your **average** across all active assistants. Individual assistants may cost more or less depending on the AI model and voice provider selected. You can see the exact breakdown when editing any assistant.
+</Tip>
+
+---
+
+## Inbound and outbound outcomes
+
+Two cards sit side by side and update in real time.
+
+<Tabs>
+  <Tab title="Inbound outcomes">
+    | Outcome | What it means |
+    | --- | --- |
+    | **Answered by AI** | Your assistant picked up and handled the call |
+    | **Escalated to Human** | The call was transferred to a human mid-conversation |
+    | **Missed** | No slot was available, or the call wasn't answered in time |
+    | **Voicemail Left** | The assistant left a voicemail and ended the call |
+    | **Callback Requested** | The caller asked for a callback, and the assistant logged it |
+
+    A high **missed** count usually means your concurrency is too low for your inbound volume. See [Concurrent Calls](/pricing/concurrent) to add slots.
+  </Tab>
+  <Tab title="Outbound outcomes">
+    | Outcome | What it means |
+    | --- | --- |
+    | **Connected** | A live person answered and the conversation ran |
+    | **No Answer** | The call rang out with no answer |
+    | **Callback** | Lead asked to be called back later |
+    | **Not Interested** | Lead explicitly declined |
+    | **Qualified** | Lead met your qualification criteria during the call |
+
+    The ratio of **Connected** to **No Answer** tells you a lot about list quality and best times to call. If connected rate is low, try adjusting your campaign's calling window.
+  </Tab>
+</Tabs>
+
+---
+
+## Action required
+
+<Warning>
+  This card shows items that need a human to act on. It's updated in real time and clears automatically when items are resolved.
+</Warning>
+
+The card surfaces four types of items:
+
+- **Leads needing follow-up** - leads that have been sitting without a next action
+- **Overdue callbacks** - callbacks that were promised but haven't happened yet
+- **Missed inbound calls today** - inbound calls from today that didn't connect to your assistant
+- **AI escalations pending** - calls your assistant handed off that haven't been picked up by a human yet
+
+Click any item to jump directly to the relevant screen. When everything is clear, the card shows a green checkmark and "All caught up!", a good sign to see at the start of your day.
+
+---
+
+## Call performance and lead sources
+
+Two charts sit side by side, lower on the page.
+
+**Call Performance** plots four lines over your selected period:
+
+| Line color | What it tracks |
+| --- | --- |
+| Green | Completed calls |
+| Orange/Red | Successful calls |
+| Purple | Total calls |
+| Blue | Inbound calls |
+
+Use this chart to check whether your completion rate is tracking with volume. If total calls go up but completions stay flat, your connection rate has dropped, worth investigating the list or calling times.
+
+**Lead Sources** is a donut chart showing where your leads originate. Sources: CSV upload, inbound call, web form, and manual entry. Growing inbound-originated leads is a strong signal that your assistant is qualifying well on the phone.
+
+---
+
+## Quick actions, schedule, and assistants
+
+The bottom row of the dashboard has three utility panels.
+
+<CardGroup cols={3}>
+  <Card title="Quick Actions" icon="bolt">
+    Three one-click shortcuts: **Add New Lead** (opens the Leads page), **Create Campaign** (opens the Campaigns page), **Test Assistant** (opens the talk dialog for a live test).
+  </Card>
+
+  <Card title="Today's Schedule" icon="calendar">
+    All meetings scheduled for today are listed in time order. Click any meeting to open the Meetings page. An empty day shows a calendar icon; no action is needed.
+  </Card>
+
+  <Card title="AI Assistants Overview" icon="robot">
+    Total assistants, how many are active, and the inbound vs. outbound split. Useful for spotting if an assistant you expected to be active has been accidentally disabled.
+  </Card>
+</CardGroup>
+
+---
+
+## Recent activity feed
+
+The activity feed at the bottom of the page shows the last several events across your account, calls, lead updates, and meeting changes, in reverse chronological order.
+
+Each item shows:
+
+- The action that happened (e.g., "Call completed", "Lead qualified")
+- The name it relates to
+- How long ago it happened (e.g., "3 minutes ago")
+
+The feed updates automatically as new events come in. You don't need to refresh.

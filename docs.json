@@ -18,13 +18,16 @@
               "home",
               "introduction",
               "platform",
-              "quick-start"
+              "quick-start",
+              "getting-started/prompting-guide",
+              "getting-started/agents-library"
             ]
           },
           {
             "group": "Using Orato",
             "pages": [
               "ai-assistant",
+              "dashboard",
               "calls",
               "leads",
               "campaigns",
@@ -71,7 +74,8 @@
             "group": "Pricing",
             "pages": [
               "pricing/overview",
-              "pricing/call-pricing"
+              "pricing/call-pricing",
+              "pricing/concurrent"
             ]
           },
           {
@@ -147,7 +151,7 @@
   },
   "fonts": {
     "family": "Inter",
-    "weight": 200
+    "weight": 300
   },
   "favicon": "/images/orato-logo-app-icon-512.png"
 }

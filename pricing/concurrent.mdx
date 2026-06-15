@@ -1,0 +1,131 @@
+---
+title: "Concurrent Calls"
+icon: "phone-volume"
+description: "Run multiple calls at the same time. Scale up for a campaign, scale back down when it's done."
+---
+
+## What is concurrency?
+
+Every Orato plan lets your AI assistant handle more than one call at a time. Concurrency is simply the number of live calls that can run simultaneously at any given moment.
+
+If you have 4 concurrent call slots and your assistant is already on 4 calls, a fifth inbound call gets queued, or rejected, depending on your inbound settings, until one slot frees up. For outbound campaigns, the dialer uses all available slots at once to move through your list as fast as possible.
+
+Think of it like lanes on a highway. More lanes, more calls moving at the same time.
+
+## Base concurrency by plan
+
+Each plan ships with a fixed number of concurrent call slots included in the subscription price.
+
+| Plan | Concurrent calls included | Extra slots |
+| --- | --- | --- |
+| Free | 2 | Up to 8 add-on slots |
+| Pro | 4 | Unlimited add-on slots |
+| Pro\+ | 8 | Unlimited add-on slots |
+
+These slots are always on, there's no activating them. The moment you launch a campaign or your number starts receiving inbound calls, all your slots are available.
+
+## Adding extra slots
+
+If your base concurrency isn't enough for a launch, a busy campaign, or a spike in inbound volume, you can add extra slots as an add-on on any plan, including Free.
+
+<Info>
+  **Add-on price: \$5 per extra slot per month.** You're not upgrading your plan. You're stacking more capacity on top of what you already have. Changes take effect immediately.
+</Info>
+
+<Note>
+  Slots removed mid-cycle are prorated and credited back. Slots added mid-cycle are charged for the remaining days of the billing period only.
+</Note>
+
+## Setting concurrency when creating a campaign
+
+When you create an outbound campaign, you set a **call rate**; this is separate from your concurrent slot count but works together with it.
+
+<Steps>
+  <Step title="Open the campaign creation modal">
+    Go to **Campaigns** in the left sidebar and click **Create Campaign**.
+  </Step>
+  <Step title="Fill in the campaign details">
+    Choose your lead batch, AI assistant, campaign name, and description.
+  </Step>
+  <Step title="Set the call rate">
+    Under **Campaign Settings**, set the **calls per minute** value. This controls how fast the dialer moves through your lead list.
+
+    The current range is **2–3 calls per minute**. This limit exists because telephony is billed on a request rate (RPS), and staying within this range keeps costs predictable and ensures carrier compliance.
+  </Step>
+  <Step title="Choose a schedule">
+    Set the campaign to start immediately or schedule it for a specific date and time. Click **Create Campaign** when ready.
+  </Step>
+</Steps>
+
+<Warning>
+  **Call rate and concurrency work together.** If you set a rate of 3 calls/minute but only have 2 concurrent slots, the dialer will still be limited by your slot count. Make sure your available slots match the throughput you're aiming for.
+</Warning>
+
+## When do you actually need more concurrency?
+
+<CardGroup cols={3}>
+  <Card title="Outbound campaigns" icon="bullhorn">
+    More slots mean the campaign finishes faster. With 4 slots, you're running 4 calls simultaneously. With 12, you're moving 3× as fast through the same list.
+  </Card>
+
+  <Card title="Inbound peaks" icon="phone-incoming">
+    Flash sales, product launches, or appointment reminder blasts can spike inbound volume. More slots mean fewer callers hit a busy signal at the same time.
+  </Card>
+
+  <Card title="Time-sensitive outreach" icon="clock">
+    Missed appointment follow-ups, fraud alerts, and delivery confirmations all have a short window to land. More concurrency means more of those calls reach people on time.
+  </Card>
+</CardGroup>
+
+## Concurrency vs. credits
+
+These are two separate things, and they don't overlap.
+
+|  | What it is | When you're charged |
+| --- | --- | --- |
+| **Concurrency** | Capacity: How many calls can run at once | Part of your subscription (\$5/slot/month for extras) |
+| **Credits** | Consumption: What you spend when a call actually happens | Pay-as-you-go, billed per call |
+
+Adding more concurrent slots doesn't change how many credits a call uses. It just lets more calls happen at the same time.
+
+## Example: planning a campaign
+
+Say you have a list of 1,000 leads and you want the campaign done in under 2 hours. Assume each call lasts roughly 90 seconds on average (connected \+ no-answer combined).
+
+| Concurrent slots | Calls per hour (approx.) | Time to complete 1,000 leads |
+| --- | --- | --- |
+| 4 | ~160 | ~6 hours |
+| 10 | ~400 | ~2.5 hours |
+| 20 | ~800 | ~1.25 hours |
+
+Add the slots you need before the campaign, run it, then remove them. You're only charged for the time the extra slots were active.
+
+You can also monitor active slots in real time on the dashboard. The **Live** badge at the top of the overview updates as calls come in and go out.
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Can I test with more concurrency before committing?">
+    Yes. Add extra slots, run a campaign, and remove them within the same billing cycle. The add-on is prorated, so you only pay for the days the extra slots were active — not a full month.
+  </Accordion>
+
+  <Accordion title="What happens if I remove slots while a campaign is running?">
+    Running calls finish normally. The new slot count only applies to calls that start after the change. You won't drop any calls mid-conversation.
+  </Accordion>
+
+  <Accordion title="Is there a maximum number of slots I can add?">
+    The Free plan allows up to 10 slots total (2 base \+ 8 add-on). Pro and Pro\+ plans can go higher — contact [support@tryorato.com](mailto:support@tryorato.com) if you need more than 50 concurrent slots, as high-volume deployments may require a custom configuration.
+  </Accordion>
+
+  <Accordion title="Do concurrent slots apply to both inbound and outbound calls?">
+    Yes. Slots are shared across both call directions. If you have 4 slots and 3 are occupied by inbound calls, your outbound dialer only has 1 slot available at that moment.
+  </Accordion>
+
+  <Accordion title="What's the difference between call rate and concurrent slots?">
+    **Call rate** (set per campaign, 2–3 calls/minute) controls how quickly the dialer starts new calls. **Concurrent slots** control how many calls can be live at the same time. Both limits apply — whichever is more restrictive wins. For example, 3 calls/minute with only 2 slots means you'll never actually reach 3/minute unless calls are very short.
+  </Accordion>
+
+  <Accordion title="Why is the call rate capped at 3 calls per minute?">
+    Telephony is billed on request rate (RPS — requests per second). Staying within 2–3 calls/minute keeps usage predictable and ensures compliance with carrier policies. If you need higher throughput, contact support to discuss your use case.
+  </Accordion>
+</AccordionGroup>

@@ -1,110 +1,126 @@
 ---
 title: "Call Pricing"
 icon: "phone"
-description: "Credits are pay-as-you-go and cover actual call usage. Here's exactly what drives them."
+description: "Credits are pay-as-you-go. You're charged only for what actually happened on a call, nothing bundled, nothing wasted."
 ---
 
-## How call costs are calculated
+## How much does Orato cost per call?
 
-Every call's credit consumption comes from what actually happened on that call. There are three components, and they're all metered independently:
-
-**Voice AI**: The speech processing that drives the conversation. This includes transcribing what the caller says, generating a response, and synthesizing that response back into speech.
-
-**Telephony**: The cost of connecting the call over the phone network. This varies by the country you're calling and the direction of the call (inbound vs. outbound).
-
-**Platform fee**: A flat per-minute charge on top of your provider costs, covering the Orato infrastructure that coordinates everything.
-
-You only pay for what they actually consumed. If a call drops in 10 seconds, you're charged for 10 seconds, not a full minute.
+Orato uses transparent, usage-based pricing. Every call's total cost is the sum of five components across three parts, Voice AI, telephony, and a platform fee. There are no bundled minutes and no expiry.
 
 ---
 
-## The three Voice AI components
+## What drives a call's cost?
 
-Voice AI breaks into three sub-components, each billed by a different unit.
+**Part A - Voice AI (STT \+ LLM \+ TTS)**
 
-### Speech-to-Text (STT)
+<CardGroup cols={3}>
+  <Card title="Transcriber (STT)" icon="ear-listen">
+    Translates the caller's words into text so the AI can comprehend them.
 
-The transcriber converts the caller's speech into text so the AI can understand it. Billed by call duration, rounded to the second.
+    Billed by **call duration**, rounded to the second.
+  </Card>
 
-Your choice of STT provider and model affects this cost. Orato supports multiple providers — lighter models cost less.
+  <Card title="Language Model (LLM)" icon="brain">
+    Reads the transcription, reasons about it, and writes the next response.
 
-### Language Model (LLM)
+    Billed by **tokens**, words, and punctuation pieces read and written.
+  </Card>
 
-The LLM processes the transcribed text and generates a response. Billed by tokens — the number of words and punctuation pieces it reads and writes.
+  <Card title="Voice Synthesis (TTS)" icon="volume-high">
+    Converts the AI's text response back into spoken audio that the caller hears.
 
-Longer conversations, more complex prompts, and larger context windows all drive token usage up. A concise, well-structured prompt is the single biggest lever you have on LLM cost.
+    Billed by **characters synthesized**.
+  </Card>
+</CardGroup>
 
-### Text-to-Speech (TTS)
+**Part B & C — Telephony and Platform**
 
-The TTS engine converts the AI's text response back into spoken audio. Billed by the number of characters synthesized.
+<CardGroup cols={2}>
+  <Card title="Telephony" icon="tower-cell">
+    The cost of connecting the call over the phone network. Varies by country and direction (inbound vs. outbound).
 
-Provider and voice selection both affect this rate. Neural voices tend to cost more than standard ones.
+    Billed by **call duration**, rounded to the minute.
+  </Card>
+
+  <Card title="Orato platform fee" icon="bolt">
+    A flat per-minute fee on top of your provider costs. Covers the infrastructure that coordinates everything in real time.
+
+    Billed by **call duration**.
+  </Card>
+</CardGroup>
+
+<Info>
+  You only pay for what actually happened. A 12-second call is billed for 12 seconds of STT and TTS, not a full minute.
+</Info>
 
 ---
 
-## Telephony costs
+## Where to see your call costs
 
-Telephony is billed by call duration, rounded to the nearest minute. The rate depends on:
-
-- **Direction** — inbound calls (people calling your number) and outbound calls (Orato dialing out) are priced differently
-- **Country** — local calls within the same country cost less than cross-border calls
-
-You can see estimated telephony rates for your target countries in your dashboard before launching a campaign.
-
----
-
-## Viewing your call costs
-
-After every conversation, open **Call History** and select any call to see a full credit breakdown — exactly how many credits each component consumed. This makes it straightforward to spot which component is driving cost and tune accordingly.
+After every call, open **Call History** and click into any conversation. You'll see a full credit breakdown, each component listed separately so you know exactly what drove the cost.
 
 <Tip>
-  If you notice LLM costs running high, the first thing to check is your system prompt length. Redundant instructions add tokens to every single call.
+  LLM costs running higher than expected? The first thing to check is your system prompt length. Every word is re-read at the start of every call. A shorter, tighter prompt is the single biggest lever on LLM spend.
 </Tip>
 
 ---
 
-## Reducing your per-call cost
+## How to reduce your per-call cost
 
-A few practical levers:
-
-**Choose lighter models where quality allows.** A smaller, faster LLM is often sufficient for structured tasks like appointment booking or FAQ handling. Reserve heavier models for complex conversations.
-
-**Keep prompts tight.** Every word in your system prompt is re-read on every call. Trim anything that doesn't directly shape behaviour.
-
-**Use the Knowledge Base.** Putting facts in the Knowledge Base lets the AI retrieve them on demand instead of keeping them in the main prompt — often reducing token usage significantly.
-
-**Test before you launch.** Pro\+ includes free voice and audio testing so you can hear how your assistant sounds and catch prompt issues before spending credits on live calls.
+<Steps>
+  <Step title="Choose lighter models where quality allows">
+    A smaller, faster LLM is often sufficient for structured tasks, appointment booking, FAQ handling, and lead qualification. Reserve heavier models for conversations that genuinely need them.
+  </Step>
+  <Step title="Keep your system prompt tight">
+    Every word in your prompt adds tokens to every call. Cut anything that doesn't directly shape the assistant's behavior. Use the [Prompting Guide](/getting-started/prompting-guide) to learn what actually needs to be in there.
+  </Step>
+  <Step title="Move facts to the Knowledge Base">
+    Product details, FAQs, pricing tables, anything static belongs in the Knowledge Base, not the prompt. The AI retrieves it on demand instead of carrying it through every call, which meaningfully reduces token usage.
+  </Step>
+  <Step title="Test before you go live">
+    Pro\+ includes free voice and audio testing in a sandbox environment. Catch prompt issues and voice mismatches before spending credits on real calls.
+  </Step>
+</Steps>
 
 ---
 
 ## Credits vs. subscription
 
-Credits are always separate from your subscription.
+Your **plan** (Free, Pro, Pro\+) unlocks features and capacity, seats, concurrency, analytics, and data retention. **Credits** are separate and cover actual call usage.
 
-Your plan (Free, Pro, Pro\+) determines your features and capacity. Credits cover usage — what actually happened on calls. Buying more credits doesn't change your plan, and upgrading your plan doesn't give you a credit balance.
+<CardGroup cols={2}>
+  <Card title="Subscription" icon="credit-card">
+    Unlocks features and raises capacity limits. Does **not** include a credit balance or bundled minutes.
+  </Card>
 
-<Info>
-  Credits never expire on any plan. See [Pricing Overview](/pricing/overview) for plan details and subscription pricing.
-</Info>
+  <Card title="Credits" icon="coins">
+    Pay-as-you-go. Charged per call based on the five components above. **Never expire** on any plan.
+  </Card>
+</CardGroup>
+
+<Note>
+  Upgrading your plan does not add credits, and buying credits does not change your plan. They're always separate. See [Pricing Overview](/pricing/overview) for plan details.
+</Note>
 
 ---
 
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="Pricing Overview" icon="credit-card" href="/pricing/overview">
-    Compare Free, Pro, and Pro\+ plan features side by side
+  <Card title="Pricing Overview" icon="layer-group" href="/pricing/overview">
+    Compare Free, Pro, and Pro\+ features side by side
   </Card>
 
-  <Card title="Call History" icon="clock" href="/calls/call-history">
-    View credit consumption breakdowns for past calls
+  <Card title="Concurrent Calls" icon="phone-volume" href="/pricing/concurrent">
+    Understand how call slots and campaign throughput work
   </Card>
 
-  <Card title="Knowledge Base" icon="book" href="/knowledge-base">
-    Reduce LLM token usage by moving facts out of your prompt
+  <Card title="Call History" icon="clock-rotate-left" href="/calls/call-history">
+    View per-call credit breakdowns after conversations
   </Card>
 
-  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
-    Configure your assistant's voice, model, and prompt
+  <Card title="Prompting Guide" icon="pen-to-square" href="/getting-started/prompting-guide">
+    Write tighter prompts and reduce your LLM cost
   </Card>
 </CardGroup>
