@@ -68,6 +68,13 @@
             ]
           },
           {
+            "group": "Pricing",
+            "pages": [
+              "pricing/overview",
+              "pricing/call-pricing"
+            ]
+          },
+          {
             "group": "Developer",
             "pages": [
               "developer/api-keys",
