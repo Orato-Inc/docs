@@ -1,3 +1,50 @@
 ---
-title: "API Reference"
+title: "Developer overview"
+description: "Everything you need to build with Orato: API keys, authentication, and the embeddable website widget."
+icon: "code"
 ---
+
+Orato gives developers two building blocks today:
+
+<CardGroup cols={2}>
+  <Card title="API keys" icon="key" href="/developer/api-keys">
+    Public keys for the widget and secret keys for server-side access.
+  </Card>
+  <Card title="Widget integration" icon="window-maximize" href="/developer/widget-integration">
+    Add a voice and chat assistant to any website with one script tag.
+  </Card>
+</CardGroup>
+
+## Authentication
+
+Orato uses two kinds of keys. Create them in **Developer → API Keys**.
+
+| Key | Prefix | Where to use it |
+| --- | --- | --- |
+| Public | `pk_live_` | In the browser, with the website widget. Restricted to whitelisted domains. |
+| Secret | `sk_live_` | On your server only. Grants full access to your account. |
+
+<Warning>
+  Treat secret keys like passwords. Never put them in frontend code, mobile apps, or public repositories.
+</Warning>
+
+## Widget quick start
+
+```html
+<script
+  src="https://app.tryorato.com/widget.js"
+  data-key="pk_live_YOUR_PUBLIC_KEY"
+  data-assistant="YOUR_ASSISTANT_ID"
+  defer
+></script>
+```
+
+See [Widget integration](/developer/widget-integration) for programmatic setup and troubleshooting.
+
+## REST API
+
+A public REST API reference for managing assistants, leads, campaigns, and calls programmatically is coming soon. If you need server-side access now, contact [support@tryorato.com](mailto:support@tryorato.com).
+
+## No-code integrations
+
+Prefer not to write code? Connect ticketing, calendar, messaging, and notification tools from the [Integrations](/integrations/overview) page.

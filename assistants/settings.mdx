@@ -1,0 +1,78 @@
+---
+title: "Settings"
+description: "Set your assistant's role, phone number, AI model, response temperature, who speaks first, and how easily callers can interrupt."
+icon: "sliders"
+---
+
+The **Settings** tab decides where your assistant is deployed and how it thinks.
+
+<Frame>
+  ![Settings tab](/images/app/assistant-settings.png)
+</Frame>
+
+## Role
+
+| Role | Description |
+| --- | --- |
+| **Outbound** (Call my leads) | Dials your contact list and qualifies leads |
+| **Inbound** (Answer incoming calls) | Picks up calls from customers automatically |
+| **Web Widget** (Embed on my website) | Visitors start a voice call or chat from your site. Currently in beta. |
+
+The field below the role changes with your choice:
+
+- **Outbound caller ID**: the number your outbound calls come from.
+- **Inbound phone number**: the number this assistant answers.
+- **Web Widget**: no number needed. A **Branding** tab appears instead. See [Branding](/assistants/branding).
+
+<Info>
+  A number is needed before you run campaigns or receive inbound calls. You can test in the browser without one. Buy numbers on the [Phone numbers](/phone-numbers) page.
+</Info>
+
+## AI Brain
+
+The language model that thinks and talks for your assistant.
+
+| Provider | Models |
+| --- | --- |
+| **Anthropic** | Claude Haiku 4.5 (default), Claude Sonnet 4.6, Claude Opus 4.7 |
+| **Groq** | GPT-OSS 120B |
+| **OpenAI** | GPT-4o, GPT-4.1, GPT-4o Mini (marked Premium) |
+| **Sarvam AI** | Sarvam 105B |
+| **Google** | Gemini 2.5 Flash-Lite, Gemini 2.5 Flash, Gemini 3.5 Flash-Lite, Gemini 3.5 Flash |
+
+See [Providers](/providers) for guidance on choosing.
+
+### Response temperature
+
+A slider from **Focused** to **Creative**. The default is **0.7**.
+
+- Lower values make answers more consistent and predictable. Good for scripted flows, compliance-heavy calls, and surveys.
+- Higher values make answers more varied. Good for open, friendly sales conversations.
+
+## How sessions start
+
+### Who speaks first?
+
+| Option | When to use |
+| --- | --- |
+| **Agent speaks first** | Outbound calls, where the assistant should open with the first message |
+| **Agent waits for user** | Inbound calls and the website widget, so the agent doesn't talk over a visitor who greets at the same time |
+
+### Interruption sensitivity
+
+| Option | Behavior |
+| --- | --- |
+| **Sensitive** | Easiest to interrupt |
+| **Default** | Ignores very short sounds |
+| **Strict** | Only real words stop the agent. Use it for noisy environments. |
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Advanced" icon="gear" href="/assistants/advanced">
+    Call limits, transfers, recording, and knowledge.
+  </Card>
+  <Card title="Phone numbers" icon="hashtag" href="/phone-numbers">
+    Buy a number for caller ID or inbound calls.
+  </Card>
+</CardGroup>

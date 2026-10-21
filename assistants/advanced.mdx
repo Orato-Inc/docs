@@ -1,0 +1,90 @@
+---
+title: "Advanced"
+description: "Override the transcriber, set call limits and end call phrases, enable recording, transfer callers to a human, raise support tickets, and attach knowledge documents."
+icon: "gear"
+---
+
+The **Advanced** tab holds call controls and the actions your assistant can take during a conversation. Every field is optional.
+
+<Frame>
+  ![Advanced tab](/images/app/assistant-advanced.png)
+</Frame>
+
+## Transcriber
+
+Orato picks the speech-to-text model automatically from your [languages](/assistants/voice-and-language#languages). The default for English is **Flux English (Recommended)**.
+
+Override it only if you need a specific model. Click **Change**, then choose:
+
+| Provider | Models |
+| --- | --- |
+| **Deepgram** | Flux English (Recommended), Flux Multilingual |
+| **Sarvam AI** | Saaras v4 Realtime, Saaras v3 |
+
+Click **Reset to recommended** to go back to automatic selection.
+
+<Tip>
+  Use **Sarvam AI** for Hindi and Indian regional languages, and **Flux Multilingual** when callers mix languages.
+</Tip>
+
+## Call limits
+
+| Field | Default | What it does |
+| --- | --- | --- |
+| **Max Duration (s)** | 300 | Longest a single call can last, in seconds |
+| **Silence Timeout (s)** | 30 | How long the assistant waits in silence before ending the call |
+| **Response Delay (s)** | 0.0 | Extra pause before the assistant replies |
+
+<Note>
+  Raise **Max Duration** for support or consultation calls that run longer than five minutes. Keep it lower for quick qualification calls to control cost.
+</Note>
+
+## End call phrases
+
+The assistant hangs up if the caller says one of these phrases. Type a phrase and press **Enter** to add it, for example `bye`, `not interested`, or `don't call me again`.
+
+## Enable recording
+
+On by default. Turn it off if you don't want calls recorded.
+
+<Warning>
+  Recording rules differ by country. Make sure you inform callers and follow the laws that apply to you.
+</Warning>
+
+## Transfer to Human
+
+Enter a phone number in E.164 format, such as `+14155552671`. When the caller asks for a human, the assistant bridges the call to this number.
+
+Add a line to your instructions so the hand-off sounds natural:
+
+```text
+If the caller asks for a person or you cannot help after two tries,
+say "Let me connect you with someone from our team" and transfer the call.
+```
+
+<Warning>
+  Make sure the transfer number is staffed during calling hours. A transfer to an unanswered line is a poor experience for the caller.
+</Warning>
+
+## Ticketing integration
+
+When a caller reports an issue, the assistant raises a ticket in the tool you select here, such as Zoho Desk or Zendesk. Connect the tool on the [Integrations](/integrations/ticketing) page first; until then the field shows **No integrations connected yet**.
+
+## Knowledge documents
+
+Choose documents from your [knowledge base](/knowledge-base) for this assistant to search during calls and widget chats. Only documents with a ready status appear. Upload files or import websites under **Knowledge Base** first.
+
+<Tip>
+  You can also refer to tools and variables in your instructions with the `@` shortcut on the [Prompt](/assistants/prompt#instructions) tab.
+</Tip>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Knowledge base" icon="book" href="/knowledge-base">
+    Upload the documents your assistant needs.
+  </Card>
+  <Card title="Integrations" icon="plug" href="/integrations/overview">
+    Connect ticketing and other tools.
+  </Card>
+</CardGroup>

@@ -1,0 +1,47 @@
+---
+title: "Multilingual assistants"
+description: "Serve callers in Hindi, Indian English, and regional languages like Tamil, Telugu, Marathi, Gujarati, and Bengali."
+icon: "language"
+---
+
+Orato is built for multilingual markets like India. An assistant can start in one language and follow the caller if they switch.
+
+## Supported languages
+
+Choose the **Primary language** on the [Voice](/assistants/voice-and-language#languages) tab. Options include English (US), English (India), Hindi, Tamil, Telugu, Marathi, Gujarati, and Bengali.
+
+## Set up a multilingual assistant
+
+<Steps>
+  <Step title="Pick the primary language">
+    On the **Voice** tab, set **Primary language** to the language most callers use, for example **Hindi**.
+  </Step>
+  <Step title="Turn on auto switch">
+    Turn on **Auto switch language** so the assistant follows callers who change language mid-call.
+  </Step>
+  <Step title="Choose a matching voice">
+    Pick a voice that speaks the language naturally. **Sarvam** (Bulbul v3) is designed for Indian languages; Cartesia also offers Indian voices. Click **Preview** to check.
+  </Step>
+  <Step title="Translate the instructions">
+    On the **Prompt** tab, click **Translate prompt**. Orato rewrites your instructions in the native script with a natural spoken tone, keeps placeholders like `{customer_name}` intact, and preserves your sections.
+  </Step>
+  <Step title="Check the transcriber">
+    Orato picks a transcriber from your languages. To force one, open **Advanced → Transcriber → Change** and choose **Sarvam AI** (Saaras v4 Realtime) for Indian languages or **Deepgram Flux Multilingual** for mixed-language calls.
+  </Step>
+  <Step title="Consider the AI model">
+    Most models handle Hindi well. **Sarvam 105B** is built for Indian languages and is worth testing for regional-language calls.
+  </Step>
+</Steps>
+
+## Tips for natural Indian-language calls
+
+- Write instructions the way people actually speak on calls. Modern terms like "profile", "calendar", or "EMI" can stay in English or be transliterated.
+- Tell the assistant how to handle Hinglish, for example `If the caller mixes Hindi and English, reply the same way.`
+- Keep numbers simple. Ask the assistant to say amounts in lakhs and crores if that's what callers expect.
+- Test with native speakers before launching a campaign.
+
+## Next steps
+
+<Card title="Tutorial: build a Hindi assistant" icon="graduation-cap" href="/tutorials/hindi-assistant">
+  A step-by-step example for a Hindi-speaking outbound assistant.
+</Card>

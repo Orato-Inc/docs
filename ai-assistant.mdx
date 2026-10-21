@@ -1,176 +1,79 @@
 ---
 title: "AI Assistants"
-description: "Build and configure AI voice assistants for phone calls and web widgets. Choose your LLM, voice, and write instructions that match your business goals."
-icon: "head-side-virus"
+description: "Create and manage the voice agents that run your campaigns, answer inbound calls, and talk to visitors on your website."
+icon: "robot"
 ---
 
-## What are AI Assistants?
-
-AI Assistants are the core of Orato. Each assistant is a fully configured voice AI that can make phone calls, receive inbound calls, or be embedded as a voice widget on your website. You configure an assistant once and it handles unlimited simultaneous conversations.
-
-Every assistant shows an estimated **cost per minute** - typically **~**$0.08 -$**0.09/min** - covering Transcriber, LLM, Voice, Telephony, and Platform costs.
+An AI Assistant is a voice agent configured for one job: qualifying leads, answering support calls, booking appointments, or helping website visitors. You set it up once, and it handles every conversation the same way.
 
 <Frame>
-  ![AI Assistant](/images/AI-Assistant.png)
+  ![AI Assistants page](/images/app/assistants.png)
 </Frame>
 
----
+## The Assistants page
 
-## Creating an AI Assistant
+Go to **AI Assistants** in the sidebar. The page shows:
 
-From the **AI Assistants** page, click **\+ Create Assistant**. The creation flow has three steps.
+- **Your assistants**: every assistant in your workspace. Use the search box to find one by name or ID.
+- **Agent templates**: ready-made starting points for common use cases. See [Assistant templates](/assistant-templates).
 
----
+## Create an assistant
 
-### Step 1 - Setup: Name & Instructions
+Click **+ Create Assistant**, or click a template to start with its prompt pre-filled. The editor has these tabs:
+
+<CardGroup cols={2}>
+  <Card title="Prompt" icon="file-lines" href="/assistants/prompt">
+    Agent name, first message, and instructions. Generate a prompt, import from your website, or translate it.
+  </Card>
+  <Card title="Voice" icon="microphone" href="/assistants/voice-and-language">
+    Voice provider, model, voice, speed, primary language, and automatic language switching.
+  </Card>
+  <Card title="Settings" icon="sliders" href="/assistants/settings">
+    Role, caller ID or inbound number, AI model, temperature, who speaks first, and interruption sensitivity.
+  </Card>
+  <Card title="Branding" icon="palette" href="/assistants/branding">
+    Colors, logo, and copy for the website widget. Shown only for Web Widget assistants.
+  </Card>
+  <Card title="Advanced" icon="gear" href="/assistants/advanced">
+    Transcriber, call limits, end call phrases, recording, transfer to a human, ticketing, and knowledge documents.
+  </Card>
+</CardGroup>
+
+When you're done, click **Create Assistant**. Click **Cancel** to leave without saving.
+
+## Live cost estimate
+
+The top of the editor shows the estimated cost per minute in USD and INR, split into **Transcriber**, **LLM**, **Voice**, and **Platform**. It updates as you change providers and models.
 
 <Frame>
-  ![Create Assistant](/images/Create-Assistant.png)
+  ![Voice tab with live per-minute cost estimate](/images/app/assistant-voice.png)
 </Frame>
 
-<Steps>
-  <Step title="Enter a name and select a role">
-    Give your assistant a name (this is what callers may hear) and choose a **Role**:
+## Roles at a glance
 
-    - **Web Widget** - embeds on your website as a floating voice button
-    - **Phone** - used for inbound or outbound phone calls
-  </Step>
-  <Step title="Use the AI Instruction Generator">
-    Fill in two fields to auto-generate your instructions:
+| Role | Use it to | You'll need |
+| --- | --- | --- |
+| **Outbound** | Call leads from campaigns or the **Make call** button | An **Outbound caller ID** (a number you own) |
+| **Inbound** | Answer calls to your business number | An **Inbound phone number** |
+| **Web Widget** (beta) | Talk or chat with website visitors | A public API key and the widget script |
 
-    1. _"What does your business do?"_ - e.g. `We sell CRM software for real estate agents`
-    2. _"Call goal?"_ - e.g. `Qualify leads and book product demos`
+You can test any assistant in the browser before you connect a number.
 
-    Click **Generate Instructions**:  Orato writes a structured prompt for you instantly.
+## Test your assistant
 
-    <Tip>
-      The generator creates a professional format with `# IDENTITY`, `# CRITICAL RULE: VOICE-FIRST RESPONSES`, and your custom context. Edit any section directly in the text area.
-    </Tip>
-  </Step>
-  <Step title="Review and refine the instructions">
-    The generated prompt enforces voice-first rules automatically:
-
-    ```text
-    # IDENTITY
-    You are [Name], an AI Voice Assistant for [Company].
-    You're warm, professional, and concise.
-    
-    # CRITICAL RULE: VOICE-FIRST RESPONSES
-    Every response must be 1-2 sentences maximum.
-    Never use bullet points, asterisks, or emojis.
-    Sound like a confident, helpful human.
-    ```
-
-    <Warning>
-      Keep responses short. Voice replies over 2–3 sentences sound unnatural on a real phone call.
-    </Warning>
-  </Step>
-</Steps>
-
----
-
-### Step 2 - Personality: Voice & Messages
-
-<Frame>
-  ![Name Assistant](/images/Name-Assistant.png)
-</Frame>
-
-<Steps>
-  <Step title="Choose your AI Brain (LLM)">
-    Select the language model that powers your assistant's responses:
-
-    <Tabs>
-      <Tab title="Anthropic">
-        Claude models: nuanced, high-quality responses. Best for complex conversations that need careful reasoning.
-      </Tab>
-      <Tab title="Groq">
-        Llama 3.3 70B and others: ultra-fast inference. **Best for low-latency phone calls** where speed matters most.
-      </Tab>
-      <Tab title="OpenAI">
-        GPT-4 models: balanced speed and intelligence. Good all-round choice.
-      </Tab>
-    </Tabs>
-  </Step>
-  <Step title="Choose your Voice">
-    Select how your assistant sounds on every call:
-
-    <Tabs>
-      <Tab title="Cartesia">
-        sonic-2 and other models: low latency, natural voices. **Recommended for most use cases.** Click **Preview** to hear before selecting.
-      </Tab>
-      <Tab title="ElevenLabs">
-        Highly natural, wide voice selection. Best when voice quality is the top priority.
-      </Tab>
-      <Tab title="Sarvam">
-        Specialised for Indian languages: Hindi, Hinglish, and Indian English accents. Best for India-based businesses.
-      </Tab>
-    </Tabs>
-  </Step>
-  <Step title="Set Opening and Closing Messages">
-    | Setting | Description |
-    | --- | --- |
-    | **Opening:  I'll write it** | Write a specific greeting, e.g. _"Hi, this is Arya from Orato, how can I help?"_ |
-    | **Opening: AI generates it** | Orato crafts a natural opening based on caller name and context |
-    | **Session End Message** | Spoken when the conversation closes, e.g. _"Thanks for your time"_ |
-  </Step>
-</Steps>
-
----
-
-### Step 3 - Review: Confirm & Launch
-
-<Frame>
-  ![Review Assistant](/images/Review-Assistant.png)
-</Frame>
-
-Review your complete configuration before saving:
-
-| Field | What to check |
-| --- | --- |
-| **Name & Role** | Correct name and deployment type |
-| **Voice** | Right voice for your target audience |
-| **AI Model** | Correct LLM provider and model |
-| **Opening** | Written or AI Generated |
-| **Closing** | Session end message is set |
-| **Knowledge Base** | Attach documents if your assistant needs to answer specific questions |
-
-Click **Update Assistant** to save. Your assistant is active immediately.
+Use **Talk** in the assistant editor to have a live voice conversation in your browser. Talk uses the voice and speed you selected on the **Voice** tab. After testing, review the transcript in [Conversations](/conversations) and refine the prompt.
 
 <Tip>
-  Click **Talk** (top right of the Edit page) to test your assistant live in the browser before deploying to real calls.
+  Test the hard cases, not only the happy path: a caller who is busy, one who asks for a human, one who asks about pricing, and one who switches language.
 </Tip>
-
----
-
-## Managing your assistants
-
-The AI Assistants page shows live stats across all your assistants:
-
-| Stat | Meaning |
-| --- | --- |
-| **Total** | All assistants in your account |
-| **Active** | Currently active and taking conversations |
-| **Outbound** | Configured for outbound calling campaigns |
-| **Inbound** | Configured to receive incoming calls |
-
----
 
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="Knowledge Base" icon="database" href="/knowledge-base">
-    Upload documents your assistant can reference during calls
+  <Card title="Write the prompt" icon="file-lines" href="/assistants/prompt">
+    Start with the most important tab.
   </Card>
-
-  <Card title="Campaigns" icon="bullhorn" href="/campaigns">
-    Use your assistant in an outbound calling campaign
-  </Card>
-
-  <Card title="Phone Numbers" icon="phone" href="/phone-numbers">
-    Buy a number to use your assistant for inbound calls
-  </Card>
-
-  <Card title="Developer" icon="code" href="/developer/api-keys">
-    Embed your assistant on your website via the Web Widget
+  <Card title="Prompting guide" icon="pen-nib" href="/prompting-guide">
+    Best practices for voice instructions.
   </Card>
 </CardGroup>

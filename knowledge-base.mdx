@@ -1,150 +1,74 @@
 ---
-title: "Knowledge Base"
+title: "Knowledge base"
+description: "Upload documents or import websites so your assistants can answer questions accurately during calls and widget chats."
 icon: "book"
 ---
 
-## Overview
-
-The **Knowledge Base** is a library of documents your AI Assistants can search and reference during live conversations. When a caller asks a question your assistant can't answer from its instructions alone, it looks up the relevant information in your uploaded documents and uses it in its response.
+The knowledge base holds the information your assistants look up during conversations: product details, pricing, FAQs, policies, and scripts. Add content once, then attach it to any assistant.
 
 <Frame>
-  ![Knowledge Base](/images/Knowledge-Base.png)
+  ![Knowledge base page](/images/app/knowledge-base.png)
 </Frame>
 
----
+## Limits
 
-## Supported file types
+| Limit | Value |
+| --- | --- |
+| File types | PDF, TXT, DOCX |
+| Max file size | 2 MB per file |
+| File uploads | 10 files per workspace |
+| Organization storage | 5 MB total, across files and website pages |
 
-<CardGroup cols={3}>
-  <Card title="PDF" icon="file-pdf">
-    Product docs, brochures, pricing sheets, compliance policies **up to 10MB**
-  </Card>
+Imported website pages count toward organization storage but **never** use file upload slots.
 
-  <Card title="TXT" icon="file-lines">
-    Plain text FAQs, scripts, call guides, response templates **up to 10MB**
-  </Card>
-
-  <Card title="DOCX" icon="file-word">
-    Word documents, SOPs, training material, company policies **up to 10MB**
-  </Card>
-</CardGroup>
-
-<Note>
-  The maximum file size is **10MB per document**. If your file is larger, split it into smaller, focused sections before uploading.
-</Note>
-
----
-
-## Uploading a document
+## Upload documents
 
 <Steps>
-  <Step title="Go to Knowledge Base">
-    Click **Knowledge Base** in the left sidebar.
+  <Step title="Open Knowledge Base">
+    Click **Knowledge Base** in the sidebar.
   </Step>
-  <Step title="Upload your file">
-    Either:
-
-    - **Drag and drop** your file onto the upload area
-    - **Click** the upload area to open a file picker and select your file
-
-    Supported formats: PDF, TXT, DOCX  up to 10MB.
+  <Step title="Upload">
+    Drag files onto the upload area, or click it to browse.
   </Step>
   <Step title="Wait for processing">
-    After uploading, Orato processes your document, extracting and indexing its content. The status changes from `Processing` to `Ready`.
-
-    <Info>
-      Processing takes a few seconds to a minute, depending on file size. Your assistant can only use documents with a **Ready** status.
-    </Info>
-  </Step>
-  <Step title="Attach to your assistant.">
-    Go to **AI Assistants → Edit Assistant → Step 3 (Review)** and attach your document in the **Knowledge Base** section at the bottom.
-
-    Only documents attached to a specific assistant are used during that assistant's conversations.
+    Each file appears under **Documents** with its type, size, token count, and status. A document can be attached to assistants once it's ready.
   </Step>
 </Steps>
 
----
+## Import a website
 
-## Knowledge Base stats
+<Steps>
+  <Step title="Click Import website">
+    Enter your site URL, for example `https://example.com`.
 
-| Stat | What it means |
-| --- | --- |
-| **Total Documents** | All files uploaded to your Knowledge Base |
-| **Ready Documents** | Files fully processed and available to attach to assistants |
-| **Total Tokens** | The combined size of all documents in AI tokens reflects how much context is available. |
-
-<Tip>
-  Tokens reflect how much of your document the AI can hold in context at once. Focused, shorter documents work better than large, generic ones — the AI finds relevant sections faster.
-</Tip>
-
----
-
-## Document table
-
-Each uploaded file shows:
-
-| Column | Description |
-| --- | --- |
-| **Name** | Filename of the document |
-| **Type** | PDF, TXT, or DOCX |
-| **Size** | File size in KB or MB |
-| **Tokens** | Number of AI tokens this document uses |
-| **Status** | `Processing` or `Ready` |
-| **Uploaded** | Date the file was added |
-| **Actions** | Delete the document |
-
----
-
-## What to upload
-
-<AccordionGroup>
-  <Accordion title="Product or service information">
-    Features, specifications, how things work, what's included in each plan. Your assistant can answer product questions accurately instead of making things up.
-  </Accordion>
-
-  <Accordion title="Pricing documents">
-    Pricing sheets, package comparisons, discount structures. Your assistant quotes accurate prices on sales calls.
-  </Accordion>
-
-  <Accordion title="FAQs">
-    Your most common customer questions and their answers. Upload as a TXT or DOCX with clear question/answer structure.
-  </Accordion>
-
-  <Accordion title="Policies and procedures">
-    Return policies, SLAs, onboarding processes, compliance requirements — anything that needs to be answered accurately and consistently.
-  </Accordion>
-
-  <Accordion title="Call scripts and talk tracks">
-    Proven sales scripts, objection-handling guides, or closing frameworks. Your assistant uses them as reference to stay on message during calls.
-  </Accordion>
-</AccordionGroup>
-
----
-
-## Best practices
+    <Frame>
+      ![Import website dialog](/images/app/knowledge-base-import.png)
+    </Frame>
+  </Step>
+  <Step title="Find pages">
+    Click **Find pages**. Orato lists the best pages from the site.
+  </Step>
+  <Step title="Pick pages">
+    Select the pages to add. They're crawled and indexed into your knowledge base.
+  </Step>
+</Steps>
 
 <Tip>
-  **Keep documents focused.** A 2-page product FAQ works better than a 50-page company handbook. The more targeted the content, the more accurately your assistant retrieves the right information.
+  You can also import a website directly from an assistant's **Prompt** tab with **Import from website**. Orato adds the pages to the knowledge base and helps you confirm business facts for the prompt.
 </Tip>
 
-<Tip>
-  **Use clear headings.** Documents with section headings (H1, H2) are easier for the AI to navigate. Use headings like _"Pricing"_, _"Refund Policy"_, _"How it works"_.
-</Tip>
+## Attach knowledge to an assistant
+
+Open the assistant, go to the **Advanced** tab, and select documents under **Knowledge documents**. Ready documents are searched on calls and in widget chats.
+
+## Write documents that work well
+
+- **One topic per document.** Separate pricing, FAQs, and policies so search finds the right one.
+- **Use plain language.** Write facts the way you'd say them on a call.
+- **Use question-and-answer format** for FAQs.
+- **Keep it current.** Replace outdated files so the assistant never quotes old prices.
+- **Remove noise.** Strip headers, footers, and boilerplate that waste storage.
 
 <Warning>
-  **Never upload sensitive personal data.** The Knowledge Base is for business and product context only. Do not upload files containing customer PII, passwords, internal financial data, or confidential personal information.
+  Your assistant can only be as accurate as its documents. Tell it in **Guardrails** not to guess when the answer isn't in its knowledge.
 </Warning>
-
----
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
-    Attach your document to an assistant in the Review step
-  </Card>
-
-  <Card title="Campaigns" icon="bullhorn" href="/campaigns">
-    Launch a campaign with your knowledge-enabled assistant
-  </Card>
-</CardGroup>

@@ -1,0 +1,111 @@
+---
+title: "Prompt"
+description: "Set your assistant's name, first message, and instructions. Generate a prompt with AI, structure it into sections, import facts from your website, and translate it."
+icon: "file-lines"
+---
+
+The **Prompt** tab defines who your assistant is and how it behaves on every conversation.
+
+<Frame>
+  ![Prompt tab](/images/app/assistant-prompt.png)
+</Frame>
+
+## Agent name
+
+The name your assistant uses, for example `Priya` or `Sales Bot`. Callers may hear it, so pick something that fits your brand.
+
+## First message
+
+What the assistant says when the conversation starts. It's optional: leave it blank and the assistant opens based on its instructions.
+
+Use `{{customer_name}}` (double braces) to insert the lead's name:
+
+```text
+Hi {{customer_name}}, this is Priya calling from Acme Realty. Do you have two minutes?
+```
+
+<Note>
+  The first message is spoken only if the agent speaks first. You can change this under **Who speaks first?** on the [Settings](/assistants/settings#how-sessions-start) tab.
+</Note>
+
+## Generate & refine
+
+Let Orato write the instructions for you.
+
+<Steps>
+  <Step title="Choose a conversation style">
+    | Style | Best for | How it behaves |
+    | --- | --- | --- |
+    | **Follow my steps** | Surveys and confirmations | Asks steps in a fixed order |
+    | **Chat naturally** | Sales and enquiries | Answers anything and covers topics in any order |
+  </Step>
+  <Step title="Describe your agent">
+    Write a short description in the box, for example:
+
+    ```text
+    Outbound assistant for a Mumbai real estate agency. Qualify leads on budget,
+    location, and timeline, then offer a site visit.
+    ```
+  </Step>
+  <Step title="Click Generate">
+    Orato writes structured instructions into the **Instructions** field.
+  </Step>
+  <Step title="Refine">
+    Once a prompt exists, the box changes to **Add follow-ups or refinements**. Type a change, such as `Ask for their email before ending the call`, and click **Update**. Click **View full prompt** to see the complete result.
+  </Step>
+</Steps>
+
+## Import from website
+
+Click **Import from website** and enter your site URL. Orato imports the pages into your [knowledge base](/knowledge-base), then lets you confirm the business facts to use in the prompt. This is the fastest way to give a new assistant accurate details about your company.
+
+## Instructions
+
+The main prompt. Write it yourself, generate it, or start from a [template](/assistant-templates).
+
+Two shortcuts make writing faster:
+
+| Shortcut | What it does |
+| --- | --- |
+| `/` at the start of a line | Inserts a section heading |
+| `@` | Inserts the `{{customer_name}}` variable or a tool name |
+
+<Frame>
+  ![Section menu opened with the slash shortcut](/images/app/assistant-sections.png)
+</Frame>
+
+### Sections
+
+| Section | Use it for |
+| --- | --- |
+| **Identity** | Who the agent is and who they represent |
+| **Objective** | What the call should achieve |
+| **Speaking style** | Tone and turn length for voice |
+| **Guardrails** | Hard rules the agent must follow |
+| **Steps** | The call flow |
+| **Error handling** | What to do when the caller is confused, silent, or off topic |
+| **Context** | Background the agent should know |
+
+See the [Prompting guide](/prompting-guide) for what to put in each section.
+
+## Translate prompt
+
+Click **Translate prompt** at the bottom of the editor to translate your instructions into the language your callers use. Voice and speech recognition work best when the instructions match the call language.
+
+- **Hindi** output uses Devanagari script with natural spoken phrasing. Common call terms stay familiar, either transliterated (for example प्रोफाइल, कैलेंडर) or in English where people say them that way.
+- **Regional languages** follow the same approach: native script, spoken tone, and loanwords only where callers actually use them.
+- Placeholders such as `{customer_name}`, `{date}`, and `{time}` are never translated.
+- Your section structure (headings, numbered rules, examples) is kept exactly.
+
+See [Multilingual assistants](/multilingual) for more.
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Voice and language" icon="microphone" href="/assistants/voice-and-language">
+    Choose how your assistant sounds.
+  </Card>
+  <Card title="Prompting guide" icon="pen-nib" href="/prompting-guide">
+    Write instructions that work on real calls.
+  </Card>
+</CardGroup>

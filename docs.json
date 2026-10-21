@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "sequoia",
-  "name": "Orato Starter Kit",
+  "name": "Orato",
   "colors": {
     "primary": "#C4622D",
     "light": "#C4622D",
@@ -11,9 +11,9 @@
     "tabs": [
       {
         "tab": "Documentation",
-        "pages": [
+        "groups": [
           {
-            "group": "Getting Started",
+            "group": "Getting started",
             "pages": [
               "home",
               "introduction",
@@ -22,43 +22,56 @@
             ]
           },
           {
-            "group": "Using Orato",
+            "group": "Build assistants",
             "pages": [
               "ai-assistant",
-              "calls",
-              "leads",
-              "campaigns",
-              "conversations",
-              "meetings",
+              "assistants/prompt",
+              "assistants/voice-and-language",
+              "assistants/settings",
+              "assistants/advanced",
+              "assistants/branding",
+              "assistant-templates"
+            ]
+          },
+          {
+            "group": "Inventory",
+            "pages": [
               "knowledge-base",
               "phone-numbers"
             ]
           },
           {
-            "group": "Phone Calls with Orato",
+            "group": "Deploy",
             "pages": [
+              "leads",
+              "campaigns",
               "calls/outbound",
-              "calls/inbound",
-              "calls/batch-calling",
-              "calls/call-history"
+              "calls/inbound"
             ]
           },
           {
-            "group": "Developer",
+            "group": "Monitor",
             "pages": [
-              "developer/api-keys",
-              "developer/widget-integration"
+              "dashboard",
+              "calls",
+              "conversations",
+              "meetings"
             ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
+          },
           {
-            "group": "Overview",
+            "group": "Manage account",
             "pages": [
-              "api-reference/introduction"
+              "account/settings",
+              "account/team-and-roles",
+              "account/billing"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "prompting-guide",
+              "providers",
+              "multilingual"
             ]
           }
         ]
@@ -67,9 +80,25 @@
         "tab": "Integrations",
         "groups": [
           {
-            "group": "Orato Integrations",
+            "group": "Integrations",
             "pages": [
-              "integrations/overview"
+              "integrations/overview",
+              "integrations/ticketing",
+              "integrations/google-calendar",
+              "integrations/messaging-and-notifications"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Developer",
+        "groups": [
+          {
+            "group": "Developer",
+            "pages": [
+              "api-reference/introduction",
+              "developer/api-keys",
+              "developer/widget-integration"
             ]
           }
         ]
@@ -78,9 +107,13 @@
         "tab": "Tutorials",
         "groups": [
           {
-            "group": "Guides",
+            "group": "Tutorials",
             "pages": [
-              "tutorials/overview"
+              "tutorials/overview",
+              "tutorials/lead-qualification-campaign",
+              "tutorials/inbound-receptionist",
+              "tutorials/website-voice-assistant",
+              "tutorials/hindi-assistant"
             ]
           }
         ]
@@ -129,5 +162,31 @@
     "family": "Inter",
     "weight": 200
   },
-  "favicon": "/images/orato-logo-app-icon-512.png"
+  "favicon": "/images/orato-logo-app-icon-512.png",
+  "redirects": [
+    {
+      "source": "/calls/batch-calling",
+      "destination": "/campaigns"
+    },
+    {
+      "source": "/calls/call-history",
+      "destination": "/calls"
+    },
+    {
+      "source": "/function-calls/introduction",
+      "destination": "/assistants/advanced"
+    },
+    {
+      "source": "/function-calls/transfer-calls",
+      "destination": "/assistants/advanced"
+    },
+    {
+      "source": "/function-calls/:slug*",
+      "destination": "/assistants/advanced"
+    },
+    {
+      "source": "/multilingual/:slug*",
+      "destination": "/multilingual"
+    }
+  ]
 }

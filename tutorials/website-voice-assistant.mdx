@@ -1,0 +1,54 @@
+---
+title: "Add a voice assistant to your website"
+description: "Build a Web Widget assistant, brand it to match your site, and install it with one script tag."
+icon: "globe"
+---
+
+In this tutorial you'll add an assistant to your website that visitors can talk to or chat with. No phone number needed.
+
+<Steps>
+  <Step title="Create the assistant from a template">
+    Go to **AI Assistants** and click **Website Voice Assistant**. Give it an **Agent name**, then click **Import from website** on the **Prompt** tab and enter your site URL. Orato imports your pages into the knowledge base and helps you confirm business facts for the prompt.
+  </Step>
+  <Step title="Set the role">
+    On the **Settings** tab, set **Role** to **Web Widget**. Set **Who speaks first?** to **Agent waits for user** so the assistant doesn't talk over a visitor's greeting.
+  </Step>
+  <Step title="Brand the widget">
+    Open the **Branding** tab and use the live preview:
+
+    - Set **Brand** and **Launcher** colors to match your site.
+    - Choose a **Launcher shape** (Circle or Pill) and **Corner on the page**.
+    - Upload your **Logo** (PNG, JPG, or WebP up to 1 MB).
+    - Edit the start screen **Headline**, for example `How can {name} help?`
+    - Add your **Privacy Policy URL** and **Terms URL**.
+
+    <Frame>
+      ![Branding tab](/images/app/assistant-branding.png)
+    </Frame>
+
+    Click **Create Assistant** and note the assistant ID.
+  </Step>
+  <Step title="Create a public key">
+    Go to **Developer → API Keys → Create API Key**, choose **Public Key**, name it `Website`, add your domain (for example `example.com`), and click **Generate API Key**. Copy the key; you'll see it only once.
+  </Step>
+  <Step title="Install the script">
+    Paste this before `</body>` on every page where the widget should appear:
+
+    ```html
+    <script
+      src="https://app.tryorato.com/widget.js"
+      data-key="pk_live_YOUR_PUBLIC_KEY"
+      data-assistant="YOUR_ASSISTANT_ID"
+      defer
+    ></script>
+    ```
+  </Step>
+  <Step title="Try it">
+    Reload your site, click the launcher, and choose **Start a call** or **Send a message**.
+  </Step>
+  <Step title="Review">
+    Widget conversations appear on **Conversations**, counted under **Voice** and **Chat**.
+  </Step>
+</Steps>
+
+Having trouble? See [Widget troubleshooting](/developer/widget-integration#troubleshooting).
