@@ -1,0 +1,62 @@
+---
+title: "API keys"
+description: "Create public keys for the website widget and secret keys for server-side access, and keep them secure."
+icon: "key"
+---
+
+Manage keys in **Developer → API Keys**.
+
+<Frame>
+  ![API Keys tab](/images/app/developer-api-keys.png)
+</Frame>
+
+## Key types
+
+| Type | Prefix | Use for | Restrictions |
+| --- | --- | --- | --- |
+| **Public key** | `pk_live_` | Frontend and the website widget | Works only on the domains you whitelist |
+| **Secret key** | `sk_live_` | Backend and server use | Full API access. Never expose it in a browser or app. |
+
+## Create a key
+
+<Steps>
+  <Step title="Click Create API Key">
+    In **Developer → API Keys**, click **+ Create API Key**.
+
+    <Frame>
+      ![Create New API Key dialog](/images/app/developer-create-key.png)
+    </Frame>
+  </Step>
+  <Step title="Choose the key type">
+    Select **Public Key** or **Secret Key**.
+  </Step>
+  <Step title="Name it">
+    Enter a **Key Name** that describes its use, for example `Marketing website` or `CRM sync`.
+  </Step>
+  <Step title="Add allowed websites (public keys)">
+    Enter each domain where the widget will run, for example `example.com`, and click **Add**. At least one domain is required, or the widget won't load.
+  </Step>
+  <Step title="Generate and copy">
+    Click **Generate API Key** and copy the key right away.
+  </Step>
+</Steps>
+
+<Warning>
+  You can see the full key only once. Store it in a password manager or secrets vault. If you lose it, create a new key.
+</Warning>
+
+## Manage keys
+
+The table lists each key's **Name**, **Key preview**, **Allowed domains**, **Usage**, and **Created** date, with actions to manage it.
+
+## Security best practices
+
+- Never commit keys to version control or share them in chat or email.
+- Use public keys only in browsers. Use secret keys only on servers.
+- Whitelist only the domains you control, including staging if you test there.
+- Create separate keys per site or service, so you can revoke one without affecting others.
+- Revoke keys you no longer use.
+
+<Note>
+  Only workspace Owners and Admins can manage API keys. See [Team and roles](/account/team-and-roles).
+</Note>

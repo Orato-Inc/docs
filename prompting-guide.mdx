@@ -1,192 +1,129 @@
 ---
-title: "Prompting Guide"
-description: "How to write instructions that make your AI Assistant perform well on every call. Good prompts make the difference between an assistant that converts and one that confuses."
+title: "Prompting guide"
+description: "Write instructions that make your assistant sound natural, stay on task, and convert on real phone calls."
+icon: "pen-nib"
 ---
 
-## Why instructions matter
+Your assistant is only as good as its instructions. A clear, specific prompt produces an assistant that sounds trained for the job. A vague one produces a vague assistant.
 
-Your AI Assistant is only as good as the instructions you give it. The LLM is powerful, but it needs direction, who it is, what the call is about, how to handle specific situations. A vague prompt produces a vague assistant. A clear, specific prompt produces one that sounds like it was trained for the job.
+<Tip>
+  Short on time? Use **Generate** on the [Prompt](/assistants/prompt) tab or start from a [template](/assistant-templates), then refine with this guide.
+</Tip>
 
-This guide covers how to write instructions that actually work.
+## Use sections
 
----
-
-## The basic structure
-
-Every good instruction prompt has three parts:
+Type `/` at the start of a line in **Instructions** to insert a section. A good prompt usually has these:
 
 <Steps>
-  <Step title="Identity: who the assistant is">
-    Tell the assistant its name, company, and role. Keep it short.
+  <Step title="Identity">
+    Who the agent is and who they represent.
 
     ```text
-        # IDENTITY
-            You are Arya, a sales assistant for Orato. 
-                You help businesses discover how AI calling can grow their revenue.
-                    You're warm, confident, and get to the point.
+    # Identity
+    You are Priya, a calling assistant for Acme Realty, a property consultancy in Mumbai.
     ```
   </Step>
-  <Step title="Voice rules: how to speak">
-    This is the most important section for calls. Without it, your assistant will sound like a chatbot.
+  <Step title="Objective">
+    What a successful call looks like.
 
     ```text
-        # CRITICAL RULE: VOICE-FIRST RESPONSES
-            Every response must be 1-2 sentences maximum.
-                You are speaking out loud — never use bullet points, 
-                    asterisks, emojis, or any formatting.
-                        Sound like a confident, helpful human.
+    # Objective
+    Qualify leads who showed interest in buying a home. If they are serious,
+    book a site visit or a callback with a human agent.
     ```
   </Step>
-  <Step title="Goal: what to do on the call">
-    Tell the assistant exactly what it's trying to achieve, what questions to ask, and how to end the call.
+  <Step title="Speaking style">
+    The most important section for voice. Without it, assistants sound like chatbots.
 
     ```text
-        # YOUR GOAL
-            Your job is to qualify leads for the sales team.
-                Ask: company size, current challenge, and budget range.
-                    If they're a good fit, offer to book a demo.
-                        If they're not interested, thank them and end the call politely.
+    # Speaking style
+    Speak in clear, warm Indian English. Keep every reply to one or two short sentences.
+    Never use lists, symbols, or emojis. Ask one question at a time.
     ```
+  </Step>
+  <Step title="Steps">
+    The call flow.
+
+    ```text
+    # Steps
+    1. Confirm they are still looking for property.
+    2. Ask whether they want to buy or rent, and the property type.
+    3. Ask for preferred locations and budget.
+    4. Ask about timeline.
+    5. If serious, offer a site visit. If not, thank them and end the call.
+    ```
+  </Step>
+  <Step title="Guardrails">
+    Hard rules.
+
+    ```text
+    # Guardrails
+    Never quote exact prices unless they are in your knowledge.
+    Never invent project names, RERA numbers, or offers.
+    If the caller asks not to be called again, apologize and end the call.
+    ```
+  </Step>
+  <Step title="Error handling">
+    What to do when things go off script.
+
+    ```text
+    # Error handling
+    If you did not understand, ask the caller to repeat once.
+    If the caller is silent, ask "Are you still there?" once.
+    If the caller goes off topic, answer briefly and return to the next step.
+    ```
+  </Step>
+  <Step title="Context">
+    Background facts: company details, offers, office hours, FAQs. For long material, use the [knowledge base](/knowledge-base) instead.
   </Step>
 </Steps>
 
----
-
-## Rules for writing good prompts
+## Rules that make a difference
 
 <AccordionGroup>
-  <Accordion title="Keep responses short, always">
-    The number one mistake is writing instructions that produce long responses. On a phone call, anything longer than two sentences sounds like a monologue. The caller will either interrupt or hang up.
+  <Accordion title="Keep replies short">
+    On a call, anything longer than two sentences sounds like a monologue. Callers interrupt or hang up.
 
-    **Bad:**
+    **Avoid:** "Explain all features, pricing tiers, and integrations."
 
+    **Better:** "Give a one-sentence summary of what we do, then ask what they need."
+  </Accordion>
+  <Accordion title="Define success precisely">
+    **Vague:** "Qualify the lead."
+
+    **Specific:** "A lead is qualified if they plan to buy within 3 months and their budget is above ₹80 lakh."
+  </Accordion>
+  <Accordion title="Say what not to do">
+    Explicit limits are as important as goals: no competitor talk, no promises you can't keep, no pushing a busy caller.
+  </Accordion>
+  <Accordion title="Script the top objections">
     ```text
-        Provide a comprehensive overview of all the features 
-            and benefits of our product, including pricing tiers, 
-                integrations, and support options.
-    ```
-
-    **Good:**
-
-    ```text
-        Give a one-sentence summary of what we do, 
-            then ask what they're looking for.
+    If they say they're busy: apologize and ask for a better time to call back.
+    If they say "just send me an email": confirm their email, then ask one qualifying question.
+    If they say they already have a solution: ask what they like about it before continuing.
     ```
   </Accordion>
-
-  <Accordion title="Be specific about the goal">
-    Don't say "qualify the lead." Say exactly what qualifies them.
-
-    **Vague:**
-
-    ```text
-        Qualify the lead and see if they're a good fit.
-    ```
-
-    **Specific:**
-
-    ```text
-        A lead is qualified if: they have a team of 5+ salespeople, 
-            they're currently spending time on manual outbound calls, 
-                and they have a budget above ₹30,000/month.
-    ```
+  <Accordion title="Use variables">
+    Insert `{{customer_name}}` with the `@` shortcut so every call feels personal.
   </Accordion>
-
-  <Accordion title="Tell it what NOT to do">
-    Explicitly stating what to avoid is just as important as telling it what to do.
-
-    ```text
-        Never discuss competitor pricing.
-            Never promise features that aren't confirmed.
-                Never keep talking if the caller says they're busy — 
-                    offer to call back instead.
-    ```
+  <Accordion title="Plan the hand-off">
+    If you set a [Transfer to Human](/assistants/advanced#transfer-to-human) number, tell the assistant exactly when to use it and what to say first.
   </Accordion>
-
-  <Accordion title="Handle the most common objections">
-    Think about the top 3 things callers say that derail a call, and write a response for each.
-
-    ```text
-        If they say "I'm busy right now":
-            Apologise, ask for a better time, and offer to schedule a callback.
-    
-                If they say "We already use a similar tool":
-                    Ask what they use and what they like about it before continuing.
-    
-                        If they say "Just send me an email":
-                            Agree, confirm their email address, and still try to get one 
-                                qualifying question answered before ending the call.
-    ```
-  </Accordion>
-
-  <Accordion title="Write a clear ending">
-    Tell your assistant exactly how and when to wrap up the call.
-
-    ```text
-        # ENDING THE CALL
-            Once you have answers to all three qualifying questions, 
-                summarise what you heard in one sentence and offer 
-                    to connect them with the team. 
-                        Always thank them before hanging up.
-    ```
+  <Accordion title="Match the language">
+    If callers speak Hindi or a regional language, translate the instructions with **Translate prompt**. See [Multilingual assistants](/multilingual).
   </Accordion>
 </AccordionGroup>
 
----
+## Test and iterate
 
-## Use the AI Instruction Generator
-
-Don't start from scratch, let Orato write the first draft.
-
-In **AI Assistants → Setup**, fill in:
-
-- What your business does
-- What the call's goal is
-
-Click **Generate Instructions** and you'll get a structured prompt that already follows all these rules. Edit it from there.
-
-<Tip>
-  The AI Instruction Generator produces a solid starting point in seconds. Most prompts only need minor edits — adjust the tone, add your specific qualifying criteria, and you're done.
-</Tip>
-
----
-
-## Quick checklist before you go live
-
-<Check>
-  Identity is defined: name, company, role
-</Check>
-
-<Check>
-  Voice rules are included ?: 1-2 sentences max, no formatting
-</Check>
-
-<Check>
-  Goal is specific: not "qualify the lead" but exactly what qualifies them
-</Check>
-
-<Check>
-  Top 3 objections are handled
-</Check>
-
-<Check>
-  A clear ending is defined
-</Check>
-
-<Check>
-  Tested using the Talk button: listened to how it sounds out loud
-</Check>
-
----
-
-## Where to go next
-
-<CardGroup cols={2}>
-  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
-    Create your assistant and paste in your prompt
-  </Card>
-
-  <Card title="Assistant Templates" icon="layout-template" href="/assistant-templates">
-    Start from a pre-built template instead of writing from scratch
-  </Card>
-</CardGroup>
+<Steps>
+  <Step title="Talk to it">
+    Use **Talk** to run realistic test calls, including difficult callers.
+  </Step>
+  <Step title="Review conversations">
+    Open [Conversations](/conversations) and read where the assistant went wrong.
+  </Step>
+  <Step title="Refine one thing at a time">
+    Use **Generate & refine** or edit the section directly, then test again.
+  </Step>
+</Steps>

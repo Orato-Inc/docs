@@ -1,133 +1,83 @@
 ---
 title: "Providers"
-description: "Every AI provider Orato supports , LLMs, voice engines, and transcribers. Understand the differences so you can pick the right combination for your use case."
+description: "The AI models, voice engines, and transcribers available in Orato, and how to choose the right combination."
+icon: "layer-group"
 ---
 
-## Overview
-
-Orato gives you the flexibility to choose your own AI providers. Every assistant has three components you can configure, the transcriber (ears), the LLM (brain), and the voice engine (mouth). Picking the right combination affects how fast your assistant responds, how natural it sounds, and how well it handles complex conversations.
-
----
-
-## LLM Providers
-
-The LLM is the brain of your assistant. It reads what the caller says and decides what to say back.
-
-<Tabs>
-  <Tab title="Groq">
-    **Best for: Phone calls where speed matters most**
-
-    Groq runs Llama 3.3 70B with ultra-low inference latency typically under 200ms. This makes responses feel instant and conversations feel natural.
-
-    | Model | Speed | Quality | Best for |
-    | --- | --- | --- | --- |
-    | Llama 3.3 70B | ⚡ Fastest | Very good | Outbound campaigns, lead qualification |
-
-    <Tip>
-      If you're running high-volume outbound campaigns and need sub-second responses, Groq is the right choice.
-    </Tip>
-  </Tab>
-  <Tab title="Anthropic">
-    **Best for: Complex conversations that need nuance**
-
-    Anthropic's Claude models are known for thoughtful, well-reasoned responses. They handle ambiguous situations and multi-turn conversations better than faster models.
-
-    | Model | Speed | Quality | Best for |
-    | --- | --- | --- | --- |
-    | Claude 3.5 Sonnet | Fast | Excellent | Support, complex sales, sensitive topics |
-    | Claude 3 Haiku | Fastest | Good | Simple FAQ handling |
-
-    <Tip>
-      Use Anthropic when your callers might ask unpredictable questions or when the conversation requires careful, nuanced handling — like medical, legal, or financial topics.
-    </Tip>
-  </Tab>
-  <Tab title="OpenAI">
-    **Best for: General-purpose use cases**
-
-    OpenAI's GPT models are well-rounded. They perform reliably across most scenarios and are a solid default choice if you're not sure which LLM to pick.
-
-    | Model | Speed | Quality | Best for |
-    | --- | --- | --- | --- |
-    | GPT-4o | Fast | Excellent | Most use cases |
-    | GPT-4o Mini | Fastest | Good | Simple, high-volume calls |
-  </Tab>
-</Tabs>
-
----
-
-## Voice Providers
-
-The voice engine converts your assistant's text responses into speech. This is what the caller actually hears.
-
-<Tabs>
-  <Tab title="Cartesia">
-    **Best for: Most use cases — recommended default**
-
-    Cartesia's sonic-2 model delivers natural-sounding speech with very low latency. It's the best balance of quality and speed for phone calls.
-
-    | Model | Latency | Languages | Highlight |
-    | --- | --- | --- | --- |
-    | sonic-2 | Very low | English, multilingual | Best latency for calls |
-
-    Example voices: _Arushi - Hinglish Speaker_, and more.
-
-    <Tip>
-      Click **Preview** next to any voice in the AI Assistants setup to hear it before choosing.
-    </Tip>
-  </Tab>
-  <Tab title="ElevenLabs">
-    **Best for: When voice quality is the top priority**
-
-    ElevenLabs produces some of the most natural-sounding voices available. Great for businesses where the brand experience matters, premium services, high-ticket sales, executive communications.
-
-    | Model | Latency | Languages | Highlight |
-    | --- | --- | --- | --- |
-    | Multilingual v2 | Low | 29 languages | Most natural sound quality |
-  </Tab>
-  <Tab title="Sarvam">
-    **Best for: Indian audiences — Hindi, Hinglish, Indian English**
-
-    Sarvam is built specifically for Indian languages and accents. If your callers speak Hindi, Hinglish, or Indian English, Sarvam voices will sound far more natural than any other provider.
-
-    | Model | Languages | Highlight |
-    | --- | --- | --- |
-    | Sarvam TTS | Hindi, Hinglish, Indian English | Best for Indian market |
-
-    See [Indian Language Setup](/multilingual/indian-languages) for a full setup guide.
-  </Tab>
-</Tabs>
-
----
-
-## Transcriber (ASR)
-
-The transcriber converts the caller's voice into text so the LLM can read it. Orato manages transcription automatically, you don't need to configure a transcriber separately. The platform selects the best option based on your voice provider and language settings.
+Every assistant combines three providers: a **transcriber** (ears), an **AI model** (brain), and a **voice engine** (mouth). The combination affects how fast the assistant responds, how natural it sounds, which languages it handles, and what it costs per minute.
 
 <Note>
-  If you're using Sarvam for Indian language voices, Orato automatically uses an ASR model optimised for Hindi and Hinglish. No additional setup needed.
+  Model lists reflect the dashboard at the time of writing. The assistant editor always shows what's currently available, along with a live cost estimate.
 </Note>
 
----
+## AI models
 
-## Choosing the right combination
+Set on the [Settings](/assistants/settings#ai-brain) tab.
 
-| Use case | LLM | Voice | Why |
+<Tabs>
+  <Tab title="Anthropic">
+    | Model | Notes |
+    | --- | --- |
+    | **Claude Haiku 4.5** | Default. Fast and affordable, strong at following instructions. |
+    | **Claude Sonnet 4.6** | More capable reasoning for complex sales and support |
+    | **Claude Opus 4.7** | Most capable, for demanding or sensitive conversations |
+  </Tab>
+  <Tab title="Groq">
+    | Model | Notes |
+    | --- | --- |
+    | **GPT-OSS 120B** | Open-weight model on Groq's fast inference, with a very low LLM cost per minute |
+  </Tab>
+  <Tab title="OpenAI">
+    | Model | Notes |
+    | --- | --- |
+    | **GPT-4o** | Premium. Well-rounded quality. |
+    | **GPT-4.1** | Premium. Strong instruction following. |
+    | **GPT-4o Mini** | Premium. Lighter and faster. |
+  </Tab>
+  <Tab title="Sarvam AI">
+    | Model | Notes |
+    | --- | --- |
+    | **Sarvam 105B** | Built for Indian languages |
+  </Tab>
+  <Tab title="Google">
+    | Model | Notes |
+    | --- | --- |
+    | **Gemini 2.5 Flash-Lite** | Lightweight and fast |
+    | **Gemini 2.5 Flash** | Balanced speed and quality |
+    | **Gemini 3.5 Flash-Lite** | Newer lightweight model |
+    | **Gemini 3.5 Flash** | Newer balanced model |
+  </Tab>
+</Tabs>
+
+## Voice engines
+
+Set on the [Voice](/assistants/voice-and-language) tab.
+
+| Provider | Example models | Speed range | Strengths |
 | --- | --- | --- | --- |
-| High-volume outbound calls | Groq | Cartesia sonic-2 | Fastest end-to-end latency |
-| Premium inbound support | Anthropic Claude | ElevenLabs | Best quality conversations |
-| Indian market calling | Groq | Sarvam | Native language \+ low latency |
-| General website widget | OpenAI GPT-4o | Cartesia | Reliable, natural |
+| **Cartesia** | Sonic 3 | 0.6x to 1.5x | Natural, low-latency voices, including Indian voices. Default. |
+| **ElevenLabs** | Turbo v2.5, Flash 2.5 | 0.7x to 1.2x | Very expressive voices |
+| **Sarvam** | Bulbul v3 | 0.5x to 2x | Hindi and Indian regional languages |
+| **Smallest AI** | Lightning v3.1 Pro | 0.5x to 2x | Lowest voice cost per minute |
 
----
+## Transcribers
 
-## Where to go next
+Picked automatically from your languages. Override on the [Advanced](/assistants/advanced#transcriber) tab.
 
-<CardGroup cols={2}>
-  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
-    Configure your assistant with your chosen providers
-  </Card>
+| Provider | Models | Use for |
+| --- | --- | --- |
+| **Deepgram** | Flux English (Recommended), Flux Multilingual | English, or callers who mix languages |
+| **Sarvam AI** | Saaras v4 Realtime, Saaras v3 | Hindi and Indian regional languages |
 
-  <Card title="Indian Language Setup" icon="globe" href="/multilingual/indian-languages">
-    Set up Hindi and Hinglish voice assistants using Sarvam
-  </Card>
-</CardGroup>
+## Recommended combinations
+
+| Use case | AI model | Voice | Transcriber |
+| --- | --- | --- | --- |
+| English sales or support (US or India) | Claude Haiku 4.5 | Cartesia Sonic 3 | Automatic |
+| Complex, high-value conversations | Claude Sonnet 4.6 | ElevenLabs | Automatic |
+| Hindi or regional-language calls | Sarvam 105B or Claude Haiku 4.5 | Sarvam Bulbul v3 | Sarvam AI |
+| High-volume, cost-sensitive campaigns | GPT-OSS 120B (Groq) or Gemini Flash-Lite | Smallest AI | Automatic |
+
+<Tip>
+  Always test a new combination with **Talk** before a campaign. Latency and voice quality are easier to judge by ear than on paper.
+</Tip>

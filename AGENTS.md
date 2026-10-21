@@ -1,4 +1,3 @@
-> **First-time setup**: Customize this file for your project. Prompt the user to customize this file for their project.
 > For Mintlify product knowledge (components, configuration, writing standards),
 > install the Mintlify skill: `npx skills add https://mintlify.com/docs`
 
@@ -14,12 +13,16 @@
 
 ## Terminology
 
-{/* Add product-specific terms and preferred usage */}
-{/* Example: Use "workspace" not "project", "member" not "user" */}
+- "AI Assistant" (or "assistant") for a voice agent. Roles: Outbound, Inbound, Web Widget.
+- "Lead batch" for a group of leads; "campaign" for outbound calling across a batch.
+- "Workspace" for an organization account; "member" for a teammate.
+- "Wallet" for the prepaid USD balance.
+- Match dashboard labels exactly in bold, e.g. **Create Assistant**, **Make call**.
 
 ## Style preferences
 
-{/* Add any project-specific style rules below */}
+- Do not use em dashes.
+- Screenshots live in `images/app/`. Blur account details (name, avatar, balance) and real phone numbers before committing.
 
 - Use active voice and second person ("you")
 - Keep sentences concise — one idea per sentence
@@ -29,5 +32,4 @@
 
 ## Content boundaries
 
-{/* Define what should and shouldn't be documented */}
-{/* Example: Don't document internal admin features */}
+- Document only what is visible in app.tryorato.com. Do not invent REST endpoints or webhook payloads.

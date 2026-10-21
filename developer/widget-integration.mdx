@@ -1,0 +1,91 @@
+---
+title: "Widget integration"
+description: "Add the Orato voice and chat widget to any website with one script tag, or initialize it programmatically in a single-page app."
+icon: "window-maximize"
+---
+
+The Orato widget adds a floating button to your website. Visitors can start a voice call with your assistant or send a text message.
+
+## Prerequisites
+
+<Check>An assistant with the **Web Widget** role. Style it on the [Branding](/assistants/branding) tab.</Check>
+<Check>A **public API key** (`pk_live_...`) with your website domain whitelisted. See [API keys](/developer/api-keys).</Check>
+<Check>Your **Assistant ID**.</Check>
+
+## Add the script
+
+Paste this snippet into the `<head>` or `<body>` of your HTML:
+
+```html
+<!-- Orato Voice Widget -->
+<script
+  src="https://app.tryorato.com/widget.js"
+  data-key="pk_live_YOUR_PUBLIC_KEY"
+  data-assistant="YOUR_ASSISTANT_ID"
+  defer
+></script>
+```
+
+Replace `pk_live_YOUR_PUBLIC_KEY` and `YOUR_ASSISTANT_ID` with your values.
+
+| Attribute | Description |
+| --- | --- |
+| `src` | The Orato widget script |
+| `data-key` | Your public API key |
+| `data-assistant` | The ID of the Web Widget assistant to load |
+| `defer` | Loads the script without blocking your page |
+
+## Initialize programmatically
+
+In React, Next.js, Vue, or another single-page app, you can initialize the widget with the global `Orato` object once the script has loaded:
+
+```javascript
+// Initialize manually
+if (window.Orato) {
+  window.Orato.init({
+    apiKey: 'pk_live_YOUR_PUBLIC_KEY',
+    assistantId: 'YOUR_ASSISTANT_ID'
+  });
+}
+```
+
+## Platform tips
+
+<AccordionGroup>
+  <Accordion title="WordPress">
+    Add the script with a header/footer code plugin, or in your theme's `footer.php` before `</body>`.
+  </Accordion>
+  <Accordion title="Webflow, Framer, Wix, Squarespace">
+    Paste the snippet into the site-wide custom code setting (head or footer) and publish.
+  </Accordion>
+  <Accordion title="Shopify">
+    Edit your theme code and add the snippet to `theme.liquid` before `</body>`.
+  </Accordion>
+  <Accordion title="Next.js">
+    Use the `next/script` component with `strategy="afterInteractive"` and the same `src` and `data-*` attributes, or call `window.Orato.init` in a client component.
+  </Accordion>
+</AccordionGroup>
+
+## Verify the installation
+
+Reload your site. The launcher button appears in the corner you chose on the Branding tab (bottom right by default). Click it and start a call or chat.
+
+## Troubleshooting
+
+<AccordionGroup>
+  <Accordion title="The widget doesn't appear">
+    - Check the browser console for errors.
+    - Make sure your domain is whitelisted on the public key in **Developer → API Keys**. Add `www.` and non-`www` versions if you use both.
+    - Confirm `data-key` starts with `pk_live_`. Never use a secret key in the browser.
+  </Accordion>
+  <Accordion title="The wrong assistant answers">
+    Check that `data-assistant` matches the ID of your Web Widget assistant.
+  </Accordion>
+  <Accordion title="The microphone doesn't work">
+    The visitor must allow microphone access, and your site must be served over HTTPS.
+  </Accordion>
+</AccordionGroup>
+
+<Tip>
+  The same instructions are available in the app under **Developer → Developer Docs**.
+</Tip>

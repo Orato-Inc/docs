@@ -1,99 +1,93 @@
 ---
 title: "Introduction"
-description: "Orato is an AI-powered Voice CRM platform. Build voice AI assistants that handle phone calls, qualify leads, book meetings, and automate your sales pipeline."
+description: "Orato is an AI-powered voice CRM. Build voice assistants that call leads, answer inbound calls, and talk to website visitors, then track every outcome in one place."
 icon: "archway"
 ---
 
 ## What is Orato?
 
-Orato is a **voice-based AI platform** that is designed to help businesses operate effectively using phone calls. You build AI Assistants who will use artificial intelligence technology to make calls for you.
+Orato is a voice AI platform for businesses that sell and support customers over the phone. You build **AI Assistants**: voice agents that hold natural, real-time conversations on your behalf. Each assistant can call your leads, answer your business number, or chat with visitors on your website.
 
-Through a single dashboard, you can manage leads, initiate dialing campaigns, record every call, and even track your scheduled appointments.
+Around the assistants, Orato gives you a lightweight CRM: lead batches, outbound campaigns, call logs, conversation summaries, meetings, and a live dashboard.
 
----
+<Frame caption="The Orato dashboard">
+  ![Orato dashboard](/images/app/dashboard.png)
+</Frame>
 
 ## What you can build
 
 <CardGroup cols={2}>
-  <Card title="Outbound Sales Campaigns" icon="bullhorn">
-    Upload your initial batch of contacts, hire your AI Assistant, and run the marketing campaign. The assistant will call each one of your contacts, qualify them, and record the result automatically.
+  <Card title="Outbound calling campaigns" icon="bullhorn" href="/campaigns">
+    Upload a list of leads, pick an assistant, and let it call every contact, qualify them, and log the outcome.
   </Card>
-
-  <Card title="Inbound Call Handling" icon="phone-arrow-down-left">
-    Link a phone number to your assistant. All incoming calls are received without delays, no missed calls, no waiting time, always available.
+  <Card title="Inbound call answering" icon="phone-arrow-down-left" href="/calls/inbound">
+    Connect a phone number to an inbound assistant so every call is answered, day or night.
   </Card>
-
-  <Card title="Website Voice Widget" icon="globe">
-    Install your voice chatbot onto any web page of your website. The visitors can call and talk with your assistant right away.
+  <Card title="Website voice and chat widget" icon="globe" href="/developer/widget-integration">
+    Add a branded widget to your site. Visitors can start a voice call or send a text message.
   </Card>
-
-  <Card title="Automated Meeting Booking" icon="calendar-check">
-    The AI qualifies the prospect and schedules the meeting with you during the call itself.
+  <Card title="Meeting booking and follow-up" icon="calendar-check" href="/meetings">
+    Schedule meetings with leads and keep them in sync with Google Calendar.
   </Card>
 </CardGroup>
 
----
-
 ## How a conversation works
 
-All Orato's communications – voice calls and web chats alike – go through a live three-step process:
+Every conversation, on a phone call or in the website widget, runs through a real-time pipeline:
 
 <Steps>
-  <Step title="Transcriber converts voice to text">
-    The caller speaks. Orato's uses its transcriber to turn their voice into text in real time via Automatic Speech Recognition (ASR). That’s the input for the AI.
+  <Step title="Transcriber turns speech into text">
+    The caller speaks and a speech-to-text model (Deepgram or Sarvam AI) transcribes it in real time.
   </Step>
-  <Step title="LLM generates a response">
-    The language model takes the input and produces an intelligent response within one second, based on the full context of the conversation and your written instructions. Orato is compatible with **Anthropic**, **Groq**, and **OpenAI**.
+  <Step title="The AI model decides what to say">
+    A large language model reads your instructions and the conversation so far, then writes the reply. Choose from Anthropic, Groq, OpenAI, Sarvam AI, or Google models.
   </Step>
-  <Step title="Voice engine speaks the response">
-    The response is rendered to speech and played to the caller. Orato supports **Cartesia**, **ElevenLabs**, and **Sarvam**, including Hinglish and Indian accent voices.
+  <Step title="Voice engine speaks the reply">
+    A text-to-speech engine (Cartesia, ElevenLabs, Sarvam, or Smallest AI) turns the reply into natural speech the caller hears.
   </Step>
 </Steps>
 
----
+Read [Platform concepts](/platform) for a deeper look at each stage.
 
 ## Platform overview
 
 | Section | What it does |
 | --- | --- |
-| **AI Assistants** | Create and setup your voice AI using your own LLM, Voice & Instructions |
-| **Leads** | Batch your contacts to target your campaigns |
-| **Campaigns** | Initiate outbound calling for your batches of leads |
-| **Calls** | Check real-time and historic call metrics & billing |
-| **Conversations** | View all voice & chat communications with transcripts |
-| **Meetings** | Schedule and log meetings set up through calls |
-| **Knowledge Base** | Upload PDF, TXT, DOCX docs your assistant can access |
-| **Phone Numbers** | Get your US & India phone numbers from Orato |
-| **Developer** | API keys and web widget integration |
-
----
+| **Dashboard** | Live overview of leads, calls, outcomes, assistant performance, and spend |
+| **Leads** | Organize contacts into batches you can target with campaigns |
+| **Calls** | Monitor every call with status, direction, duration, and outcome |
+| **Conversations** | Review voice and chat interactions with summaries and billing details |
+| **Phone Numbers** | Buy US and Indian numbers for caller ID and inbound calls |
+| **Campaigns** | Run outbound calling across a lead batch |
+| **Integrations** | Connect ticketing, calendar, messaging, and notification tools |
+| **Meetings** | Schedule and track client meetings |
+| **AI Assistants** | Create and configure your voice agents |
+| **Knowledge Base** | Upload documents or import websites for your assistants to reference |
+| **Developer** | Create API keys and install the website widget |
 
 ## Supported providers
 
 <CardGroup cols={3}>
-  <Card title="LLM Providers" icon="brain">
-    **Anthropic** · **Groq** · **OpenAI**
+  <Card title="AI models" icon="brain">
+    Anthropic, Groq, OpenAI, Sarvam AI, Google
   </Card>
-
-  <Card title="Voice Providers" icon="microphone">
-    **Cartesia** · **ElevenLabs** · **Sarvam**
+  <Card title="Voices" icon="microphone">
+    Cartesia, ElevenLabs, Sarvam, Smallest AI
   </Card>
-
-  <Card title="Phone Numbers" icon="phone">
-    **United States** (\+1) · **India** (\+91)
+  <Card title="Phone numbers" icon="phone">
+    United States (+1) and India (+91)
   </Card>
 </CardGroup>
 
----
+See [Providers](/providers) for the models available in each.
 
 ## Next steps
 
 <CardGroup cols={2}>
-  <Card title="Quick Start" icon="rocket" href="/quick-start">
-    Create your first assistant and make a live call in 5 minutes
+  <Card title="Quick start" icon="rocket" href="/quick-start">
+    Build your first assistant and test it in the browser.
   </Card>
-
-  <Card title="Platform Concepts" icon="lightbulb" href="/platform">
-    Understand agents, pipelines, and key terminology
+  <Card title="Platform concepts" icon="lightbulb" href="/platform">
+    Understand assistants, roles, costs, and key terms.
   </Card>
 </CardGroup>

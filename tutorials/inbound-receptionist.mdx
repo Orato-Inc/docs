@@ -1,0 +1,56 @@
+---
+title: "Answer your business line with AI"
+description: "Set up an inbound assistant that answers every call, uses your FAQs, raises tickets, and transfers to a person when needed."
+icon: "phone-arrow-down-left"
+---
+
+In this tutorial you'll build an AI receptionist for a clinic. It answers calls, handles common questions, and hands off to your front desk when needed.
+
+**You'll need:** a wallet balance and a phone number.
+
+<Steps>
+  <Step title="Buy a number">
+    Go to **Phone Numbers → Buy a number**. Buy a US number instantly, or submit **India compliance** (company legal name and GSTIN) for an Indian number. Approval takes 2 to 3 business days.
+  </Step>
+  <Step title="Add your knowledge">
+    Go to **Knowledge Base** and upload a short FAQ document (PDF, TXT, or DOCX, up to 2 MB) with opening hours, address, doctors, services, and fees. Or click **Import website** to pull in your site's pages.
+  </Step>
+  <Step title="Create the assistant">
+    Go to **AI Assistants** and click **Clinic Appointment Scheduler**.
+
+    - **Agent name**: `Asha`
+    - **First message**: `Thank you for calling Acme Clinic, this is Asha. How can I help you today?`
+    - Replace the clinic details in the instructions with your own.
+  </Step>
+  <Step title="Configure settings">
+    On the **Settings** tab:
+
+    - **Role**: Inbound
+    - **Inbound phone number**: the number you bought
+    - **Who speaks first?**: Agent speaks first, so callers hear the greeting right away
+    - **Interruption sensitivity**: Default, or **Strict** if many callers are in noisy places
+  </Step>
+  <Step title="Add a human fallback and knowledge">
+    On the **Advanced** tab:
+
+    - **Transfer to Human**: your front desk number, in E.164 format (for example `+919876543210`)
+    - **Knowledge documents**: select your FAQ
+    - **Ticketing Integration**: optional, if you've connected Zoho Desk or Zendesk
+
+    Add to the instructions:
+
+    ```text
+    If the caller has a medical emergency, tell them to call emergency services immediately.
+    If they ask for a doctor or the front desk, transfer the call.
+    Never give medical advice.
+    ```
+
+    Click **Create Assistant**.
+  </Step>
+  <Step title="Test">
+    Call your number from your phone. Ask about opening hours, book an appointment, and ask for a person to check the transfer.
+  </Step>
+  <Step title="Monitor">
+    Track **Answered by AI**, **Escalated to Human**, and **Missed** on the **Dashboard**, and read call summaries on **Conversations**.
+  </Step>
+</Steps>

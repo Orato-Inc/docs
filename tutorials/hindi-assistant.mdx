@@ -1,0 +1,46 @@
+---
+title: "Build a Hindi assistant"
+description: "Configure an assistant that speaks natural Hindi, understands Hinglish, and follows callers who switch language."
+icon: "language"
+---
+
+In this tutorial you'll build an outbound assistant that follows up on loan applications in Hindi.
+
+<Steps>
+  <Step title="Start from a template">
+    Go to **AI Assistants** and click **NBFC Loan Follow-up**. Set the **Agent name**, for example `Neha`, and replace the lender details in the instructions with your own.
+  </Step>
+  <Step title="Set the language">
+    On the **Voice** tab:
+
+    - **Primary language**: Hindi
+    - **Auto switch language**: on, so the assistant follows callers who reply in English
+  </Step>
+  <Step title="Choose a Hindi voice">
+    Select **Sarvam** (model **Bulbul v3**) and preview the voices. Pick one that sounds natural for your audience and keep the speed close to 1.0x.
+  </Step>
+  <Step title="Translate the instructions">
+    On the **Prompt** tab, click **Translate prompt**. Orato rewrites the instructions in Devanagari with a natural, spoken tone. Placeholders like `{customer_name}` and your section structure stay as they are.
+
+    Review the result, then update the **First message** in Hindi, for example:
+
+    ```text
+    नमस्ते {{customer_name}} जी, मैं नेहा बोल रही हूँ। आपके लोन आवेदन के बारे में दो मिनट बात कर सकते हैं?
+    ```
+  </Step>
+  <Step title="Check the transcriber">
+    On the **Advanced** tab, Orato picks a transcriber from your languages. To set it yourself, click **Change** and choose **Sarvam AI → Saaras v4 Realtime**.
+  </Step>
+  <Step title="Pick the AI model">
+    On the **Settings** tab, set **Role** to **Outbound** and choose a caller ID. Try **Anthropic Claude Haiku 4.5** first, then compare with **Sarvam AI → Sarvam 105B**.
+  </Step>
+  <Step title="Test with native speakers">
+    Use **Talk** and ask colleagues who speak Hindi to try it. Listen for unnatural phrasing, wrong number formats, and how it handles Hinglish.
+  </Step>
+</Steps>
+
+## Tips
+
+- Ask the assistant to say amounts the way callers expect, for example in lakhs.
+- Keep compliance language (fees, interest, consent) in **Guardrails**, and review the translated version carefully.
+- See [Multilingual assistants](/multilingual) for other Indian languages.

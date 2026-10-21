@@ -1,0 +1,85 @@
+---
+title: "Team and roles"
+description: "Invite teammates to your workspace and control what each person can do with Owner, Admin, Staff, Viewer, and custom roles."
+icon: "users-gear"
+---
+
+Go to **Settings → Team** to manage who has access to your workspace.
+
+## Invite a member
+
+<Steps>
+  <Step title="Open Members">
+    In **Settings → Team**, stay on the **Members** tab and click **Invite member**.
+  </Step>
+  <Step title="Enter details">
+    Enter the teammate's **Email** and choose a **Role**. The dialog shows what the role can and can't do.
+  </Step>
+  <Step title="Send">
+    Click **Send invitation**. You can change the role later under **Members**.
+  </Step>
+</Steps>
+
+The members table shows each person's name, email, role, and status.
+
+## Built-in roles
+
+Roles sit on a ranked ladder. A **lower rank means more authority**, and a role can only manage members ranked below it.
+
+<Tabs>
+  <Tab title="Owner (rank 0)">
+    **Sole account with full team control.** Best for the person who registered the workspace.
+
+    **Can:**
+    - Do everything an Admin can, plus manage Admins and transfer ownership
+    - Invite or remove Admins, Staff, and Viewers
+    - Change any member's role (except creating a second Owner)
+
+    **Can't:**
+    - Leave the Owner role without transferring ownership to an Admin (email OTP required)
+  </Tab>
+  <Tab title="Admin (rank 100)">
+    **Full workspace access with peer limits.** Best for trusted leads who run the workspace day to day.
+
+    **Can:**
+    - Use billing, settings, integrations, and all operational features
+    - Invite members as Admin, Staff, or Viewer
+    - Change or remove Staff and Viewer members
+
+    **Can't:**
+    - Remove or change the Owner
+    - Remove or change other Admins
+    - Promote anyone to Owner (the Owner must transfer)
+  </Tab>
+  <Tab title="Staff (rank 200)">
+    **Runs day-to-day operations.** Best for operators and agents who run campaigns and handle calls.
+
+    **Can:**
+    - Manage leads, campaigns (including start and pause), calls, assistants, meetings, and the knowledge base
+    - View phone numbers, integrations, and dashboards
+
+    **Can't:**
+    - Access billing and the wallet
+    - Invite or remove members, or edit roles
+    - Manage API keys or connect integrations
+  </Tab>
+  <Tab title="Viewer (rank 300)">
+    **View-only access.** Best for people who review data without making changes.
+
+    **Can:**
+    - View leads, campaigns, call history, and dashboards
+
+    **Can't:**
+    - Create or update records, start campaigns, place calls, or change settings
+  </Tab>
+</Tabs>
+
+Click **View full permission list** on any role in the **Roles** tab for the complete breakdown.
+
+## Custom roles
+
+The Owner can add custom roles in the gaps between built-in ranks. For example, a role at rank 150 sits between Admin and Staff. Go to **Settings → Team → Roles** and click **Create role**.
+
+## Transfer ownership
+
+Ownership moves only through **Transfer ownership**, which is confirmed with an email OTP. Transfer to an existing Admin.

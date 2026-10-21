@@ -1,0 +1,77 @@
+---
+title: "Voice and language"
+description: "Choose your assistant's voice provider, model, voice, and speaking speed, and set the languages it understands and speaks."
+icon: "microphone"
+---
+
+The **Voice** tab controls how your assistant sounds and which languages it uses.
+
+<Frame>
+  ![Voice tab](/images/app/assistant-voice.png)
+</Frame>
+
+## Voice
+
+<Steps>
+  <Step title="Pick a provider">
+    Choose **Cartesia**, **ElevenLabs**, **Sarvam**, or **Smallest AI**. The cost estimate at the top of the page updates when you switch.
+  </Step>
+  <Step title="Pick a model and voice">
+    **Model** and **Voice** are optional. If you leave them, Orato uses the provider's default.
+  </Step>
+  <Step title="Preview">
+    Click **Preview** to hear the selected voice.
+  </Step>
+  <Step title="Set the speed">
+    Drag the **Speed** slider. The preview replays automatically when you release it, and **Talk** uses the same speed.
+  </Step>
+</Steps>
+
+### Providers compared
+
+| Provider | Example models | Speed range | Good for |
+| --- | --- | --- | --- |
+| **Cartesia** | Sonic 3 | 0.6x to 1.5x | Natural, low-latency English and Indian voices. Default choice. |
+| **ElevenLabs** | Turbo v2.5, Flash 2.5 | 0.7x to 1.2x | Highly expressive voices |
+| **Sarvam** | Bulbul v3 | 0.5x to 2x | Hindi, Indian English, and Indian regional languages |
+| **Smallest AI** | Lightning v3.1 Pro | 0.5x to 2x | The lowest voice cost per minute |
+
+<Tip>
+  Match the voice to your audience. For Indian callers, try a Cartesia or Sarvam voice with an Indian accent. Keep speed between 0.9x and 1.1x for phone calls; very fast speech is hard to follow on a phone line.
+</Tip>
+
+## Languages
+
+### Primary language
+
+The language the agent starts the conversation in. Options include:
+
+- English (US)
+- English (India)
+- Hindi
+- Tamil
+- Telugu
+- Marathi
+- Gujarati
+- Bengali
+
+The primary language also guides which [transcriber](/assistants/advanced#transcriber) Orato picks for you.
+
+### Auto switch language
+
+Turn on **Auto switch language** to let the agent follow the caller. If the caller switches language mid-call, the agent switches too.
+
+<Note>
+  For the best results in a non-English language, also translate your instructions with **Translate prompt** on the [Prompt](/assistants/prompt#translate-prompt) tab and choose a voice that supports that language.
+</Note>
+
+## Next steps
+
+<CardGroup cols={2}>
+  <Card title="Settings" icon="sliders" href="/assistants/settings">
+    Choose the role and AI model.
+  </Card>
+  <Card title="Multilingual assistants" icon="language" href="/multilingual">
+    Serve callers in Hindi and regional languages.
+  </Card>
+</CardGroup>

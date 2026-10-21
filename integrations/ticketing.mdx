@@ -1,0 +1,42 @@
+---
+title: "Ticketing"
+description: "Let your assistant raise support tickets in Zoho Desk or Zendesk when a caller reports an issue."
+icon: "ticket"
+---
+
+Connect a helpdesk so that when a caller reports a problem, your assistant raises a ticket automatically. Your support team picks it up in the tool they already use.
+
+| Tool | Status |
+| --- | --- |
+| **Zoho Desk** | Available |
+| **Zendesk** | Available |
+| **Freshdesk** | Request this integration |
+
+## Set up
+
+<Steps>
+  <Step title="Connect the helpdesk">
+    Go to **Integrations**, find **Zoho Desk** or **Zendesk**, and click **Connect**. Complete the sign-in in the connection window.
+
+    For Zoho Desk, you can optionally choose your account's **Domain Extension** (the region of your Zoho account).
+  </Step>
+  <Step title="Select it on your assistant">
+    Open the assistant, go to the **Advanced** tab, and choose the tool under **Ticketing Integration**.
+  </Step>
+  <Step title="Tell the assistant when to raise a ticket">
+    Add guidance to the instructions:
+
+    ```text
+    If the caller reports a problem with an order, delivery, or payment,
+    collect their name, order number, and a short description of the issue,
+    then raise a support ticket and tell them the team will follow up.
+    ```
+  </Step>
+  <Step title="Test">
+    Use **Talk** to report a test issue and check that the ticket appears in your helpdesk.
+  </Step>
+</Steps>
+
+<Tip>
+  Pair ticketing with **Transfer to Human** on the Advanced tab: raise a ticket for routine issues, and transfer urgent ones to a person.
+</Tip>

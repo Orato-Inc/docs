@@ -1,150 +1,83 @@
 ---
 title: "Campaigns"
-description: "Launch outbound calling campaigns to your lead batches. Assign an AI Assistant, set call rate, and monitor progress in real time."
-icon: "campground"
+description: "Call every lead in a batch automatically with an outbound assistant, immediately or on a schedule, and track progress and results."
+icon: "bullhorn"
 ---
 
-## Overview
-
-A Campaign is how you put your AI Assistant to work at scale. You pick a Lead Batch, assign an assistant, and Orato calls every contact in that list automatically — logging outcomes, transcripts, and qualified leads as it goes.
+A campaign connects a lead batch to an outbound assistant and calls each lead for you.
 
 <Frame>
-  ![Orato Campaigns — list of all campaigns with status and progress](/images/campaigns.png)
+  ![Campaigns page](/images/app/campaigns.png)
 </Frame>
 
----
+## Before you start
 
-## The campaigns dashboard
+<Check>An assistant with the **Outbound** role. See [Settings](/assistants/settings#role).</Check>
+<Check>An **Outbound caller ID** set on that assistant. See [Phone numbers](/phone-numbers).</Check>
+<Check>A lead batch. See [Leads](/leads).</Check>
+<Check>Enough wallet balance. See [Billing and credits](/account/billing).</Check>
 
-Four numbers are shown at the top:
-
-<CardGroup cols={4}>
-  <Card title="Total Campaigns" icon="bullhorn">
-    Every campaign you've ever created
-  </Card>
-
-  <Card title="Active" icon="circle-play">
-    Campaigns running right now
-  </Card>
-
-  <Card title="Total Calls" icon="phone">
-    All calls made across every campaign
-  </Card>
-
-  <Card title="Qualified Leads" icon="user-check">
-    Contacts marked as qualified by your assistant
-  </Card>
-</CardGroup>
-
-### Campaign status
-
-| Status | What it means |
-| --- | --- |
-| `Running` | The campaign is actively making calls |
-| `Completed` | Every contact in the batch has been called |
-| `Cancelled` | The campaign was stopped before finishing |
-
----
-
-## Creating a campaign
-
-Click **\+ Create Campaign** in the top right of the Campaigns page.
-
-<Frame>
-  ![Create Campaign](/images/Create-Campaign-.png)
-</Frame>
+## Create a campaign
 
 <Steps>
-  <Step title="Fill in the campaign details">
-    | Field | What to enter |
-    | --- | --- |
-    | **Campaign Name** | Something clear — e.g. _"June Outreach — Property Leads"_ |
-    | **Lead Batch** | The batch of contacts you want to call |
-    | **Description** | Optional notes about what this campaign is for |
+  <Step title="Click Create campaign">
+    Go to **Campaigns** and click **+ Create campaign**.
+
+    <Frame>
+      ![Create New Campaign dialog](/images/app/campaigns-create.png)
+    </Frame>
   </Step>
-  <Step title="Choose your AI Assistant">
-    Pick which assistant handles the calls. Make sure the assistant's instructions match the type of leads you're calling.
-
-    <Tip>
-      An assistant set up for lead qualification will behave very differently from one set up for payment reminders. Use the right one for the job.
-    </Tip>
+  <Step title="Campaign details">
+    Enter a **Campaign Name**, pick the **Lead Batch**, and optionally describe the campaign's purpose and goals.
   </Step>
-  <Step title="Add lead filters (optional)">
-    If you don't want to call every contact in the batch, narrow it down:
-
-    - **Lead Status**: only call contacts with a specific status (e.g. new leads only)
-    - **Lead Score**: only call contacts above a certain score
-
-    Leave both empty to call the entire batch.
-
-    <Info>
-      As the dashboard says: _"Leave filters empty to include all leads from the batch. Add filters to target specific lead segments."_
-    </Info>
+  <Step title="Select the assistant">
+    Search for and choose the AI assistant that will make the calls.
   </Step>
-  <Step title="Set the call rate and schedule">
-    | Setting | Guidance |
-    | --- | --- |
-    | **Call Rate (calls/min)** | Keep it between **3 and 8 calls per minute**. Going higher risks triggering spam detection on carrier networks. The default is 5. |
-    | **Start Immediately** | Campaign begins the moment you click Create |
-    | **Schedule for Later** | Set a specific date and time to start |
-
-    <Warning>
-      Don't set the call rate above 8 calls per minute. It won't get you results faster — it'll just get your number flagged as spam.
-    </Warning>
+  <Step title="Set the call rate">
+    Enter the **Call rate (calls per minute)**. Orato limits outbound cadence to 1 to 2 calls per minute for cost and carrier compliance.
   </Step>
-  <Step title="Click Create Campaign">
-    That's it. If you chose Start Immediately, your assistant starts dialling straight away.
+  <Step title="Schedule">
+    Choose **Start Immediately** or **Schedule for Later** and pick a start time.
+  </Step>
+  <Step title="Create">
+    Click **Create Campaign**.
   </Step>
 </Steps>
 
----
+## Monitor campaigns
 
-## Monitoring a live campaign
+The Campaigns page shows:
 
-Click any campaign to open its detail view:
+| Stat | Meaning |
+| --- | --- |
+| **Total campaigns** | All campaigns you've created |
+| **Active** | Campaigns currently running |
+| **Total calls** | Calls placed across all campaigns |
+| **Qualified leads** | Leads marked qualified from campaign outcomes |
 
-- **Progress bar**: how many contacts have been called versus how many are left
-- **Results**: a breakdown of outcomes (connected, no answer, qualified, failed)
-- **Individual calls**: click through to read the transcript of any specific call
+Each row shows the campaign's **Status**, **Progress**, **Start Time**, **Results**, and **Created** date, with actions to manage it. Filter by status or search by name.
 
----
+Individual calls appear on the [Calls](/calls) page, and outcomes roll up to the [Dashboard](/dashboard).
 
-## Before you launch
+## Call outcomes
 
-<Check>
-  A Lead Batch exists with valid phone numbers in international format
-</Check>
+Outbound calls are grouped into these outcomes:
 
-<Check>
-  Your AI Assistant is configured and tested with the Talk button
-</Check>
+| Outcome | Meaning |
+| --- | --- |
+| **Connected** | The lead answered |
+| **No Answer** | The call wasn't picked up |
+| **Callback** | The lead asked to be called back |
+| **Not Interested** | The lead declined |
+| **Qualified** | The lead met your qualification criteria |
 
-<Check>
-  The calling hours are appropriate for your contacts' time zone
-</Check>
+<Tip>
+  Tell your assistant what "qualified" means in its instructions, for example `A lead is qualified if they plan to buy within 3 months.` Clear criteria give you cleaner outcome data.
+</Tip>
 
-<Check>
-  Your account has enough balance — check by clicking Add Fund in the top nav
-</Check>
+## Best practices
 
----
-
-## Where to go next
-
-<CardGroup cols={2}>
-  <Card title="Leads" icon="users" href="/leads">
-    Create a Lead Batch if you haven't already
-  </Card>
-
-  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
-    Configure the assistant that will make the calls
-  </Card>
-
-  <Card title="Conversations" icon="messages" href="/conversations">
-    Review call transcripts and outcomes after the campaign runs
-  </Card>
-
-  <Card title="Calls" icon="phone" href="/calls">
-    Monitor real-time activity and usage during the campaign
-  </Card>
-</CardGroup>
+- **Test first.** Run a small batch of internal numbers before calling real leads.
+- **Call at sensible hours** in your leads' time zone, and respect do-not-call requests.
+- **Keep batches focused.** One audience and one goal per campaign makes results easier to read.
+- **Review conversations** from the first calls and refine the prompt before scaling up.

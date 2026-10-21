@@ -1,121 +1,75 @@
 ---
-title: "Phone Numbers"
-description: "Buy and manage phone numbers for your AI Assistants. Available in the United States and India. Requires a one-time compliance request."
-icon: "phone-office"
+title: "Phone numbers"
+description: "Buy US and Indian phone numbers for outbound caller ID and inbound calls. US numbers are available instantly; Indian numbers require compliance approval."
+icon: "hashtag"
 ---
 
-## Overview
-
-Phone numbers are what your AI Assistants use to make outbound calls and receive inbound calls. You purchase numbers directly through Orato; no third-party telephony provider setup needed.
+Your assistants need a phone number to make campaign calls and to receive inbound calls. Numbers are bought from your organization wallet.
 
 <Frame>
-  ![Phone Number](/images/Phone-Number.png)
+  ![Phone numbers page](/images/app/phone-numbers.png)
 </Frame>
 
-Currently available in:
+## Overview stats
 
-<CardGroup cols={2}>
-  <Card title="🇺🇸 United States" icon="phone">
-    Numbers with \+1 country code for US-based calling
-  </Card>
+| Stat | Meaning |
+| --- | --- |
+| **Your numbers** | Numbers your organization owns |
+| **Avg pickup (30D)** | Average pickup rate over the last 30 days |
+| **Best caller ID** | Your best-performing number |
+| **Wallet balance** | Funds available. Click **Add funds** to top up. |
 
-  <Card title="🇮🇳 India" icon="phone">
-    Numbers with the \+91 country code for India-based calling
-  </Card>
-</CardGroup>
+## Buy a US number
 
----
-
-## Buying a phone number
+US numbers are available instantly.
 
 <Steps>
-  <Step title="Go to Phone Numbers">
-    Click **Phone Numbers** in the left sidebar. You'll see all available numbers with their status and country.
-
-    Stats at the top show **the total available** numbers and **Countries** covered.
+  <Step title="Open Buy a number">
+    Go to **Phone Numbers** and click the **Buy a number** tab.
   </Step>
-  <Step title="Click Buy Number">
-    Find a number you want and click **Buy Number** next to it. This opens the compliance request form.
+  <Step title="Select United States">
+    Available numbers are listed with their location and monthly price.
 
-    <Info>
-      Before any number can be activated, Orato requires a one-time compliance verification to confirm your business identity. This is required by telecom regulations.
-    </Info>
-  </Step>
-  <Step title="Submit your compliance request.">
     <Frame>
-      ![Comp](/images/Comp.png)
+      ![Available US numbers](/images/app/phone-buy-us.png)
     </Frame>
-
-    Fill in the compliance form:
-
-    | Field | Description |
-    | --- | --- |
-    | **Legal Business Name** | Your registered company name, e.g., _Acme Pvt. Ltd._ |
-    | **Display Alias** | How you want to appear, e.g., _Acme Support Line_ |
-    | **CIN Number** | Company Identification Number |
-    | **GST Number** | Your GST registration number |
-    | **Country** | Country of business registration |
-    | **Number Type** | Type of number being requested |
-    | **Registration Certificate** | Upload PDF/PNG/JPEG - max 10MB |
-    | **GST Certificate** | Upload PDF/PNG/JPEG - max 10MB |
-
-    Check the confirmation box and click **Submit for Review**.
   </Step>
-  <Step title="Wait for approval">
-    Orato reviews your documents. Once approved, your number is activated and ready to be assigned to an AI Assistant.
-
-    <Note>
-      Compliance is a **one-time process per account**. Once approved, you can purchase additional numbers without resubmitting documents.
-    </Note>
+  <Step title="Click Buy">
+    The monthly price is paid from your wallet and the number appears under **My numbers**.
   </Step>
 </Steps>
 
----
+## Buy an Indian number
 
-## Compliance tab
+Indian numbers require business verification first.
 
-Click the **Compliance** tab on the Phone Numbers page to see all your compliance requests:
+<Steps>
+  <Step title="Select India">
+    On the **Buy a number** tab, select **India**. The **India compliance** form appears.
 
-| Status | Meaning |
+    <Frame>
+      ![India compliance form](/images/app/phone-buy-india.png)
+    </Frame>
+  </Step>
+  <Step title="Submit your company details">
+    Enter your **Company legal name**, **GSTIN**, and optionally your **CIN**, then click **Submit for verification**.
+  </Step>
+  <Step title="Wait for approval">
+    The Orato team reviews requests within 2 to 3 business days. After approval you can browse and buy Indian numbers.
+  </Step>
+</Steps>
+
+## Use a number
+
+| To... | Do this |
 | --- | --- |
-| **Pending** | Request submitted, currently under review |
-| **Approved** | Documents verified, numbers are available to purchase |
-| **Rejected** | Documents were not accepted. Resubmit with corrections |
+| Make outbound calls | Set the number as **Outbound caller ID** on an Outbound assistant's [Settings](/assistants/settings) tab |
+| Answer inbound calls | Set it as **Inbound phone number** on an Inbound assistant's Settings tab |
 
-<Warning>
-  If your compliance request is rejected, you'll receive a reason. Correct the issue in your documents and resubmit via **New Compliance Request**.
-</Warning>
+<Note>
+  You can test any assistant in the browser without a number.
+</Note>
 
----
-
-## Assigning a number to an assistant
-
-Once you have an active phone number, connect it to an AI Assistant:
-
-1. Go to **AI Assistants** and open the assistant you want to use for calls
-2. In the **Setup** step, select your phone number in the telephony settings
-3. Save the assistant
-
-Your assistant will now use that number for all inbound and outbound calls.
-
----
-
-## Next steps
-
-<CardGroup cols={2}>
-  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
-    Assign your number to an AI Assistant
-  </Card>
-
-  <Card title="Campaigns" icon="bullhorn" href="/campaigns">
-    Start making outbound calls with your number
-  </Card>
-
-  <Card title="Calls" icon="phone" href="/calls">
-    Monitor call activity and billing
-  </Card>
-
-  <Card title="Conversations" icon="messages" href="/conversations">
-    Review call transcripts and outcomes
-  </Card>
-</CardGroup>
+<Tip>
+  Calling Indian leads? Use an Indian number as caller ID. People are far more likely to answer a local number.
+</Tip>

@@ -1,0 +1,77 @@
+---
+title: "Run a lead qualification campaign"
+description: "Import leads, build a qualifier assistant from a template, and call the whole batch with a campaign."
+icon: "filter"
+---
+
+In this tutorial you'll call a list of property enquiries, qualify each lead on budget, location, and timeline, and see the results on the dashboard. Swap in your own industry as you go.
+
+**You'll need:** a wallet balance, a phone number for caller ID, and a CSV of leads.
+
+<Steps>
+  <Step title="Prepare your leads">
+    Create a CSV with `name` and `phone` columns. Add any extra columns you find useful, such as `notes` or `city`.
+
+    ```csv
+    name,phone,notes,city
+    Rahul Sharma,+919876543210,Enquired about 2BHK,Pune
+    Ananya Iyer,+919812345678,Wants a villa,Bengaluru
+    ```
+
+    Go to **Leads → Create batch → Batch with CSV**, name the batch `Property enquiries - October`, upload the file, and click **Create Batch with CSV**.
+  </Step>
+  <Step title="Create the assistant from a template">
+    Go to **AI Assistants** and click **Real Estate Lead Qualifier**. The first message and instructions are filled in for you.
+
+    - Set **Agent name** to `Priya`.
+    - In the instructions, replace the generic company and city with your own.
+    - Add your definition of qualified, for example `A lead is qualified if they plan to buy within 3 months with a budget above ₹80 lakh.`
+  </Step>
+  <Step title="Pick the voice">
+    On the **Voice** tab, choose **Cartesia**, preview a few Indian English voices, and set **Primary language** to **English (India)**. Turn on **Auto switch language** in case leads reply in Hindi.
+  </Step>
+  <Step title="Configure settings">
+    On the **Settings** tab:
+
+    - **Role**: Outbound
+    - **Outbound caller ID**: your Indian number
+    - **AI Brain**: Anthropic Claude Haiku 4.5
+    - **Who speaks first?**: Agent speaks first
+  </Step>
+  <Step title="Set call controls">
+    On the **Advanced** tab:
+
+    - **Max Duration**: 300 seconds is plenty for qualification.
+    - **End Call Phrases**: add `not interested` and `don't call me`.
+    - **Transfer to Human**: your sales team's number, for hot leads who want to talk now.
+    - **Knowledge documents**: attach your project brochure or price list.
+
+    Click **Create Assistant**.
+  </Step>
+  <Step title="Test before you launch">
+    Use **Talk** to play a few leads: an interested buyer, a busy person, and someone who isn't interested. Refine the prompt until all three go well.
+
+    Then create a small batch with your own number and run a one-lead campaign to hear a real call.
+  </Step>
+  <Step title="Launch the campaign">
+    Go to **Campaigns → + Create campaign**:
+
+    - **Campaign Name**: `Property enquiries - October`
+    - **Lead Batch**: the batch you created
+    - **Select Assistant**: Priya
+    - **Call rate**: 1 to 2 calls per minute
+    - **Schedule**: Start Immediately, or schedule for business hours
+
+    Click **Create Campaign**.
+  </Step>
+  <Step title="Track results">
+    - Watch progress on the **Campaigns** page.
+    - See outcomes (Connected, No Answer, Callback, Not Interested, Qualified) on the **Dashboard**.
+    - Read summaries on **Conversations** and schedule site visits for qualified leads on **Meetings**.
+  </Step>
+</Steps>
+
+## Next steps
+
+- Improve your prompt with the [Prompting guide](/prompting-guide).
+- Connect [Google Calendar](/integrations/google-calendar) to keep meetings in sync.

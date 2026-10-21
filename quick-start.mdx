@@ -1,176 +1,139 @@
 ---
-title: "Quick Start"
-description: "Create your Orato AI Assistant and make a live call in under 5 minutes."
-icon: "robot"
+title: "Quick start"
+description: "Create your first Orato assistant, test it in the browser, and make your first call."
+icon: "rocket"
 ---
 
-## What you'll achieve
-
-By the end of this guide, you'll have a working AI Assistant that makes real phone calls or runs on your website as a voice widget.
+By the end of this guide you'll have a working AI assistant you can talk to in your browser, plus a clear path to your first real phone call.
 
 <Info>
-  You'll need an Orato account. Sign up at [app.tryorato.com](https://app.tryorato.com) if you haven't already.
+  You need an Orato account. Sign up or log in at [app.tryorato.com](https://app.tryorato.com).
 </Info>
 
----
-
-## Create your first AI Assistant
+## 1. Create an assistant
 
 <Steps>
-  <Step title="Go to AI Assistants">
-    In the left sidebar, click **AI Assistants**, then click **\+ Create Assistant**.
+  <Step title="Open AI Assistants">
+    In the sidebar, click **AI Assistants**. Start from one of the **Agent templates** or click **+ Create Assistant** to start blank.
 
     <Frame>
-      ![AI Assistant](/images/AI-Assistant.png)
+      ![AI Assistants page with agent templates](/images/app/assistants.png)
     </Frame>
   </Step>
-  <Step title="Step 1 - Setup: Name and Instructions">
-    Enter your assistant's name and select a role (**Web Widget** for website, or **Phone** for calls).
+  <Step title="Write the prompt">
+    On the **Prompt** tab:
 
-    Then use the **AI Instruction Generator**:
+    - Enter an **Agent name**, for example `Priya`.
+    - Optionally add a **First message**, for example `Hi {{customer_name}}, this is Priya calling from Acme Realty.`
+    - Under **Generate & refine**, pick a conversation style (**Follow my steps** or **Chat naturally**), describe your agent in a sentence or two, and click **Generate**. Orato writes the instructions for you.
 
-    - Field 1: _"What does your business do?"_ - e.g. `We sell CRM software for real estate agents`
-    - Field 2: _"Call goal?"_ - e.g. `Qualify leads and book demos`
-    - Click **Generate Instructions**
-
-    Orato writes a structured, voice-optimised prompt for you. Edit the text directly to match your tone.
-
-    <Tip>
-      The generator enforces voice-first rules - responses stay under 2 sentences, no bullet points or emojis. This keeps your assistant sounding natural on calls.
-    </Tip>
-  </Step>
-  <Step title="Step 2 - Personality: Voice and Messages">
-    Choose your **AI Brain (LLM)**:
-
-    <Tabs>
-      <Tab title="Groq (Fastest)">
-        Llama 3.3 70B:  ultra-low latency. Best for phone calls where response speed matters most.
-      </Tab>
-      <Tab title="Anthropic">
-        Claude: nuanced, thoughtful responses. Best for complex sales or support conversations.
-      </Tab>
-      <Tab title="OpenAI">
-        GPT-4:  reliable all-round choice for most use cases.
-      </Tab>
-    </Tabs>
-
-    Choose your **Voice**:
-
-    <Tabs>
-      <Tab title="Cartesia (Recommended)">
-        sonic-2 model - natural, low-latency. Click **Preview** to hear it before choosing.
-      </Tab>
-      <Tab title="ElevenLabs">
-        Wide selection of highly natural voices.
-      </Tab>
-      <Tab title="Sarvam">
-        Best for Indian audiences — Hindi, Hinglish, and Indian English accents.
-      </Tab>
-    </Tabs>
-
-    Set your **Opening Message** - write your own greeting or let AI generate it based on caller context.
-  </Step>
-  <Step title="Step 3 - Review and Save">
-    Check your full configuration summary - name, voice, AI model, opening, and closing. Optionally attach a Knowledge Base document.
-
-    Click **Update Assistant** to save.
+    <Frame>
+      ![Prompt tab](/images/app/assistant-prompt.png)
+    </Frame>
 
     <Tip>
-      Click **Talk** (top right) to test your assistant in the browser immediately after saving.
+      Have a website? Click **Import from website**. Orato imports your pages into the knowledge base and helps you confirm business facts for the prompt.
     </Tip>
+  </Step>
+  <Step title="Choose a voice">
+    On the **Voice** tab, pick a provider (Cartesia, ElevenLabs, Sarvam, or Smallest AI), a voice, and the speed. Click **Preview** to hear it. Set the **Primary language** the agent starts in.
+  </Step>
+  <Step title="Pick a role and AI model">
+    On the **Settings** tab, choose the **Role**:
+
+    - **Outbound** to call leads
+    - **Inbound** to answer calls to your number
+    - **Web Widget** to talk to visitors on your website
+
+    Then choose the **AI Brain** provider and model. The default, Anthropic Claude Haiku 4.5, is a good starting point.
+  </Step>
+  <Step title="Save">
+    Click **Create Assistant**. You can come back and edit any tab later.
   </Step>
 </Steps>
 
----
+## 2. Test it in your browser
 
-## Make your first call
+You don't need a phone number to test. Open your assistant and use **Talk** to start a live voice conversation in the browser. Try the questions your customers usually ask and listen for anything that sounds off.
+
+After each test, open **Conversations** to review what happened and refine the prompt.
+
+## 3. Go live
 
 <Tabs>
-  <Tab title="From the Dashboard">
+  <Tab title="Outbound calls">
     <Steps>
-      <Step title="Go to Campaigns">
-        Click **Campaigns** in the sidebar, then **\+ Create Campaign**.
+      <Step title="Buy a number">
+        Go to **Phone Numbers → Buy a number** and buy a US number, or submit India compliance for an Indian number. See [Phone numbers](/phone-numbers).
       </Step>
-      <Step title="Create a Lead Batch first">
-        Go to **Leads → Create Batch**. Add a contact manually or upload a CSV with at least a `phone_number` column.
+      <Step title="Set the caller ID">
+        In your assistant's **Settings** tab, choose the number under **Outbound caller ID**.
       </Step>
-      <Step title="Launch the Campaign">
-        Select your Lead Batch and your AI Assistant. Set call rate to **5 calls/min** (recommended). Click **Create Campaign** - your assistant starts calling immediately.
+      <Step title="Add leads">
+        Go to **Leads → Create batch**. Add contacts manually or upload a CSV/Excel file with `name` and `phone` columns.
+      </Step>
+      <Step title="Call">
+        For one lead, go to **Calls → Make call**. For a whole batch, go to **Campaigns → Create campaign**.
       </Step>
     </Steps>
   </Tab>
-  <Tab title="Via the API">
-    Get your API key from **Developer → API Keys**, then trigger a call:
-
-    ```bash
-    curl --request POST \
-      --url https://api.tryorato.com/v1/call \
-      --header 'Authorization: Bearer YOUR_API_KEY' \
-      --header 'Content-Type: application/json' \
-      --data '{
-        "assistant_id": "your-assistant-id",
-        "recipient_phone_number": "+1234567890"
-      }'
-    ```
+  <Tab title="Inbound calls">
+    <Steps>
+      <Step title="Buy a number">
+        Buy a number on the **Phone Numbers** page.
+      </Step>
+      <Step title="Connect it to the assistant">
+        Set the assistant's role to **Inbound** and choose the number under **Inbound phone number** on the **Settings** tab.
+      </Step>
+      <Step title="Call it">
+        Call the number from your phone. Your assistant answers.
+      </Step>
+    </Steps>
   </Tab>
-  <Tab title="Web Widget">
-    Add this script to your website's `<head>` or `<body>`:
+  <Tab title="Website widget">
+    <Steps>
+      <Step title="Style the widget">
+        Set the assistant's role to **Web Widget** and customize colors and copy on the **Branding** tab.
+      </Step>
+      <Step title="Create a public key">
+        Go to **Developer → API Keys → Create API Key**, choose **Public Key**, and add your website domain.
+      </Step>
+      <Step title="Install the script">
+        Paste the snippet into your site:
 
-    ```html
-    <script
-      src="https://app.tryorato.com/widget.js"
-      data-key="pk_live_YOUR_PUBLIC_KEY"
-      data-assistant="YOUR_ASSISTANT_ID"
-      defer
-    ></script>
-    ```
-
-    A floating microphone button appears on your site. Visitors click it to speak to your assistant instantly.
+        ```html
+        <script
+          src="https://app.tryorato.com/widget.js"
+          data-key="pk_live_YOUR_PUBLIC_KEY"
+          data-assistant="YOUR_ASSISTANT_ID"
+          defer
+        ></script>
+        ```
+      </Step>
+    </Steps>
   </Tab>
 </Tabs>
 
----
-
 ## Before you go live
 
-<Check>
-  Test your assistant using the **Talk** button in the dashboard
-</Check>
-
-<Check>
-  Review the conversation transcript after testing — check for unnatural responses
-</Check>
-
-<Check>
-  Set up a Phone Number if you need inbound or outbound calling
-</Check>
-
-<Check>
-  Connect your calendar in **Settings → Calendar** if your assistant books meetings
-</Check>
-
-<Check>
-  Upload Knowledge Base documents if your assistant needs to answer product questions
-</Check>
-
----
+<Check>Test the assistant with **Talk** and review the transcript in **Conversations**.</Check>
+<Check>Attach knowledge documents if the assistant needs to answer product or pricing questions.</Check>
+<Check>Add a **Transfer to Human** number in **Advanced** so callers can reach a person.</Check>
+<Check>Top up your wallet in **Settings → Billing & Credits**.</Check>
 
 ## Next steps
 
 <CardGroup cols={2}>
   <Card title="AI Assistants" icon="robot" href="/ai-assistant">
-    Deep dive into all assistant configuration options
+    Every assistant setting explained.
   </Card>
-
+  <Card title="Prompting guide" icon="pen-nib" href="/prompting-guide">
+    Write instructions that sound natural on calls.
+  </Card>
   <Card title="Campaigns" icon="bullhorn" href="/campaigns">
-    Launch your first outbound calling campaign
+    Call a full lead batch automatically.
   </Card>
-
-  <Card title="Knowledge Base" icon="database" href="/knowledge-base">
-    Upload documents for accurate answers on every call
-  </Card>
-
-  <Card title="Developer" icon="code" href="/developer/api-keys">
-    Integrate Orato into your own application
+  <Card title="Tutorials" icon="graduation-cap" href="/tutorials/overview">
+    Step-by-step builds for common use cases.
   </Card>
 </CardGroup>

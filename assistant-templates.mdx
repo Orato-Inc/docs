@@ -1,104 +1,73 @@
 ---
-title: "Assistant Templates"
-description: "Pre-built AI Assistant templates for the most common use cases. Pick one, customise it for your business, and go live in minutes."
+title: "Assistant templates"
+description: "Start from a ready-made agent template with a proven first message and instructions, then customize it for your business."
+icon: "shapes"
 ---
 
-## Overview
-
-Instead of writing instructions from scratch, start from a template. Each template is built for a specific use case, with a ready-to-use prompt, a recommended LLM and voice, and a clear goal already defined. You just fill in your company name and adjust the details.
-
----
+Templates give you a working prompt in one click. Each one fills in the **First message** and **Instructions** for a common use case, so you only need to adjust the details.
 
 ## Available templates
 
 <CardGroup cols={2}>
-  <Card title="Lead Qualifier" icon="filter">
-    Calls inbound or outbound leads, asks discovery questions, scores them, and routes hot leads to your sales team.
-
-    **Best for:** Sales teams, real estate, SaaS, financial services
+  <Card title="Real Estate Lead Qualifier" icon="house">
+    Qualify property buyers in Indian metros on budget, location, and timeline. Books a site visit or callback when the lead is serious.
   </Card>
-
-  <Card title="Appointment Booker" icon="calendar-check">
-    Qualifies the caller and books a meeting directly during the call, synced to your connected calendar.
-
-    **Best for:** Consultants, clinics, service businesses, property agents
+  <Card title="E-commerce Customer Support" icon="cart-shopping">
+    Handle order status, returns, and delivery issues for Indian online shoppers.
   </Card>
-
-  <Card title="Customer Support" icon="headset">
-    Answers FAQs, handles common issues, and transfers to a human when the caller needs real help.
-
-    **Best for:** E-commerce, SaaS, any business with high inbound call volume
+  <Card title="Clinic Appointment Scheduler" icon="stethoscope">
+    Book, reschedule, and answer basic queries for a multi-specialty clinic in India.
   </Card>
-
-  <Card title="Payment Reminder" icon="credit-card">
-    Calls contacts with overdue accounts, confirms their details, and offers a payment link or callback.
-
-    **Best for:** Collections, subscription renewals, invoice follow-ups
+  <Card title="EdTech Admissions Counselor" icon="graduation-cap">
+    Follow up on course enquiries and book demo classes for Indian learners.
   </Card>
-
-  <Card title="Recruitment Screener" icon="user-check">
-    Screens candidates against your job criteria, asks structured questions, and shortlists strong applicants.
-
-    **Best for:** HR teams, staffing agencies, high-volume hiring
+  <Card title="NBFC Loan Follow-up" icon="building-columns">
+    Follow up on personal or business loan applications with a compliant, empathetic tone.
   </Card>
-
-  <Card title="Survey Collector" icon="clipboard-list">
-    Calls your contact list, asks structured survey questions, and logs every response for analysis.
-
-    **Best for:** Market research, NPS surveys, post-purchase feedback
+  <Card title="Website Voice Assistant" icon="globe">
+    Answer visitor questions on your website and capture leads. No phone number needed.
   </Card>
 </CardGroup>
 
----
-
-## How to use a template
+## Use a template
 
 <Steps>
-  <Step title="Go to AI Assistants">
-    Click **AI Assistants** in the left sidebar, then click **\+ Create Assistant**.
+  <Step title="Open AI Assistants">
+    Click **AI Assistants** in the sidebar. Templates are listed under **Agent templates**.
   </Step>
-  <Step title="Choose a template">
-    On the creation screen, browse the available templates and pick the one closest to your use case.
-  </Step>
-  <Step title="Customise the instructions">
-    The template comes with a ready-to-use prompt. Update:
+  <Step title="Click a template">
+    The editor opens with the template's first message and instructions filled in.
 
-    - Your assistant's name
-    - Your company name and what you do
-    - Specific qualifying criteria or questions for your business
-    - Any objections or scenarios unique to your industry
+    <Frame>
+      ![Real Estate Lead Qualifier template loaded in the editor](/images/app/assistant-template.png)
+    </Frame>
   </Step>
-  <Step title="Pick your LLM and voice">
-    Each template includes a recommended provider. You can change it, but the recommendation is a good starting point.
+  <Step title="Make it yours">
+    - Enter an **Agent name**.
+    - Replace generic details (company name, city, products, prices) with your own.
+    - Use **Generate & refine** to add follow-ups, such as `Also ask whether they need a home loan`.
+    - Attach your own documents under **Advanced → Knowledge documents**.
   </Step>
-  <Step title="Test and launch">
-    Click **Talk** to test the assistant live in your browser. Adjust the instructions until it sounds right, then launch.
+  <Step title="Choose voice and settings">
+    Pick a voice on the **Voice** tab and a role and AI model on the **Settings** tab.
+  </Step>
+  <Step title="Create and test">
+    Click **Create Assistant**, then test with **Talk** before going live.
   </Step>
 </Steps>
 
----
+## What's inside a template
 
-## Recommended settings per template
+The Real Estate Lead Qualifier shows the typical structure:
 
-| Template | Recommended LLM | Recommended Voice | Typical Call Length |
-| --- | --- | --- | --- |
-| Lead Qualifier | Groq (Llama 3.3 70B) | Cartesia sonic-2 | 3–5 min |
-| Appointment Booker | Groq (Llama 3.3 70B) | Cartesia or ElevenLabs | 4–6 min |
-| Customer Support | Anthropic Claude | ElevenLabs | 5–10 min |
-| Payment Reminder | Groq (Llama 3.3 70B) | Cartesia sonic-2 | 2–4 min |
-| Recruitment Screener | OpenAI GPT-4 | ElevenLabs | 8–12 min |
-| Survey Collector | Groq (Llama 3.3 70B) | Cartesia sonic-2 | 3–5 min |
+- **Identity**: who the agent is ("Priya, a professional real estate calling assistant").
+- **Goal**: what a successful call looks like (book a site visit or a callback).
+- **Personality**: warm, respectful, short replies, never pushy.
+- **Qualification flow**: the questions to cover, in a natural order.
+- **Rules**: what never to do, such as inventing project names or quoting exact prices.
 
----
+Use the same structure when you write your own prompts. See the [Prompting guide](/prompting-guide).
 
-## Where to go next
-
-<CardGroup cols={2}>
-  <Card title="Prompting Guide" icon="pencil" href="/prompting-guide">
-    Learn how to customise and improve your template's instructions
-  </Card>
-
-  <Card title="AI Assistants" icon="robot" href="/ai-assistant">
-    Full guide to all assistant configuration options
-  </Card>
-</CardGroup>
+<Tip>
+  Templates use placeholders such as `{customer_name}` and `{date}`. Keep them so Orato can fill in each lead's details.
+</Tip>
